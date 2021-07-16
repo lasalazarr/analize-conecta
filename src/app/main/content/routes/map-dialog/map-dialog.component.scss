@@ -1,0 +1,77 @@
+.map-container {
+    height: 80%;
+}
+
+#map {
+    height: 100%;
+}
+
+.btns {
+    float: right;
+}
+
+.btn-create {
+    margin-right: 10px;
+}
+
+.btn-fab-check {
+    position: fixed;
+    bottom: 175px;
+    right: 10px;
+    background-color: #f5d25e;
+}
+
+.btn-fab-cancel {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+}
+
+.btn-fab-back {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+}
+
+.btn-fab-call {
+    position: fixed;
+    bottom: 110px;
+    right: 10px;
+    background-color: #f5d25e;
+}
+
+.btn-fab-nav {
+    position: fixed;
+    bottom: 110px;
+    left: 10px;
+    background-color: #f5d25e;
+}
+
+.contact-section {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    height: 100px;
+    background-color: #f5d25e;
+}
+
+.contact-section-opened {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    height: 200px;
+    background-color: #f5d25e;
+}
+
+.mat-card-header-text {
+    height: auto;
+    margin: 0;
+  }
+
+.fix-margin {
+    margin: 0 -8px;
+}
+
+.subtitle-address {
+    font-size: smaller;
+}

@@ -1,0 +1,109 @@
+<table>
+  <tr>
+    <td rowspan="3">
+      <div class="panel panel-warning panel-list">
+        <div class="panel-heading">Variables
+          <mat-form-field class="field-filter">
+            <mat-label>Filtro</mat-label>
+            <input matInput [(ngModel)]="filter" (keyup)="filterVars()" />
+          </mat-form-field>
+        </div>
+        <div class="panel-body body-list">
+          <mat-selection-list class="list" #varsList>
+            <mat-list-option *ngFor="let param of filteredParameters" [value]="param" (click)="onItemSelect(param,varsList)">
+              {{ param.Nombre }}
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </div>
+    </td>
+    <td>
+      <mat-form-field class="input-field">
+        <mat-label>ID</mat-label>
+        <input matInput readonly placeholder="Introduzca el ID" [(ngModel)]="selectedVar.Id">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="input-field">
+        <mat-label>Descripción</mat-label>
+        <input matInput placeholder="Introduzca la descripción" [(ngModel)]="selectedVar.Nombre">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="input-field">
+        <mat-label>Tipo de dato</mat-label>
+        <mat-select [(ngModel)]="selectedVar.Tipo">
+          <mat-option value="boolean">Chequeo</mat-option>
+          <mat-option value="decimal">Decimal</mat-option>
+          <mat-option value="int">Entero</mat-option>
+          <mat-option value="string">Texto</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="input-field">
+        <mat-label>Valor</mat-label>
+        <input matInput placeholder="Introduzca el valor" [(ngModel)]="selectedVar.Valor">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="input-field">
+        <mat-label>Unidad</mat-label>
+        <input matInput placeholder="Introduzca la unidad" [(ngModel)]="selectedVar.Concepto">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-checkbox [(ngModel)]="selectedVar.Estado">Estado</mat-checkbox>
+      <mat-icon title="Guardar" class="icon" (click)="save()">save</mat-icon>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <div class="panel panel-warning panel-simulator">
+        <div class="panel-heading">Simulador de pago de delivery
+          <mat-icon title="Simular delivery" class="icon" (click)="calc()">calculate</mat-icon>
+        </div>
+        <div class="panel-body">
+          <table>
+            <tr>
+              <td colspan="2">
+                <mat-label>T:Tiempo D:Distancia P:Paradas Expresión: (T*VT + D*VD + P*VP)</mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="input-field">
+                  <mat-label>Tiempo (min)</mat-label>
+                  <input matInput placeholder="Introduzca el tiempo" type="number" [(ngModel)]="time">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="input-field">
+                  <mat-label>Distancia (Km)</mat-label>
+                  <input matInput placeholder="Introduzca la distancia" type="number" [(ngModel)]="distance">
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="input-field">
+                  <mat-label>Paradas</mat-label>
+                  <input matInput placeholder="Introduzca nro de paradas" type="number" [(ngModel)]="stops">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="input-field">
+                  <mat-label>Resultado</mat-label>
+                  <input matInput readonly type="text" [(ngModel)]="result">
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>

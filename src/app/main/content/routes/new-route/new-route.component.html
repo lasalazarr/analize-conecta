@@ -1,0 +1,244 @@
+<table>
+  <tr>
+    <td colspan="2">
+      <div class="row">
+
+        <div class="panel panel-warning">
+          <div class="panel-heading">Nueva ruta</div>
+          <div class="panel-body">
+            <div class="row">
+              <form name="routeForm" [formGroup]="routeForm">
+                <mat-grid-list #grid cols="{{ grid.cols }}" rowHeight="55px">
+      
+                  <mat-grid-tile>
+                    <input class="form-field" type="datetime-local" [(ngModel)]="route.Fecha" *ngIf="editable" formControlName="Fecha" required>
+                    <input class="form-field" type="text" [(ngModel)]="route.Fecha" *ngIf="!editable" formControlName="Fecha" required disabled>
+                  </mat-grid-tile>
+                
+                  <mat-grid-tile>
+                    <mat-form-field class="form-field">
+                      <mat-label>Punto de inicio</mat-label>
+                      <mat-select formControlName="IdBodegaInicio" [(ngModel)]="route.IdBodegaInicio" [disabled]="!editable" required>
+                        <mat-option>--</mat-option>
+                        <mat-option *ngFor="let w of warehouses" [value]="w.Bodega">
+                          {{w.Nombre}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </mat-grid-tile>
+                
+                  <mat-grid-tile>
+                    <mat-form-field class="form-field">
+                      <mat-label>Bodegas</mat-label>
+                      <mat-select #stop (selectionChange)="warehouseStop = stop.value" [disabled]="!editable">
+                        <mat-option>--</mat-option>
+                        <mat-option *ngFor="let w of warehouses" [value]="w.Bodega">
+                          {{w.Nombre}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </mat-grid-tile>
+                
+                  <mat-grid-tile>
+                    <mat-form-field class="form-field">
+                      <mat-label>Proveedor</mat-label>
+                      <mat-select formControlName="IdTransportista" [(ngModel)]="route.IdTransportista" [disabled]="!editable" required>
+                        <mat-option>--</mat-option>
+                        <mat-option *ngFor="let driver of drivers" [value]="driver.IdTransportista">
+                          {{driver.RazonSocial}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </mat-grid-tile>
+                
+                  <mat-grid-tile *ngIf="editable">
+                    <button mat-raised-button (click)="calc()">
+                      Calcular ruta
+                      <mat-icon class="mat-icon" title="Calcular ruta">map</mat-icon>
+                    </button>
+                  </mat-grid-tile>
+                
+                </mat-grid-list>
+              </form>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <label class="table-title">Pedidos pendientes por entrega</label>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <mat-form-field class="input-filter">
+        <mat-label>Filtrar</mat-label>
+        <input matInput class="filter-input" placeholder="Ingresa valor a buscar" #inputFilter type="search">
+        <button mat-raised-button class="filter-bottom" (click)="filter(inputFilter.value)">
+          <mat-icon class="mat-icon" title="Filtrar">filter_alt</mat-icon>
+        </button>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <mat-form-field class="form-field select-range">
+        <mat-label>Selección múltiple</mat-label>
+        <mat-select #multiSelect (selectionChange)="multiselect(multiSelect.value)">
+          <mat-option [value]="0">--</mat-option>
+          <mat-option [value]="10">10</mat-option>
+          <mat-option [value]="15">15</mat-option>
+          <mat-option [value]="20">20</mat-option>
+          <mat-option [value]="25">25</mat-option>
+          <mat-option [value]="35">35</mat-option>
+          <mat-option [value]="50">50</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <mat-form-field class="form-field zones">
+        <mat-label>Zonas</mat-label>
+        <mat-select #zonesSelect (selectionChange)="onSelectZone($event.value)" multiple>
+          <mat-option disabled>--</mat-option>
+          <mat-option *ngFor="let zone of zones" [value]="zone">
+            {{ zone.Nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <mat-accordion class="accordion" hideToggle>
+        <mat-expansion-panel class="panel-expansion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-label>Zonas</mat-label>
+            </mat-panel-title>
+            <mat-panel-description>
+              Edición de radios
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>
+            <mat-list role="list">
+              <mat-list-item *ngFor="let zone of zones" role="listitem">
+                <mat-form-field class="zone-radio-field">
+                  <mat-label>Zona {{ zone.Nombre }} Radio (km)</mat-label>
+                  <input matInput [(ngModel)]="zone.Radio" type="number" (blur)="setZoneRadio()" />
+                </mat-form-field>
+              </mat-list-item>
+            </mat-list>
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <mat-form-field class="form-field zones">
+        <mat-label>Lider</mat-label>
+        <mat-select #liderSelect (selectionChange)="onSelectLider($event.value)" [(ngModel)]="IdLiderSelect">
+          <mat-option [value]="null">--</mat-option>
+          <mat-option *ngFor="let lider of lideres" [value]="lider.IdLider">
+            {{ lider.Nombres }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr *ngIf="dataSource != undefined">
+    <td colspan="2">
+      <div class="row">
+        <div>
+          <button mat-raised-button (click)="exportToExcel()">
+            Exportar Excel
+            <mat-icon class="mat-icon" title="Exportar">send_and_archive</mat-icon>
+          </button>
+        </div>
+
+        <table mat-table [dataSource]="filteredData" class="mat-elevation-z8">
+      
+          <ng-container matColumnDef="Numero">
+            <th mat-header-cell *matHeaderCellDef> Pedido </th>
+            <td mat-cell *matCellDef="let element"> {{element.Numero}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Factura">
+            <th mat-header-cell *matHeaderCellDef> Factura </th>
+            <td mat-cell *matCellDef="let element"> {{element.Factura}} </td>
+          </ng-container>
+          <ng-container matColumnDef="NombreEmpresaria">
+            <th mat-header-cell *matHeaderCellDef> Cliente </th>
+            <td mat-cell *matCellDef="let element"> {{element.NombreEmpresaria}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="Fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{ element.Fecha.toString().substring(0,10) }} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="NombreCiudad">
+            <th mat-header-cell *matHeaderCellDef> Parroquia </th>
+            <td mat-cell *matCellDef="let element"> {{element.NombreCiudad}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="GeoZona">
+            <th mat-header-cell *matHeaderCellDef> Zona </th>
+            <td mat-cell *matCellDef="let element"> {{ element.GeoZona }} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="selected">
+            <th mat-header-cell *matHeaderCellDef> <input type="checkbox" #cbxAll (click)="selectAll(cbxAll.checked)" *ngIf="editable" /> </th>
+            <td mat-cell *matCellDef="let element"> <input type="checkbox" (click)="selectItem($event,element)" [(ngModel)]="element.selected" [disabled]="!editable" /> </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+      </div>
+    </td>
+  </tr>
+
+  <tr *ngIf="dataSource != undefined">
+    <td colspan="2">
+      <mat-paginator class="paginator" 
+        [length]="dataLength"
+        [pageIndex]="pageIndex"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        (page)="pageEvent = getData($event)">
+      </mat-paginator>
+    </td>
+  </tr>
+</table>
+
+<table  #tableNewRoute style="display: none;" id="tableNewRoute">  
+  <tr>  
+    <th>Nro Pedido</th>  
+    <th>No. Factura</th>  
+    <th>Empresaria</th>  
+    <th>Direccion</th>  
+    <th>Telefono</th>  
+    <th>Contraentrega</th>  
+  </tr>  
+  <tr  *ngFor="let pedido of selectedItemsReport;">  
+    <td>{{pedido.Numero}}</td>  
+    <td>{{pedido.Factura}}</td>
+    <td>{{pedido.NombreEmpresaria}}</td>  
+    <td>{{pedido.DireccionEntregaPedido}}</td>  
+    <td>{{pedido.TelefonoPrincipal}}</td>  
+    <td>{{pedido.Contraentrega ? 'Si' : 'No'}}</td>   
+  </tr>  
+</table>  

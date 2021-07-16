@@ -1,0 +1,152 @@
+<div _ngcontent-xhr-c118="" class="page-layout simple fullwidth" style="position: relative;">
+    <div class="content p-24" [style.display]="!showProduct?'block':'none'">
+        <div class="menuPedido">
+            <div class="step">
+                <div class="innerstep active">1</div>
+                <div class="seleccionPaso">
+                    <mat-icon>event</mat-icon>
+                    <div>
+                        {{ 'CAMPAÑA: ' + SessionUser?.Campana }}
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="step">
+                <div class="innerstep active">2</div>
+                <div class="seleccionPaso" (click)="showMenuEmpresarias()">
+                    <mat-icon>person_add</mat-icon>
+                    <div>
+                        {{ NumeroDocumento ? (NombreEmpresariaCompleto  + ' • ' + NumeroDocumento) : ('EMPRESARIA') }}
+                    </div>
+                </div>
+
+            </div>
+            <div class="step" >
+                <div class="innerstep active" >3</div>
+                <div class="seleccionPaso"   (click)="BodegaPedido()">
+                    <mat-icon>store</mat-icon>
+                    <div>
+                      BODEGA:   {{BodegaSeleccionado + ' • ' + NombreBodega}}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="step">
+                <div class="innerstep" [ngClass]="{'active':NumeroDocumento }">4</div>
+                <div class="seleccionPaso" (click)="openProductos()" [matBadge]="numberOfItems | async"
+                    matBadgePosition="after">
+                    <mat-icon>add_shopping_cart</mat-icon>
+                    <div>
+                        AGREGAR ARTICULOS
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="innerstep" [ngClass]="{'active': (numberOfItems | async)>0}">5</div>
+                <div class="seleccionPaso" (click)="openDatosEnvio()">
+                    <mat-icon>airport_shuttle</mat-icon>
+                    <div>
+                        {{ DatosEnvioSeleccionado ? (DatosEnvioSeleccionado  + ' • ' + BodegaSeleccionado) : ('GUARDAR DATOS ENVIO') }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="step">
+            <div class="innerstep" [ngClass]="{'active': !((numberOfItems |async) > 0)}">6</div>
+            <button class="registrar" [disabled]="!((numberOfItems |async) > 0) " (click)="openBottomSheet()">REGISTRAR
+            </button>
+        </div>
+        <div class="advice">
+            {{ 'Desde: ' + ( SessionUser?.FechaIniCampana |date:"fullDate")}}
+        </div>
+        <div class="advice">
+            {{ ' Hasta: ' +(SessionUser?.FechaFinCampana |date:"fullDate") }}
+
+        </div>
+
+    </div>
+
+    <!-- <div [style.display]="showProduct ? 'block':'none'"
+        [ngClass]="{'efectoEmpresariasOn' : showProduct , 'efectoEmpresariasOff' : !showProduct}"
+        class="empresariasSeleccion">
+
+        <div class="search-header">
+            <mat-form-field class="filterInput">
+                <input matInput placeholder="Buscar Artículo" aria-label="State" [formControl]="productCtrl">
+            </mat-form-field>
+            <mat-icon class="iconClose" style="line-height: 100px;" (click)="closeSelectArticulo()">close</mat-icon>
+        </div>
+
+        <cdk-virtual-scroll-viewport itemSize="75" maxBufferPx="600" minBufferPx="600" class="example-viewport">
+            <div *cdkVirtualFor="let item of filteredProduct | async">
+                <div class="example-item">
+                    <div (click)="openAdicionarArticulo(item.PLU)">{{item?.NombreProducto}} •{{item?.NombreColor}} •
+                        {{item?.NombreTalla}}</div>
+
+                    <ng-container *ngIf="item?.Imagen != ''">
+                        <img class="imageAriticulo" (click)="openAdicionarArticulo(item.PLU)"
+                            src="{{ 'https://appsaved.lineadirectaec.com/assets/imagesAplicacion/' + item?.Imagen}}"
+                            alt="Articulo">
+                    </ng-container>
+                    <ng-container *ngIf="lodash.isEmpty(item.Imagen) || lodash.isNil(item.Imagen)">
+                        <mat-icon class="noimageicon">image</mat-icon>
+                    </ng-container>
+                </div>
+                <hr class="hrarticulo">
+            </div>
+
+        </cdk-virtual-scroll-viewport>
+
+    </div> -->
+
+    <div [style.display]="showEmpresaria ? 'block':'none'"
+        [ngClass]="{'efectoEmpresariasOn' : showEmpresaria , 'efectoEmpresariasOff' : !showEmpresaria}"
+        class="empresariasSeleccion">
+        <div class="search-header">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Escribe una Palabra">
+            </mat-form-field>
+            <mat-icon class="iconClose" (click)="closeSelectEmpresaria()">close</mat-icon>
+        </div>
+
+        <div>
+            <mat-table #tableEmpresaria [dataSource]="dataSource" class="">
+                <ng-container matColumnDef="imagenEmpresaria">
+                    <mat-cell *matCellDef="let row">
+                        <img class="mr-20"
+                            src="https://appsaved.lineadirectaec.com/assets/images/appimages/empresarias.png">
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="NombreCompleto">
+                    <mat-cell *matCellDef="let row"> {{row.NombreEmpresariaCompletoBusqueda}}</mat-cell>
+                </ng-container>
+                <mat-header-row></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"
+                    style="cursor: pointer" (click)="openDetalleCliente(row)">
+                </mat-row>
+            </mat-table>
+
+            <mat-paginator [pageSizeOptions]="[100,200,300]"></mat-paginator>
+        </div>
+    </div>
+
+    <articulos [style.display]="showProduct?'block':'none'" (OpenProduct)="openAdicionarArticulo($event)"
+        [initialReturn]="initialReturn" (close)="showProduct=false" [filteredItem]="filteredItem">
+
+    </articulos>
+    <div class="containershopcar" [style.display]="((numberOfItems |async) > 0) ? 'block':'none' " 
+        (click)="openBottomSheet()" >
+        <div [matBadge]="numberOfItems | async"  matBadgePosition="after">
+            <mat-icon>shopping_cart</mat-icon>
+
+        </div>
+    </div>
+
+    <app-boton-pagos></app-boton-pagos>
+</div>

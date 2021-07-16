@@ -1,0 +1,46 @@
+
+
+<div
+    id="forms"
+    class="page-layout simple fullwidth"
+    fxLayout="column"
+    fusePerfectScrollbar
+>
+    <!-- HEADER -->
+
+    <div
+        class="px-24 h-100 mat-white-bg"
+        fxLayout="row"
+        fxLayoutAlign="start center"
+    >
+        <div
+            fxLayout="row"
+            style="width: 100%; justify-content: space-between;"
+        >
+            <div style="font-size: 32px;">Subir catalogos</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+        <div class="search-header">           
+        </div>
+        <div class="col-xs-4">
+            <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
+        </div>
+       
+        <div class="col-xs-1">
+            <button class="btn btn-primary" style="" (click)="CargarArchivo()">Subir catalogo</button>
+        </div>
+        <div class="col-xs-3">
+        <div *ngIf="mostrar" class="col-xs-3">
+            <p style="color: green;font-weight: bold;">{{mensaje2}}</p>
+        </div>
+        <div *ngIf="!mostrar" class="col-xs-3">
+            <p style="color: red;font-weight: bold;">{{mensaje2}}</p>
+        </div>
+        </div>
+                
+    </div>
+</div>

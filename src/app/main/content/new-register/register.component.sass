@@ -1,0 +1,104 @@
+// :host
+//     width: 80%
+//     margin: auto
+
+div, span, p
+    font-family: Poppins
+    font-weight: 400
+    color: #606770
+
+button, a.btn
+    border-radius: 5pxF
+    padding: 5px 30px
+    text-decoration: none
+    text-align: center
+    cursor: pointer
+    color: #B4B4B4
+    font-family: Poppins
+    font-weight: 400
+
+.btn-primary , a.btn-primary
+    color: #606770
+    background-color: #EFD729
+    border: solid 2px #EFD729
+
+.btn-primary:disabled, .btn-primarybutton[disabled],
+a.btn-primary:disabled, a.btn-primarybutton[disabled]
+    background-color: white
+    border: solid 2px #EFD729
+    cursor: default
+
+#wraper_register
+    height: 400px
+    width: 300px
+    //width: calc( 40% - 30px)
+    margin: 15px auto
+    display: grid
+    grid-template-rows: 10px 20% auto
+
+    #backLogin
+        color: #EFD729
+    img
+        width: 60%
+        margin: auto
+
+    .content-register
+        display: flex
+        flex-direction: column
+        align-items: stretch
+
+        span
+            text-align: center
+            color: #606770
+            font-size: 14px
+            margin: 10px 0
+
+        span.error-field
+            text-align: left
+            color: red
+            font-size: 10px
+            margin: 0
+
+        .enter-as
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+
+            button
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                height: 60px
+                color: #fff
+                transition-duration: 600ms
+
+            .btn-select
+                background-color: #EFD729
+                border-color: #EFD729
+                color: #606770
+
+        form
+            height: auto
+            display: flex
+            flex-direction: column
+            align-items: stretch
+            justify-content: space-around
+
+            button
+                margin: 10px 0
+input
+    font-size: 18px
+    color: #B4B4B4
+    font-family: Poppins
+    font-weight: 400
+    font-size: 14px
+    border-radius: 5px
+    padding: 5px 10px
+    margin-top: 7px
+    margin-bottom: 7px
+    background-color: #F6F5F6
+    border: solid 1px #606770
+
+    ::placeholder
+        color: #C3C3C3

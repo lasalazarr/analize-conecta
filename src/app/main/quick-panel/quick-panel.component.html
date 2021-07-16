@@ -1,0 +1,29 @@
+<div class="mx-12" style="font-size: 20px;
+line-height: 50px;">
+  <span>Notificaciones</span>
+</div>
+<mat-divider cdkFocusRegionEnd></mat-divider>
+<mat-list class="container-noti">
+  <ng-container *ngFor="let event of ListEventos">
+    <div class="ml-12 " fxLayout="row">
+      <div class="button-edit-image">
+        <div>
+          <mat-icon>alarm_on</mat-icon>
+
+        </div>
+      </div>
+      <div class="mx-12">
+        <div matLine class="fecha-noti">
+          {{ 'Hace ' + event?.RemainingDays + (event?.RemainingDays>1? ' dias ':' dia ') }}
+        </div>
+        <div class="secondary-text">{{event.Comentario}}</div>
+        <div matLine class="fecha-noti">{{event.Fecha | date:'MMM d, y'}}</div>
+      </div>
+
+    </div>
+    <hr class="separator">
+
+
+
+  </ng-container>
+</mat-list>

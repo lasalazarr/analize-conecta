@@ -1,0 +1,31 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Detalle Solicitud</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+        <form class="formy" [formGroup]="formImage" class="mat-white-bg   mb-24" fxLayout="column">
+            <div class="uploadImage">
+                Documento</div>
+            <div class="uploadImage my-12">
+                <input id="channel-file" type="file" (change)="uploadFileAndSetPreview($event,'Documento')" />
+            </div>
+            <button mat-raised-button (click)="guardarDocumentos()" class="buttonGlod" aria-label="CREATE AN ACCOUNT"
+                [disabled]="formImage.invalid">
+                Actualizar Documento
+            </button>
+            <button mat-raised-button (click)="dialogRef.close()" class="buttonGlod">
+                Cancelar
+            </button>
+
+        </form>
+
+
+
+
+    </div>
+</div>

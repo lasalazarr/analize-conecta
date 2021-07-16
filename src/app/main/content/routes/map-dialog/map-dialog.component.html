@@ -1,0 +1,59 @@
+<div class="map-container" id="map-container">
+  <div id="map"></div>
+  <ng-container *ngIf="distance != undefined && duration != undefined && value != undefined">
+    <div>
+      <p><strong>Distancia total:</strong> {{ distance }}</p>
+      <p><strong>Tiempo estimado:</strong> {{ duration }}</p>
+      <p *ngIf="update || create"><strong>Valor total:</strong> {{ value }}</p>
+    </div>
+    <mat-dialog-actions align="end">
+      <button mat-button [mat-dialog-close]="false">Cancelar</button>
+      <button mat-button [mat-dialog-close]="routeData">
+        <ng-container *ngIf="!update && create">Crear ruta</ng-container>
+        <ng-container *ngIf="update && !create">Actualizar ruta</ng-container>
+        <ng-container *ngIf="!update && !create">Iniciar ruta</ng-container>
+        <mat-icon class="mat-icon" title="Crear ruta">map</mat-icon>
+      </button>
+    </mat-dialog-actions>
+  </ng-container>
+  <ng-container *ngIf="!multiple">
+    <button mat-fab color="secondary" class="btn-fab-back" (click)="router.navigate(['/routes/delivery/list/' + driverId])">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <button mat-fab color="secondary" class="btn-fab-cancel" (click)="cancel()">
+      <mat-icon>block</mat-icon>
+    </button>
+    <button mat-fab color="secondary" class="btn-fab-check" (click)="done()">
+      <mat-icon>done_outline</mat-icon>
+    </button>
+    <a *ngIf="lat != undefined && lng != undefined && currentPos != undefined" href="https://www.google.es/maps?q={{lat}},{{lng}}">
+      <button mat-fab color="secondary" class="btn-fab-nav">
+        <mat-icon>near_me</mat-icon>
+      </button>
+    </a>
+    
+    <a href="{{ 'tel:' + phone }}">
+      <button mat-fab color="secondary" class="btn-fab-call">
+        <mat-icon>call</mat-icon>
+      </button>
+    </a>
+    <div [ngClass]="openedPanel == false ? 'contact-section': 'contact-section-opened'" *ngIf="request != undefined && client != undefined">
+      <mat-card>
+        <mat-card-header class="fix-margin">
+          <div mat-card-avatar>
+            <img #lImage [style.display]="viewImage ? 'block':'none'"
+                        src="https://www.lineadirectaec.com/lineadirectaec.com/imagenes/{{ client.Nit.trim() }}.png"
+                        (load)="viewImage = true">
+            <img *ngIf="!viewImage" src="https://imagenesapp.lineadirectaec.com/assets/images/avatars/profile.jpg">
+          </div>
+          <mat-card-title>{{ request.Numero }}</mat-card-title>
+          <mat-card-subtitle>{{ duration }}</mat-card-subtitle>
+          <mat-card-subtitle>ID {{ client.Nit }} - {{ client.NombreEmpresariaCompleto }}</mat-card-subtitle>
+          <mat-card-subtitle class="subtitle-address">{{ client.DireccionPedidos  }}</mat-card-subtitle>
+          <mat-icon *ngIf="!openedPanel" (click)="openedPanel = !openedPanel">vertical_align_top</mat-icon>
+          <mat-icon *ngIf="openedPanel" (click)="openedPanel = !openedPanel">vertical_align_bottom</mat-icon>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

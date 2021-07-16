@@ -1,0 +1,42 @@
+fuse-quick-panel {
+  display: flex;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  z-index: 99;
+  flex-direction: column;
+
+  .mat-slide-toggle-content {
+    flex: 1;
+  }
+}
+
+.separator {
+  margin-bottom: 12px;
+}
+hr{
+  border-top: 1px solid #dedcdc !important;
+
+}
+.container-noti{
+  background-color: #ececec;
+}
+.fecha-noti{
+  FONT-SIZE: 12PX;
+}
+.button-edit-image {
+  align-self: center;
+  div {
+      background-color: #3c4252;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      border-radius: 44px;
+      margin-top: 10px;
+      cursor: pointer;
+      mat-icon {
+          color: white;
+          line-height: 37px;
+      }
+  }
+}

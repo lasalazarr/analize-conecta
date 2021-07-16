@@ -1,0 +1,36 @@
+<div class="dialog-content" >
+
+  <mat-toolbar matDialogTitle class="mat-accent m-0" style="background-color: black; color: white;">
+    <mat-toolbar-row>
+      <span class="title dialog-title" style="background-color: black; color: white;">Detalle Pedido : {{data.NumeroPedidoReservado}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div>
+
+  </div>
+
+  <div style="display: flex; flex-direction: row">
+    <div style=" overflow: hidden; flex-grow: 1">
+      <ag-grid-angular #agGrid style="width: 100%; height: 200px;" id="myGrid" class="ag-theme-balham"
+        [columnDefs]="columnDefs" [rowData]="rowData" [context]="this" (gridReady)="onGridReady($event)" (rowClicked)="openAdicionarArticulo($event)" >
+      </ag-grid-angular>
+    </div>
+
+
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+<div class="box-footer">
+    <button *ngIf="visiblepago" type="submit" class="btn btn-default"  (click)="openRegistroPago()" 
+    style="background-color: black; color: white;">Registrar pago</button>
+    <button type="submit" class="btn btn-info pull-right"   (click)="onClose()"
+    style="background-color: black; color: white;">Cerrar</button>
+  </div>

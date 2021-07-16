@@ -1,0 +1,28 @@
+<form (ngSubmit)="addMarkerOnDriverPosition(searchCode.value)" novalidate>
+  <mat-form-field class="form-field">
+    <mat-label>Rastrear pedido</mat-label>
+    <input matInput placeholder="Ingresa el código de tu pedido" #searchCode type="text">
+    <mat-icon class="search-icon" (click)="addMarkerOnDriverPosition(searchCode.value)">search</mat-icon>
+  </mat-form-field>
+</form>
+
+<mat-label *ngIf="duration != undefined" class="route-time-label">Tiempo aprox: {{ duration }}</mat-label>
+<div id="map"></div>
+<ng-container *ngIf="driver != undefined">
+  <a href="{{ 'tel:' + driver.Telefono }}">
+    <button mat-fab color="secondary" class="btn-fab-call">
+      <mat-icon>call</mat-icon>
+    </button>
+  </a>
+  <div class="contact-section">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar>
+          <img src="https://imagenesapp.lineadirectaec.com/assets/images/avatars/profile.jpg" />
+        </div>
+        <mat-card-title>{{ driver.RazonSocial }}</mat-card-title>
+        <mat-card-subtitle>Pedido: {{ requestNum }}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</ng-container>

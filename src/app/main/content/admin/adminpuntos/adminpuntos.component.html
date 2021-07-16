@@ -1,0 +1,43 @@
+<div style="padding: 10px;">
+  <mat-tab-group  class="dashboard__tabs mt-5" style="width: 990px;height: 600px;">
+    <mat-tab class="nav-link" label="Parametros puntos">
+      <div>
+        <ag-grid-angular #agGrid style="width: 100%; height: 200px;" 
+        id="myGrid" 
+        class="ag-theme-balham"
+        [columnDefs]="columnDefs" 
+        [rowData]="rowData" 
+        [context]="this" 
+        (gridReady)="onGridReady($event)"
+        [frameworkComponents]="frameworkComponents" 
+         >
+      </ag-grid-angular>
+      </div>
+    </mat-tab>
+    <mat-tab class="nav-link" label="Puntos Conceptos">
+      <div>
+        <app-conceptos></app-conceptos>
+      </div>
+    </mat-tab>
+    <mat-tab class="nav-link" label="Puntos x Monto">
+      <div>
+        <app-puntos-xmontos></app-puntos-xmontos>
+      </div>
+    </mat-tab>
+    <mat-tab class="nav-link" label="Puntos x Cantidad">
+      <div>
+        <app-puntos-xcantidad></app-puntos-xcantidad>
+      </div>
+    </mat-tab>
+    <mat-tab class="nav-link" label="Puntos x estado">
+      <div>
+        <app-puntos-xestado></app-puntos-xestado>
+      </div>
+    </mat-tab>
+    <mat-tab class="nav-link" label="Cargue puntos">
+      <div>
+       <app-cargue-puntos></app-cargue-puntos>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div> 

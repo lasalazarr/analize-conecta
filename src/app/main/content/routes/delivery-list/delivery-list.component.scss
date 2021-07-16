@@ -1,0 +1,34 @@
+:host {
+    .content {
+        .horizontal-stepper-wrapper,
+        .vertical-stepper-wrapper {
+            max-width: 800px;
+        }
+    }
+}
+
+.custom-toolbar {
+    background-color:#000000;
+    color:white;
+}
+
+.form-field {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.item-text {
+    margin-top: 5px;
+}
+
+.btn-start {
+    float: right;
+}
+
+.status-text {
+    margin-right: 5px;
+}

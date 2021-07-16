@@ -1,0 +1,59 @@
+:host {
+    overflow-y: auto;
+}
+
+.row {
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
+    clear:both;
+}
+
+.panel {
+    padding: 20px;
+}
+
+.panel-heading {
+    color: #F6F5F6;
+    background-color: #EFD729;
+}
+
+.mat-icon {
+    cursor: pointer;
+}
+
+table, .paginator, .form-field {
+    width: 100%;
+}
+
+.paginator {
+    float: right;
+    margin-right: 15px;
+}
+
+.input-filter, .table-title {
+    margin-left: 15px;
+}
+
+.zones, .select-range {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.panel-expansion {
+    margin: 10px;
+}
+
+.zone-radio-field {
+    width: 50%;
+}
+
+.filter-bottom {
+    float: right;
+    position: absolute;
+    margin-left: 10px;
+}
+
+.filter-input {
+    margin-top: 15px;
+}

@@ -1,0 +1,32 @@
+<div class="dialog-content">
+
+  <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+      <mat-toolbar-row>
+          <span class="title dialog-title">Razon de cancelación</span>
+      </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="containerInput">
+      <mat-form-field class="my-12" fxFlex="100" class="mat-form-reason-cancelation">
+          <mat-label>Ingresa la razon de la cancelacion</mat-label>
+          <!-- <input matInput [(ngModel)]="reasonCancelation"> -->
+          <mat-select [(ngModel)]="reasonCancelation">
+            <mat-option *ngFor="let reason of genericsReasons" [value]="reason">
+              {{ reason.text }}
+            </mat-option>
+          </mat-select>
+     </mat-form-field>
+  </div>
+  <div class="errorDescription">
+      <span *ngIf="existeError" class="error">{{descripcionError}}</span>
+  </div>
+  <div class="m-0" fxLayout="row" fxLayoutAlign="end center" style="    padding: 0px 10px 10px 10px;">
+
+      <button class="buttonBlack" (click)="cancelar()">
+          Cancelar envio
+      </button>
+      <button class="buttonBlack" (click)="cerrar()">
+        Cerrar
+    </button>
+  </div>
+
+</div>

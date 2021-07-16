@@ -1,0 +1,81 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Detalle Articulo: {{data.CodigoRapido}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <div mat-dialog-content class="m-0" fusePerfectScrollbar>
+        <form name="form" [formGroup]="form">
+
+            <mat-card-content>
+
+                <!-- <fuse-widget fxLayout="column" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="50" > -->
+     
+                   
+                    <!-- Front -->
+                    <div class="fuse-widget-front mat-elevation-z2">
+                        <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+                            <div>
+                                <p align="left" class="text-color-negro">
+                                    <b>{{data.NombreProd +' • ' +data.Color +' • '+data.Talla}}</b></p>
+                                <mat-divider></mat-divider>
+                            </div>
+
+                   
+                        </div>
+
+                        <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+
+                            <ng-container
+                                *ngIf="!lodash.isNil(data.NombreImagen) && !lodash.isEmpty(data.NombreImagen)">
+                                <img class="CenterImageArticuloDetalle"
+                                    src="{{ 'https://appsaved.lineadirectaec.com/assets/imagesAplicacion/'+data.NombreImagen}}" alt="Articulo">
+                            </ng-container>
+                            <ng-container *ngIf="lodash.isNil(data.NombreImagen) || lodash.isEmpty(data.NombreImagen)">
+                                <div style="height: 200px;display: flex;">
+                                    <img class="CenterImageArticuloDetalle"
+                                        style="width: 70px;width: 70px;align-self: center;"
+                                        src="assets/images/scrumboard/GlodLogo.png" alt="Articulo">
+                                </div>
+
+                            </ng-container>
+
+                            <!-- PRODUCCION <img class="CenterImageArticulo" src="../../../../saved/assets/imagesAplicacion/{{data.NombreImagen}}"
+                alt="Articulo">-->
+
+                        </div>
+                    </div>
+                    <!-- / Front -->
+
+                    <!-- Back -->
+     
+                    <!-- / Back -->
+
+    
+                
+            </mat-card-content>
+        </form>
+
+        <!--<div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100" style="color: green">
+      <br>
+      <b>Costo de Envío:</b> $12.78<br>
+    </div>-->
+
+    </div>
+
+
+
+
+    <div class="m-0" fxLayout="row" fxLayoutAlign="end center" style="    padding: 0px 10px 10px 10px;">
+        <!-- <button class="buttonAppBlack" (click)="onAdicionarArticulo()">
+            <mat-icon>favorite</mat-icon> Me Encanta
+        </button> -->
+        <button class="buttonAppBlack" (click)="onNoClick()">
+            CERRAR
+        </button>
+    </div>
+
+</div>

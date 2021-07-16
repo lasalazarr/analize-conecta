@@ -1,0 +1,178 @@
+<div>
+    <ng-container *ngIf="!cedulaValida">
+        <div>
+            <h2 style="color: brown;text-align: center;"> Su cédula no es válida no puede aplicar a este crédito</h2>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="validacionDirecciones">
+        <h2 style="color: brown;text-align: center;">{{mensageDireccion}}</h2>
+        <div style="display: flex;justify-content: center;">
+
+            <button mat-raised-button (click)=" actualizarDatos()" class="buttonGlod">
+                Actualizar Datos
+            </button>
+        </div>
+
+    </ng-container>
+
+
+    <!--DIV VALIDACION  *ngIf="bandera==true"  -->
+    <div >
+        <div>
+            <h2 style="color: brown;text-align: center;"> Calificación crédito:  {{CalificacionC}}</h2>
+        </div>
+        <form class="mat-white-bg   mb-24" fxLayout="column" name="form" [formGroup]="form">
+            <mat-vertical-stepper>
+    
+                <mat-step label="Información personal">
+                    
+    
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Lider" formControlName="Lider" readonly>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <mat-select placeholder="Tipo Documento" formControlName="TipoCedula" required disabled readonly>
+                            <mat-option *ngFor="let Item of ListTipoDocumento" [value]="Item.Id">
+                                {{ Item.Nombre }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Número Cedula" formControlName="NumeroCedula"
+                            readonly>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Primer Nombre" formControlName="PrimerNombre"
+                            readonly>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Segundo Nombre" formControlName="SegundoNombre"
+                            readonly>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Primer Apellido" formControlName="PrimerApellido"
+                            readonly>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Segundo Apellido" formControlName="SegundoApellido"
+                            readonly>
+                    </mat-form-field>
+    
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input matInput [matDatepicker]="picker1" formControlName="FechaNacimiento"
+                            placeholder="Fecha Nacimiento" readonly>
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <mat-select placeholder="Genero" formControlName="Genero" readonly>
+                            <mat-option *ngFor="let Item of ListGenero" [value]="Item.IdGenero" readonly>
+                                {{ Item.Nombre }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Nacionalidad" formControlName="Nacionalidad"
+                            readonly>
+                    </mat-form-field>
+                </mat-step>
+                <mat-step label="Direcciones">
+    
+                    <app-seleccion-direccion [disableEdit]="true" (selectedAddresOut)="onselectedAddress($event)"
+                        [cedula]="user.Cedula" [showSave]="false" [showUpdateAddress]="true"></app-seleccion-direccion>
+    
+    
+    
+    
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="DireccionDomicilio" readonly
+                            formControlName="DireccionDomicilio">
+                    </mat-form-field>
+    
+                </mat-step>
+                <mat-step label="Telefonos">
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Numero Celular 1" formControlName="NumeroCelular1">
+                    </mat-form-field>
+    
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Telefono Domicilio" formControlName="Telefono1">
+                    </mat-form-field>
+    
+    
+    
+                    <mat-form-field class="registroEmpresaria" fxFlex="100">
+                        <input autocomplete="off" matInput placeholder="Correo Electrónico"
+                            formControlName="CorreoElectronico">
+                        <mat-error *ngIf="form.controls?.CorreoElectronico?.errors?.pattern">
+                            Email Invalido
+                        </mat-error>
+                    </mat-form-field>
+    
+                </mat-step>
+    
+            </mat-vertical-stepper>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+    
+    
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                <br />
+            </div>
+    
+            <button mat-raised-button (click)="enviarFormulario()" class="buttonGlod" aria-label="CREATE AN ACCOUNT"
+                [disabled]="form.invalid || !cedulaValida || validacionDirecciones">
+                Enviar Información
+            </button>
+    
+        </form>
+    
+        <div style="font-size: 26px;
+        width: 100%;
+        text-align: center;">Subir Documentación</div>
+    
+        <form class="formy" [formGroup]="formImage" class="mat-white-bg   mb-24" fxLayout="column">
+    
+            <div class="uploadImage">
+                Cédula Delantera</div>
+            <div class="uploadImage my-12">
+                <input id="channel-file" type="file" (change)="uploadFileAndSetPreview($event,'CedulaDelantera')" />
+            </div>
+            
+            <div class="uploadImage">
+                Cédula Trasera</div>
+            <div class="uploadImage my-12">
+                <input id="channel-file" type="file" (change)="uploadFileAndSetPreview($event,'CedulaTrasera')" />
+            </div>
+            
+            <div class="uploadImage">Servicios Básicos</div>
+            <div class="uploadImage my-12">
+                <input id="channel-file" type="file" (change)="uploadFileAndSetPreview($event,'Servicios')" />
+            </div>
+            <div class="uploadImage">Contrato</div>
+            <div class="uploadImage my-12">
+                <input id="channel-file" type="file" (change)="uploadFileAndSetPreview($event,'Contrato')" />
+            </div>
+            <div class="uploadImage">Inscripción</div>
+            <div class="uploadImage my-12">
+                <input id="channel-file" type="file" (change)="uploadFileAndSetPreview($event,'Inscripcion')" />
+            </div>
+    
+       
+    
+            <button mat-raised-button (click)="guardarDocumentos()" class="buttonGlod" aria-label="CREATE AN ACCOUNT"
+                [disabled]="formImage.invalid || validarSolicitud">
+                Enviar Documentación
+            </button>
+    
+        </form>
+    </div>
+    <!--div  *ngIf="bandera==false">
+        <div>
+            <h2 style="color: brown;text-align: center;"> No esta autorizado para este proceso.</h2>
+        </div>
+    </div-->
+    
+
+
+</div>

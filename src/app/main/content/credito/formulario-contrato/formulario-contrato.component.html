@@ -1,0 +1,46 @@
+<div class="mx-24 my-24">
+    <form class="mat-white-bg   mb-24" fxLayout="column" name="form" [formGroup]="form">
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <input autocomplete="off" matInput placeholder="Ciudad Contrato" formControlName="CiudadContrato">
+        </mat-form-field>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <input autocomplete="off" matInput placeholder="Nacionalidad" formControlName="Nacionalidad">
+        </mat-form-field>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <input autocomplete="off" matInput placeholder="Nombre Completo" formControlName="NombreCompleto">
+        </mat-form-field>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <input autocomplete="off" matInput placeholder="Dirección Completa" formControlName="DireccionCompleta">
+        </mat-form-field>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <input autocomplete="off" matInput placeholder="Cedula" formControlName="Cedula">
+        </mat-form-field>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <input matInput [matDatepicker]="picker1" formControlName="FechaContrato"
+                placeholder="Fecha Contrato" readonly>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+ 
+
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <br />
+        </div>
+
+        <button mat-raised-button (click)="enviarFormulario()" class="buttonGlod" aria-label="CREATE AN ACCOUNT"
+            [disabled]="form.invalid ">
+            Enviar Información
+        </button>
+
+    </form>
+</div>

@@ -1,0 +1,105 @@
+<div id="login" fxLayout="column" fusePerfectScrollbar style="background: black;">
+    <div class="headerGlog">
+        <div class="logo">
+            <!--<img src="assets/images/logos/fuse.svg">-->
+            <img src="assets/images/conecta.png">
+
+
+        </div>
+    </div>
+
+    <div class="video">
+        <video #videoPlayer autoplay playsinline loop muted style="pointer-events: none;" preload="metadata">
+            <source src="{{videoSource}}" type="video/mp4" />
+            Browser not supported
+        </video>
+    </div>
+
+    <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="login-form">
+
+
+            <form name="loginForm" [formGroup]="loginForm" novalidate>
+                <div class="containerInputs">
+                    <input type="text" placeholder="USUARIO" autocomplete="off" formControlName="usuario">
+                    <input placeholder="CONTRASEÑA" autocomplete="off" type="password" formControlName="password" autocomplete="new-password"> 
+                    <!-- <mat-error *ngIf="loginFormErrors.usuario.required" >
+                        Usuario es requerido
+                    </mat-error> -->
+                    <!-- <mat-error *ngIf="loginFormErrors.password.required">
+                        Contraseña es requerida
+                    </mat-error> -->
+
+
+                    <!--<div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+                        <mat-checkbox class="remember-me" aria-label="Remember Me">
+                            Recordarme
+                        </mat-checkbox>
+
+                        <a class="forgot-password" [routerLink]="'/cambiarClave'"  >
+                            Olvidaste tu contraseña?
+                        </a>
+                        <a class="forgot-password " style="display:none"   #jojo>
+
+                        </a>
+                    </div>-->
+                </div>
+
+
+
+
+            </form>
+            <div *ngIf="Loading">
+                <mat-spinner style="margin:0 auto;"></mat-spinner>
+            </div>
+            <div class="container-remember">
+                <mat-checkbox class="checkLogin" [(ngModel)]="rememberme" [labelPosition]="'after'">
+                    RECUERDAME
+                </mat-checkbox>
+            </div>
+
+            <button mat-raised-button color="primary" aria-label="LOG IN" [disabled]="loginForm.invalid"
+                (click)="loginNow()">
+                INICIAR SESION
+            </button>
+            <button mat-raised-button aria-label="LOG IN" (click)="Registro()">
+                REGISTRATE
+            </button>
+            <button mat-raised-button aria-label="LOG IN" (click)="openRecuperarClave()">
+                RECUPERAR CONTRASEÑA
+            </button>
+   
+            
+            <!--hr>
+            <div>
+                <span>!O inicia sesion con tu red social !</span>
+            </div-->
+            <!-- <input type="text"  #juta>
+<button (click)="focusin()" >focus</button>-->
+            <div [ngStyle]="{'display':jey}">
+                <div *ngIf="errorLogin">
+                    <span style="color: #d43c31;">No se pudo iniciar sesion, por favor verifique.</span>
+                </div>
+                <!--      <div *ngIf="!IsAdmin" class="register" fxLayout="column" fxLayoutAlign="center center">
+                    <span class="text">No tienes Cuenta?</span>
+                    <a class="link" [routerLink]="'/register'">Crear una cuenta</a>
+                </div> -->
+            </div>
+
+
+            <!--div class="logoscontainers">
+                <div class="logofacebook">
+                    <img src="assets/images/facebook.svg">
+                </div>
+                <div class="logogmail">
+                    <img src="assets/images/gmail.svg">
+                </div>
+            </div-->
+
+
+        </div>
+
+    </div>
+
+</div>

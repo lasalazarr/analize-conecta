@@ -1,0 +1,138 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+
+    <div class="content p-24 mat-white-bg justifyMenu containerArticulos">
+        <ng-container *ngIf="!secondLevel && !thirdLevel && !showProduct">
+            <div class="containerCategories">
+                <div *ngIf="!initialReturn" class="returnTap" (click)="closeComponent()">
+                    <button mat-mini-fab style="background: black;align-self: center;">
+                        <mat-icon style="color: white;">reply</mat-icon>
+                    </button>
+                    <div>Volver Menu pedido </div>
+                </div>
+                <ng-container *ngFor="let item of categoryTree">
+                    <ng-container *ngIf="!lodash.isNil(item.img)">
+                        <img [src]="'assets/images/articulos/' + item.img" alt="" (click)="selectCategoryFirst(item)">
+                    </ng-container>
+                    <ng-container *ngIf="lodash.isNil(item.img)" (click)="selectCategoryFirst(item)">
+                        <div (click)="selectCategoryFirst(item)">
+                            <div>{{item.description}}</div>
+                            <img src="assets/images/scrumboard/GlodLogo.png">
+                        </div>
+                    </ng-container>
+
+                </ng-container>
+
+            </div>
+        </ng-container>
+        <ng-container *ngIf="secondLevel">
+
+            <div class="containerCategories">
+                <div class="returnTap" (click)="secondLevel = false">
+                    <button mat-mini-fab style="background: black;align-self: center;">
+                        <mat-icon style="color: white;">reply</mat-icon>
+                    </button>
+                    <div>Volver</div>
+                </div>
+                <ng-container *ngFor="let item of secondTree.listCategory">
+                    <ng-container *ngIf="!lodash.isNil(item.img)">
+                        <img [src]="'assets/images/articulos/' + item.img" alt="" (click)="selectCategorySecond(item)">
+                    </ng-container>
+                    <ng-container *ngIf="lodash.isNil(item.img)">
+                        <div (click)="selectCategorySecond(item)">
+                            <div>{{item.description}}</div>
+                            <img src="assets/images/scrumboard/GlodLogo.png">
+                        </div>
+
+                    </ng-container>
+                </ng-container>
+                <ng-container   *ngIf="secondTree.listCategory?.length == 0">
+                    <div class="video">
+                        <video #videoPlayer autoplay playsinline loop muted style="pointer-events: none;" preload="metadata">
+                            <source src="{{videoSource}}" type="video/mp4" />
+                            Browser not supported
+                        </video>
+                    </div>
+                    <!-- <img src=""> -->
+                </ng-container>
+
+
+            </div>
+        </ng-container>
+        <ng-container *ngIf="thirdLevel">
+            <div class="containerCategories">
+                <div class="returnTap" (click)="secondLevel = true;thirdLevel = false">
+                    <button mat-mini-fab style="background: black;align-self: center;">
+                        <mat-icon style="color: white;">reply</mat-icon>
+                    </button>
+                    <div>Volver</div>
+                </div>
+                <ng-container *ngFor="let item of thirdTree.listCategory">
+                    <ng-container *ngIf="!lodash.isNil(item.img)">
+                        <img [src]="'assets/images/articulos/' + item.img" alt="" (click)="selectCategoryThird(item)">
+                    </ng-container>
+                    <ng-container *ngIf="lodash.isNil(item.img)">
+                        <div (click)="selectCategoryThird(item)">
+                            <div>{{item.description}}</div>
+                            <img src="assets/images/scrumboard/GlodLogo.png">
+                        </div>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngIf="thirdTree.listCategory?.length == 0">
+                    <div>
+                        <div>Pronto</div>
+                        <img src="assets/images/scrumboard/GlodLogo.png">
+                    </div>
+                    <!-- <img src=""> -->
+                </ng-container>
+            </div>
+        </ng-container>
+
+        <div [style.display]="showProduct ? 'block':'none'"
+            [ngClass]="{'efectoEmpresariasOn' : showProduct , 'efectoEmpresariasOff' : !showProduct}"
+            class="empresariasSeleccion">
+
+            <div class="search-header">
+                <mat-form-field class="filterInput">
+                    <input matInput placeholder="Buscar Artículo" aria-label="State" (keyup)="sendFilterWord()"
+                        [(ngModel)]="filterWord">
+                </mat-form-field>
+                <button mat-mini-fab style="background: black;align-self: center;" (click)="returnToCategories()">
+                    <mat-icon style="color: white;">reply</mat-icon>
+                </button>
+            </div>
+            <!-- <pre>{{filteredProduct | async}} </pre> -->
+            <cdk-virtual-scroll-viewport id="inputsearch" itemSize="75" maxBufferPx="600" minBufferPx="600"
+                class="example-viewport">
+                <div *cdkVirtualFor="let item of filteredProduct | async">
+                    <div class="example-item">
+                        <div (click)="OpenProduct.next(item.PLU)">{{item?.NombreProducto}} •{{item?.NombreColor}} •
+                            {{item?.NombreTalla}}</div>
+
+                        <ng-container *ngIf="item?.Imagen != ''">
+                            <div class="image-cropper" (click)="OpenProduct.next(item.PLU)">
+                                <img src="{{ 'https://appsaved.lineadirectaec.com/assets/imagesAplicacion/' + item?.Imagen}}"
+                                    alt="avatar" class="profile-pic">
+                            </div>
+
+
+
+
+                        </ng-container>
+
+                        <ng-container *ngIf="lodash.isEmpty(item.Imagen) || lodash.isNil(item.Imagen)">
+                            <mat-icon (click)="OpenProduct.next(item.PLU)" class="noimageicon">crop_original</mat-icon>
+                        </ng-container>
+                    </div>
+                    <hr class="hrarticulo">
+                </div>
+
+            </cdk-virtual-scroll-viewport>
+
+        </div>
+    </div>
+
+
+
+</div>

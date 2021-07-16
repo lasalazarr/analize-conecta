@@ -1,0 +1,60 @@
+<div class="dialog-content">
+
+  <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+    <mat-toolbar-row>
+      <span class="title dialog-title">Detalle Cartera</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+
+    <div>
+      <div><b>Documento</b></div>
+      <div> {{data.Nit}} </div>
+    </div>
+    <div>
+      <div><b>Nombre</b></div>
+      <div> {{data.Nombre}} </div>
+    </div>
+    <div>
+        <div><b>Factura</b></div>
+        <div> {{data.Numero}} </div>
+      </div>
+      <div>
+        <div><b>Campaña</b></div>
+        <div> {{data.Campana}} </div>
+      </div>
+    <div>
+      <div><b>Fecha Factura</b></div>
+      <div> {{data.Fecha | date}} </div>
+    </div>
+ 
+    <div>
+      <div><b>Valor</b></div>
+      <div> {{data.Valor}} </div>
+    </div>
+    <div>
+      <div><b>Devolucion</b></div>
+      <div> {{data.Devolucion}} </div>
+    </div>
+    <div>
+      <div><b>Recaudo</b></div>
+      <div> {{data.Recaudo}} </div>
+    </div>
+    <div>
+      <div><b>Saldo Pendiente</b></div>
+      <div> {{data.Saldo}} </div>
+
+ 
+ 
+
+  </div>
+  <div class="box-footer">
+    <button type="submit" class="buttonGlod" style="width: 150px;" (click)="openRegistroPago(data.Numero, data.Nit)" 
+    >Registrar pago</button>
+    <button (click)="dialogRef.close()" style="width: 125px;" class="buttonGlod" aria-label="Close">
+        CERRAR
+    </button>
+  </div>
+
+</div>

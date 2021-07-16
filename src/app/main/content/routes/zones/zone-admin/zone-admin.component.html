@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <td>
+      <div class="panel panel-warning panel-list">
+        <div class="panel-heading">Zonas
+          <mat-form-field class="field-filter">
+            <mat-label>Filtro</mat-label>
+            <input matInput [(ngModel)]="filter" (keyup)="filterZones()" />
+          </mat-form-field>
+        </div>
+        <div class="panel-body body-list">
+          <mat-selection-list class="list" #zonesList>
+            <mat-list-option *ngFor="let zone of filteredZones" [value]="zone" (click)="onItemSelect(zone, zonesList)">
+              {{ zone.Nombre }}
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </div>
+    </td>
+    <td>
+      <app-zone-form [zone]="selectedZone" [events]="formEvent.asObservable()" (outputZone)="setZone($event)"></app-zone-form>
+    </td>
+  </tr>
+</table>

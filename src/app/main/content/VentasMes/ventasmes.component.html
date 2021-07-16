@@ -1,0 +1,119 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+  
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Ventas por Mes</div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+<div class="content p-24 mat-white-bg">
+
+
+    <div fxLayout="column"  fxLayoutAlign="start start" fxLayout.gt-md="row">
+
+            <!-- REACTIVE FORM EXAMPLE -->
+
+            <form class="mat-white-bg   mb-24" fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form"
+                [formGroup]="form">
+                <mat-form-field class="registroEmpresaria" fxFlex="100">
+                    <mat-select placeholder="Mes" formControlName="Mes" [(ngModel)]="MesSeleccionado"
+                        required>
+                        <mat-option *ngFor="let Item of ListMes" [value]="Item.IdMes">
+                            {{ Item.Nombre }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="registroEmpresaria" fxFlex="100">
+                    <mat-select placeholder="Anio" formControlName="Anio" [(ngModel)]="AnioSeleccionado"
+                        required>
+                        <mat-option *ngFor="let Item of ListAnio" [value]="Item.IdAnio">
+                            {{ Item.Nombre }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button (click)="ConfirmData()" mat-raised-button  class="buttonGlod"
+                aria-label="CREATE AN ACCOUNT" [disabled]="form.invalid || SaveInProgress">
+                Consultar
+                </button>
+           
+
+            </form>
+
+            <!-- / CONTENT -->
+
+     </div>
+       
+         <div class="example-header">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Escribe una Palabra">
+            </mat-form-field>
+            </div>
+    
+
+
+
+
+        <div class="example-container mat-elevation-z8">
+
+            <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="Fecha">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Fecha| date}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef>Total Venta Mes</mat-footer-cell>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="Meta">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Meta</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Meta| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="Venta">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Venta</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Venta| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                <ng-container matColumnDef="Cumplimiento">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Cumplimiento</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Cumplimiento  | percent}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef> {{getTotalSaldo() | currency}} </mat-footer-cell>
+                </ng-container>
+               
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"  class="example-element-row"
+                 > </mat-row>
+                <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+            </mat-table>	
+              
+
+            <mat-paginator [pageSizeOptions]="[31]"></mat-paginator>
+    
+        </div>
+
+
+
+    </div>
+<div class="example-container mat-elevation-z8">
+
+
+    <fusioncharts  
+    width="100%"
+    type="Column2d"
+    [dataSource]="dataSource1"  >
+  </fusioncharts>
+
+</div>
+</div>
+
+

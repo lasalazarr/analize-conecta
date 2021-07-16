@@ -1,0 +1,40 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+      <mat-toolbar-row>
+        <span class="title dialog-title">Anular Pedido {{data.Numero}}</span>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+  
+    <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+        <form fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form" [formGroup]="form">
+    
+
+
+          <mat-form-field fxFlex="100" class="appform">
+            <mat-select placeholder="Motivo Anulacion:" formControlName="MotivoAnulacion" [(ngModel)]="MotivoAeleccionado"
+                (selectionChange)="SelectedDespacharA($event)" required>
+                <mat-option *ngFor="let Item of ListMotivo" [value]="Item.Nombre">
+                    {{ Item.Nombre }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formErrors.MotivoAnulacion.required">
+                Despachar A es requerido
+            </mat-error>
+        </mat-form-field>
+        </form>
+  
+    </div>
+   
+  
+      <div class="box-footer">
+        <button type="submit" class="btn btn-default"  (click)="Anular()" 
+        style="background-color: black; color: white;">ANULAR</button>
+        <button type="submit" class="btn btn-info pull-right"   (click)="dialogRef.close()" 
+        style="background-color: black; color: white;">CERRAR</button>
+      </div>
+
+
+  </div>
+  

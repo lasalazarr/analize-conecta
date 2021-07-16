@@ -1,0 +1,102 @@
+<div _ngcontent-xhr-c118="" class="page-layout simple fullwidth">
+    <div _ngcontent-xhr-c118="" class="content p-24">
+        <div class="menuPedido">
+            <button class="seleccionPaso">{{ 'CAMPAÑA: ' + SessionUser?.Campana + ' • ' +
+     '(Desde: ' }}{{ SessionUser?.FechaIniCampana |date:"fullDate"}} Hasta: {{SessionUser?.FechaFinCampana |date:"fullDate"}})</button>
+            <button class="seleccionPaso" (click)="showMenuEmpresarias()">
+                {{ NumeroDocumento ? (NombreEmpresariaCompleto  + ' • ' + NumeroDocumento) : ('DATOS DE TU EMPRESARIA') }}</button>
+
+            <button class="seleccionPaso" (click)="openDatosEnvio()">
+                {{ DatosEnvioSeleccionado ? (DatosEnvioSeleccionado  + ' • ' + BodegaSeleccionado) : ('DATOS DE ENVIO') }}
+            </button>
+            <button class="seleccionPaso" (click)="openProductos()" [matBadge]="numberOfItems | async"
+                matBadgePosition="before">BUSCAR Y AGREGAR ARTICULOS</button>
+        </div>
+        <button class="registrar" [disabled]="!((numberOfItems |async) > 0) " (click)="openBottomSheet()">REGISTRAR
+        </button>
+    </div>
+    <div [style.display]="showProduct ? 'block':'none'"
+        [ngClass]="{'efectoEmpresariasOn' : showProduct , 'efectoEmpresariasOff' : !showProduct}"
+        class="empresariasSeleccion">
+
+        <div class="search-header">
+            <mat-form-field class="filterInput">
+                <input matInput placeholder="Buscar Artículo" aria-label="State" [formControl]="productCtrl">
+            </mat-form-field>
+            <mat-icon class="iconClose" style="line-height: 100px;" (click)="closeSelectArticulo()">close</mat-icon>
+        </div>
+
+        <cdk-virtual-scroll-viewport itemSize="75" maxBufferPx="600" minBufferPx="600" class="example-viewport">
+<<<<<<< HEAD
+            <div *cdkVirtualFor="let item of filteredProduct | async" class="example-item">
+                <div (click)="openAdicionarArticulo(item.PLU)">{{item?.NombreProducto}} •{{item?.NombreColor}} •
+                    {{item?.NombreTalla}}</div>
+
+                <ng-container *ngIf="item?.Imagen != ''">
+                    <img class="CenterImageArticulo" style="width: 60px;height: 60px;float: right;;margin-right: 10px;"
+                        src="{{ 'https://imagenesapp.lineadirectaec.com/assets/imagesAplicacion/' + item?.Imagen}}" alt="Articulo">
+                </ng-container>
+=======
+            <div *cdkVirtualFor="let item of filteredProduct | async">
+                <div class="example-item">
+                    <div (click)="openAdicionarArticulo(item.PLU)">{{item?.NombreProducto}} •{{item?.NombreColor}} •
+                        {{item?.NombreTalla}}</div>
+>>>>>>> be61f609b2841d1670473c80a15100246ca0c628
+
+                    <ng-container *ngIf="item?.Imagen != ''">
+                        <img class="imageAriticulo" (click)="openAdicionarArticulo(item.PLU)"
+                            src="{{ 'http://imagenesapp.lineadirectaec.com/assets/imagesAplicacion/' + item?.Imagen}}"
+                            alt="Articulo">
+                    </ng-container>
+                    <ng-container *ngIf="lodash.isEmpty(item.Imagen) || lodash.isNil(item.Imagen)">
+                        <mat-icon class="noimageicon">image</mat-icon>
+                    </ng-container>
+                </div>
+                <hr class="hrarticulo">
+            </div>
+
+        </cdk-virtual-scroll-viewport>
+
+    </div>
+
+    <div [style.display]="showEmpresaria ? 'block':'none'"
+        [ngClass]="{'efectoEmpresariasOn' : showEmpresaria , 'efectoEmpresariasOff' : !showEmpresaria}"
+        class="empresariasSeleccion">
+        <div class="search-header">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Escribe una Palabra">
+            </mat-form-field>
+            <mat-icon class="iconClose" (click)="closeSelectEmpresaria()">close</mat-icon>
+        </div>
+
+        <div>
+            <mat-table #tableEmpresaria [dataSource]="dataSource" class="">
+                <ng-container matColumnDef="imagenEmpresaria">
+                    <mat-cell *matCellDef="let row">
+<<<<<<< HEAD
+                        <img class="mr-20" src="https://imagenesapp.lineadirectaec.com/assets/images/appimages/empresarias.png">
+=======
+                        <img class="mr-20"
+                            src="localhostnesapp.lineadirectaec.com/assets/images/appimages/empresarias.png">
+>>>>>>> be61f609b2841d1670473c80a15100246ca0c628
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="NombreCompleto">
+                    <mat-cell *matCellDef="let row"> {{row.NombreEmpresariaCompletoBusqueda}}</mat-cell>
+                </ng-container>
+                <mat-header-row></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"
+                    style="cursor: pointer" (click)="openDetalleCliente(row)">
+                </mat-row>
+            </mat-table>
+
+            <mat-paginator [pageSizeOptions]="[100,200,300]"></mat-paginator>
+        </div>
+    </div>
+    <div class="containershopcar" *ngIf="(numberOfItems |async) > 0 " (click)="openBottomSheet()">
+        <div>
+            <mat-icon>shopping_cart</mat-icon>
+
+        </div>
+    </div>
+</div>

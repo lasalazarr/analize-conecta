@@ -1,0 +1,39 @@
+<div id="wraper_register">
+    <a id="backLogin" routerLink="/login">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <img src="/assets/images/gloglogo.png">
+
+    <div class="content-register">
+
+        <span>Tú tambien eres Glod</span>
+
+        <form [formGroup]="this.registerForm" (ngSubmit)="signUp()">
+
+            <input formControlName="Names" placeholder="Nombres" required>
+            <span *ngIf="namesField.touched && namesField.errors?.required" class="error-field">
+                Campo 'Nombres' requerido
+            </span>
+            <input formControlName="Mobile" placeholder="Celular" required>
+            <span *ngIf="mobileField.touched && mobileField.errors?.required"
+                class="error-field">
+                Campo 'Celular' requerido
+            </span>
+            <input formControlName="Email" placeholder="Email" required>
+            <span *ngIf="emailField.touched && emailField.errors?.required"
+                class="error-field">
+                Campo 'Email' requerido
+            </span>
+            <span *ngIf="emailField.touched && emailField.errors?.email"
+                class="error-field">
+                Campo 'Email' no es valido
+            </span>
+            <span *ngIf="this.errorMessage" class="error-field">
+                {{this.errorMessage}}
+            </span>
+            <button class="btn-primary" [disabled]="!this.registerForm.valid">
+               Únete 
+            </button>
+        </form>
+    </div>
+</div>

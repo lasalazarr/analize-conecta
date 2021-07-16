@@ -1,0 +1,1380 @@
+﻿usuario y pass pruebas: 0912006103
+
+http://181.188.213.187/GLOD/Login.aspx  
+
+API KEY GOOGLE TC GEO: 
+
+1709860835 PEW281429
+0604129577001
+0350233664  usuario y contraseña Empresaria pts
+0931489033   usuario y contraseña Empresaria -- sale err por que no tiene puntos
+0703744060001 usuario y contraseña Lider
+0923605562001 usuario y contraseña Director
+
+0350233664
+
+geo: 0914530928 - Zona: 00113
+gerente de zona para opcion cedula: 0906374426
+ger:1088009775 - IdVendedor: 7002  - IdZona: 50201 
+PEW51075
+fsevents@
+
+- conceptos: 5: - por compra, 16: + reserva, 10: + nivel pedido, 18: + portal saved
+
+- revisar creacion de usuario y clave
+- revisar creacion cuando hay error 
+- falta validar unineg en sesion
+- cuando se elige direccion de entrega despacho hay que guarfar un departamento
+
+PENDIENTES DE MEJORA SAVED
+OK - Cuando diga enviar pedido, bloquear boton para que no se envien varias veces
+- bloquear ventana de adicionar articulo cuando se intenta abrir varias veces
+OK - se debe borrar el detalle del pedido cada que se digite la cedula de una empresaria para nuevo pedido. 
+OK - en ok pedido reservado llevar a pagina de home
+OK - revisar flete en punto de venta deberia ser 0
+- revisar grid precio cat y emp cuando se asignan de una en una los articulso
+OK - poner hora y fecha en resumen de pedido
+OK - Adcionar a encabezado pedido cantidad de puntos utilziado
+- Arreglar esta bandera para que se ponga en true si hay IVA x ciudad x zona x articulo x cliente. Clase: PluController.cs Metodo: ListarxCodigoRapido()
+- no dejar reservar cuando los puntos son negativos o hay temas de calculos. que sea >= 0
+- Pagar flete con puntos
+OK - Mensaje informativo en calculo de puntos cuando se escriben mas de los requeridos y cuando quiere usar mas de los puntos disponibles
+- bug de seleccion de flete en 0
+- cantidad y precio en session de grid de detalle de pedido cuando se recarga
+OK - mensaje de cargando pedido cuando se envia
+- revisar formulario de resumen de pedido en mi lista de pedidos. Pendiente + ajuste GEO
+- bodegas, campanas, catalogo, catalogoreal, unineg quemadas en codigo
+- boton de apoyo para buscar empresaria y calcular puntos a usar
+- bug de seleccionar articulo dando click por fuera de la ventana, permite ver el detalle sin asginar.
+- en ventana de despachar a: se debe mostrar solo las opciones que pertenezca al perfil en sesion.
+- en ventana de despachar	cuando se selecciona a casa y se cambia a lider se bloquea el boton guardar.
+- boton de girar imagen para detalle hacerlo mas llamativo
+- grid de detalle pedido y demas componentes poner el signo $ en donde se dinero.
+OK - redondear todos los numeros a 2 decimales
+- totalizar valores en grid de detalle pedido
+- poner colores rojo/verde a variables (disponible, etc)
+- modificar el % de iva en las tablas de fletes de 14% a 12%
+- limpiar codigo fuente de lo que esta comentado
+- quitar barra de navegacion del chrome
+- boton salir no funciona
+- mis puntos en opcion de menu de avatar
+- BUG: si me equivoco de cedula y vuelvo a digitarla se mantiene la seleccion de flete y ciudad del usuario con elq ue se equivoco. CORREGIR
+- cuando se selecciona pagar con flete muy rapido no alcanza a traer el valor de la tbl parametros y no los suma en el resumen.
+OK - si se selecciona punto de venta en envio, en el resumen no se debe permitir pagar el flete con puntos.
+OK - cuando se paga flete con puntos no se descuenta de la tabla de puntos. Se debe crear categoria en estructura de puntos.
+OK - ajustar puntos usados con pagar flete con puntos.
+- no suma precio puntos cuando se asigna uno a uno
+- cuando entre coomo empresaria ajustar consultas de detalle y mis pedidos de empresaria.
+- cuando se guarda pedido como empresaria en nit queda la cedula del lider o director. debe quedar la cedula de la empresaria.
+- organizar el catalogo real cuando se guarda detalle pedido.
+OK - borrar codigo rapido cuando se digita uno segudio del otro
+OK - Adicionar nombre y nit cuando se reserva el pedido.
+OK - Poner disponible en grid de detalle pedido
+OK - Quitar eliminar en detalle de pedido cuando no este disponible el articulo para almacenar la demanda.
+- Si mis puntos da negativo desde que se carga el resumen, se debe ocultar el boton de reservar pedido.
+- cuando selecciono pagar flete puntos no recalcula % pts y puntos gastados, etc
+OK - Se corrige tema de puntos ganados cuando no esta disponible el articulo. para que no gane mas pts de los que son.
+- Precio catalogo no esta sumando cuando son mas de 2 articulos y se agregan uno a uno.
+- revisar este pedido por que se fue con flete 0 y elegi enviar a lider y me mostro cobrar 1.71 y no elegi pagar puntos por que estaban en 0: numero='PEW329934', usuario: 1709860835
+OK - Mostrar SALDO A PAGAR luego que se reserva el pedido.
+
+
+COMPILAR y PUBLICAR
+COMPILAR PARA SERVIDOR AZURE: ng build --base-href /saved/ --prod --aot=false --build-optimizer=false
+- Permisos a la carpeta de saved
+- agregar .json en iis en filtrado de solicitudes. web.config en raiz
+- agregar en tipos mime : .json --> application/json
+- en AppSettings.json debe quedar con la direccion IP y el puerto por que sino no entra a la app http://181.188.213.187:808/Application.Enterprise.Services/api/
+
+PAGINA DE ICONOS Y SVG: https://www.flaticon.com/free-icons/puzzle/7
+MAterial ICONS: https://material.io/resources/icons/?icon=thumb_up&style=baseline
+
+SQL: 181.188.213.187,8899
+usuario: sistemas
+clave: Nivi2020
+BD: Factu19
+
+
+recuperar correo: geovanny.bastidas@niviglobal.com
+
+https://azure.microsoft.com/es-es/account/
+User: geobas_22@hotmail.com
+Clave: Bastigeo0113
+
+13.68.118.81:3389
+AZURE:
+13.68.112.132
+RDP: 13.68.118.81 --> dinamico cada que se apaga y se prende
+
+MSTSC
+52.177.217.51
+52.184.231.33  --> statica
+User: Administrador
+Clave: L1n34d1r3ct4
+
+CONFIGURAR KDIFF
+
+git config --global --add merge.tool kdiff3
+git config --global --add mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
+git config --global --add mergetool.kdiff3.trustExitCode false
+
+git config --global --add diff.guitool kdiff3
+git config --global --add difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
+git config --global --add difftool.kdiff3.trustExitCode false
+
+SQL SERVER PRODUCCION
+Database=Factu55;Server=52.184.231.33;User ID=user_saved;Password=1234567890
+Database=Factu55;Server=NC01TE03CGNP;User ID=sa;Password=Colombia2019+
+
+URL PRODUCCION:  http://52.184.231.33/saved
+PRUEBA CON POSTMAN o CHROME PRODUCCION: http://52.184.231.33/Application.Enterprise.Services/api/AutenticationUser/Prueba
+
+URL SVDN PRUEBAS:  http://52.184.231.33/svdn
+
+TABLAS
+
+CLIENTE:
+Whatsapp	varchar(50)	Checked
+TipoCliente	varchar(50)	Checked
+TallaPrendaSuperior	varchar(50)	Checked
+TallaPrendaInferior	varchar(50)	Checked
+TallaCalzado	varchar(50)	Checked
+TarjetaCD	varchar(50)	Checked
+
+adicionar SVDN_PEDIDOSC1_2000--> campo: puntosusados int null
+
+Create table SVDN_EXCEPTION_ERROR -->02-04-2019
+
+Adicion en la tabla de Parametro = CarpetaImagenesSAVED = 77
+Adicion en la tabla de Parametro = 78	Puntos Ganados x Portal SAVED	100	int	True	Puntos
+Adicion en la tabla de Parametro = 79	Valorw	100	int	True	Puntos
+Adicion en la tabla de SVDN_PUNTOS_CONCEPTOS: 18	PortalSaved
+
+
+
+
+
+PROCEDIMIENTOS
+
+ALTER PROCEDURE [dbo].PRC_SVDN_SUSUARIOS 
+ALTER PROCEDURE [dbo].[PRC_SVDN_CLIENTE] opcion I-A, opcion S-N, opcion S-O
+CREATE PROCEDURE [dbo].PRC_SVDN_EXCEPTION_ERROR
+CREATE PROCEDURE [dbo].PRC_SVDN_BODEGA
+
+ALTER PROCEDURE [dbo].[PRC_SVDN_CATALOGO] --> IF @i_option = 'C' --> codigo, (RTRIM(LTRIM(nombre)) + ' - ' + RTRIM(LTRIM(codigo))) as nombre,
+
+PRC_SVDN_PEDIDOSC1_2000-->parametro de entrada, @i_puntosusados int	= NULL
+PRC_SVDN_PEDIDOSC1_2000--> opcion I-A, agrerar i_puntosusados insert
+
+PRC_SVDN_PEDIDOSC2_2000-->Agregar parametro @i_porcentajedctopuntos				numeric(12,2)				= NULL,
+PRC_SVDN_PEDIDOSC2_2000-->Agregar parametro @i_puntosganados					int							= NULL,
+PRC_SVDN_PEDIDOSC2_2000--> Opcion I-A : agregar colmuna en insert de --> puntosganados
+PRC_SVDN_PEDIDOSC2_2000--> Opcion I-A : agregar colmuna en insert de --> porcentajedctopuntos
+CREATE PROCEDURE [dbo].[PRC_SVDN_PUNTOS_SAVED] (al final de este archivo ver script sql)
+
+ALTER PROCEDURE [dbo].[PRC_SVDN_PEDIDOSC2_2000] --> IF @i_option = 'J' --> adicionar , svdn_ped.porcentajedctopuntos
+
+REVISAR SP_INVENTACION OPCION S-->G por que no esta en mi BD factu55
+-->02-04-2019
+
+[PRC_SVDN_PLU] --> opcion s-'D', @i_option_tipo 1,2,3 y 4, agregar campo , Ltrim(rtrim(kar.IMAGEN)) as IMAGEN. Adicional hacer update a la tabla kardex con una imagen por default.
+
+
+[PRC_SVDN_PLU] --> opcion s-'D', agregar campo , (select puntos from catalogos_plus where plu=plu.plu
+									and catalogo in (select catalogo from campanas where fechaini < GETDATE() and GETDATE() < fechafin)
+									) as puntos
+
+PRC_SVDN_CATALOGOS_PLUS--> opcion s-'E'--> cambiar el where a este --> and CATALOGOS_PLUS.catalogo in (select catalogo	from campanas where fechaini < GETDATE() and GETDATE() < fechafin) 
+
+SVDN_CLIENTE --> OPCION FINAL --> IF @i_option = 'ED' NOTA: MIRAR AL FINAL DE ESTE ARCHIVO. CAMBIAR 'ED' por 'EE' por que Geo ya creo 'ED' en produccion y se solapan
+
+
+<add name="conexion" connectionString="Database=Factu55;Server=NC01TE037KZP\MSSQLSERVER2017;User ID=sa;Password=Colombia19+" providerName="System.Data.SqlClient" />
+
+
+Install ANGULAR
+1) https://nodejs.org/en/download/
+2) https://git-scm.com/downloads  --> todos los pasos por default
+3) https://angular.io/guide/setup-local
+4) desde el terminal de VSCode : npm install -g @angular/cli
+5) OJO, si error de "node-sass" ejecutar: npm rebuild node-sass
+
+GIT: https://git-scm.com/book/es/v1/Fundamentos-de-Git-Trabajando-con-repositorios-remotos
+Desde git bash here en la carpeta nueva creada
+
+git add .
+git commit -m "comentario commit"
+git push origin master
+
+
+git pull origin master
+git mergetool
+git add .
+git commit -m ""
+git push origin master
+
+github.com
+email: ramosgilmauricio@gmail.com
+user: mauriciora01
+pass: Mr4m0s01
+mauriciora01@github.com
+
+----------------------------------------
+SavedServicesNet
+git config --global user.email "ramosgilmauricio@gmail.com" mauriciora01-Mr4m0s01- mauriciora01@github.com
+git init
+git remote add origin https://github.com/mauriciora01/SavedServicesNet.git
+git remote
+git remote add pb https://github.com/mauriciora01/SavedServicesNet.git
+git remote -v
+git fetch pb
+git pull origin master
+git config --global user.email "ramosgilmauricio@gmail.com"
+
+
+----------------------------------------
+SavedCliAng7
+git config --global user.email "ramosgilmauricio@gmail.com"
+git init
+git remote add origin https://github.com/mauriciora01/SavedCliAng7.git
+git remote
+git remote add pb https://github.com/mauriciora01/SavedCliAng7.git
+git remote -v
+git fetch pb
+git pull origin master
+git config --global user.email "ramosgilmauricio@gmail.com"
+
+
+
+ERROR: Error: Cannot find module 'node-sass'
+npm uninstall node-sass  
+npm install node-sass
+npm install -g node-sass
+
+borrar node_modules
+npm install
+npm rebuild node-sass
+
+
+
+git fetch --all
+
+SavedCliAng7.git
+
+
+git fetch origin
+git checkout -f origin/SavedCliAng7.git
+git checkout SavedCliAng7.git
+git merge origin/SavedCliAng7.git
+
+npm install @agm/core --save --> instalar google maps
+https://www.youtube.com/watch?v=-IwTQgKIjCQ --> google maps y angular 7
+https://angular-material-extensions.github.io/google-maps-autocomplete/home  --> autocompletar google maps
+https://stackblitz.com/edit/angular-google-maps-direction
+https://www.npmjs.com/package/agm-direction
+npm install --save @agm/core agm-direction
+yarn add @agm/core agm-direction
+https://medium.freecodecamp.org/how-you-can-replicate-airbnbs-location-area-display-using-geocoding-in-angular-2001794f86a9 --> propiedades de marcacion de zona
+https://mdbootstrap.com/docs/angular/advanced/google-maps/ --> buscador de direcciones
+https://blog.ng-classroom.com/blog/ionic2/google-maps-and-geocoder/ --> explicacion geocoder convierte cordenadas en direcciones
+
+
+
+https://therichpost.com/how-to-implement-owl-carousel-slider-in-angular-7 --> carrusel de imagenes
+
+
+npm install @angular/core@5.2.8 --save
+ng update @angular/cli @angular/core --force
+
+https://www.magneto365.com/es/postulation/5162javascript:void(0);
+
+http://localhost/Application.Enterprise.Services/api/Cliente/ListClienteSVDNxNit
+
+http://localhost/Application.Enterprise.Services/api/Parroquia/ListarParroquia
+
+ListClienteSVDNxNit
+ListClienteSVDNxNit
+
+
+https://material.angular.io/components/dialog/overview
+https://www.onlineinterviewquestions.com/blog/angular-5-modal-dialog-example/
+
+CORS:
+https://enable-cors.org/
+https://dzone.com/articles/access-control-allow-origin-header-and-the-aspnet
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api
+https://stackoverflow.com/questions/53298478/has-been-blocked-by-cors-policy-response-to-preflight-request-doesn-t-pass-acce
+
+https://github.com/expressjs/cors
+https://www.youtube.com/watch?v=z357fcsblnc
+https://stackoverflow.com/questions/52801753/issue-with-cors-when-sending-a-get-request-to-external-api-in-nodejs-heroku
+https://www.npmjs.com/package/cors
+
+http://restlet.com/company/blog/2016/09/27/how-to-fix-cors-problems/
+https://codeday.me/es/qa/20181231/53719.html
+
+
+https://github.com/angular/angular/issues/19044
+https://es.stackoverflow.com/questions/201330/implementar-http-headers-en-proyecto-ionic-angular-habilitar-cors-en-api-rest
+https://flaviocopes.com/express-cors/
+https://blog.jscrambler.com/setting-up-5-useful-middlewares-for-an-express-api/
+https://www.keycdn.com/support/cors
+https://stackoverflow.com/questions/47345282/how-to-add-cors-request-in-header-in-angular-5
+https://www.npmjs.com/package/cors
+https://github.com/expressjs/cors#readme
+https://github.com/expressjs/cors#readme
+https://www.concretepage.com/angular-2/angular-4-crud-example
+https://github.com/imdurgeshpal/Angular-4-CRUD-Operations
+https://stackabuse.com/how-to-start-a-node-server-examples-with-the-most-popular-frameworks/
+
+https://github.com/cyrilletuzi/nguniversal-expressengine-httpinterceptor/
+
+https://stackoverflow.com/questions/48840417/cloud-functions-cors-error-response-to-preflight-request-doesnt-pass-access-co
+
+-- textbox numericos
+https://github.com/changhuixu/ngx-digit-only -- npm i -S @uiowa/digit-only
+https://material.angular.io/components/form-field/overview textbox material
+
+
+http://www.eduforbetterment.com/bottom-sheet-modal/ --> componente de detalle de pedido
+----------------------------------------------------------------------
+UPDATE ANGULAR 5 TO ANGULAR 7
+
+https://dzone.com/articles/upgrade-to-angular-7-in-5-simple-steps-1
+https://github.com/angular/angular/issues/15548
+https://github.com/angular/angular-cli/issues/12148
+https://github.com/angular/flex-layout/issues/735
+
+
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of core-js@^2.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of core-js@^2.4.1 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ core-js-bundle@3.0.1
+added 1 package and audited 37317 packages in 75.329s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-23T23:44:42.140Z
+Hash: 0754f662d5d31738ef79
+Time: 17003ms
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 2.07 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js
+Module not found: Error: Can't resolve 'core-js/es7/reflect' in 'D:\ProyectosAngular\SavedCliAng5\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models'ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/services/match-media.service.ts(1,23): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.
+i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-23T23:46:40.594Z
+Hash: 0754f662d5d31738ef79
+Time: 14264ms
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 2.07 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+ERROR in ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js
+Module not found: Error: Can't resolve 'core-js/es7/reflect' in 'D:\ProyectosAngular\SavedCliAng5\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models'ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/services/match-media.service.ts(1,23): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.
+i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> npm install core-js@2.6.5 --save
+npm WARN rollback Rolling back node-pre-gyp@0.12.0 failed (this is probably harmless): EPERM: operation not permitted, lstat 'D:\ProyectosAngular\SavedCliAng5\node_modules\chokidar\node_modules\fsevents\node_modules'
+npm WARN rollback Rolling back ajv@4.11.8 failed (this is probably harmless): EPERM: operation not permitted, rmdir 'D:\ProyectosAngular\SavedCliAng5\node_modules\fsevents\node_modules'
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ core-js@2.6.5
+updated 1 package and audited 37317 packages in 80.258s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T01:42:16.279Z
+Hash: f5fc9405eb4af6dbc638
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/services/match-media.service.ts(1,23): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.
+i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> npm i --save @angular/flex-layout@6.0.0-beta.15
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/flex-layout@6.0.0-beta.15 requires a peer of @angular/cdk@>=6.0.0-beta.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+peer dependencies yourself.
+npm WARN @angular/flex-layout@6.0.0-beta.15 requires a peer of @angular/common@>=6.0.0-beta.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ @angular/flex-layout@6.0.0-beta.15
+updated 1 package and audited 37317 packages in 42.427s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T01:48:37.648Z
+Hash: ee74d2472ad88987d493
+Time: 14260ms
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in node_modules/@angular/flex-layout/core/typings/match-media/mock/mock-match-media.d.ts(62,22): error TS2420: Class 'MockMediaQueryList' incorrectly implements interface 'MediaQueryList'.
+  Type 'MockMediaQueryList' is missing the following properties from type 'MediaQueryList': onchange, addEventListener, removeEventListener, dispatchEvent
+node_modules/@angular/flex-layout/core/typings/match-media/mock/mock-match-media.d.ts(79,27): error TS2304: Cannot find name 'MediaQueryListListener'.
+node_modules/@angular/flex-layout/core/typings/match-media/mock/mock-match-media.d.ts(81,23): error TS2304: Cannot find name 'MediaQueryListListener'.
+node_modules/@angular/flex-layout/core/typings/match-media/server-match-media.d.ts(11,22): error TS2420: Class 'ServerMediaQueryList' incorrectly implements interface 'MediaQueryList'.
+  Type 'ServerMediaQueryList' is missing the following properties from type 'MediaQueryList': onchange, addEventListener, removeEventListener, dispatchEvent
+node_modules/@angular/flex-layout/core/typings/match-media/server-match-media.d.ts(28,27): error TS2304: Cannot find name 'MediaQueryListListener'.
+node_modules/@angular/flex-layout/core/typings/match-media/server-match-media.d.ts(30,23): error TS2304: Cannot find name 'MediaQueryListListener'.
+node_modules/@angular/flex-layout/core/typings/match-media/server-match-media.d.ts(42,15): error TS2416: Property '_registry' in type 'ServerMatchMedia' is not assignable to the same property in base type 'MatchMedia'.
+  Type 'Map<string, ServerMediaQueryList>' is not assignable to type 'Map<string, MediaQueryList>'.
+    Type 'ServerMediaQueryList' is missing the following properties from type 'MediaQueryList': onchange, addEventListener, removeEventListnode_modules/@angular/flex-layout/core/typings/match-media/server-match-media.d.ts(54,15): error TS2416: Property '_buildMQL' in type 'ServerMatchMedia' is not assignable to the same property in base type 'MatchMedia'.  Type '(query: string) => ServerMediaQueryList' is not assignable to type '(query: string) => MediaQueryList'.
+    Type 'ServerMediaQueryList' is not assignable to type 'MediaQueryList'.
+node_modules/@angular/flex-layout/core/typings/observable-media/observable-media.d.ts(11,14): error TS2416: Property 'subscribe' in type 'ObservableMedia' is not assignable to the same property in base type 'Subscribable<MediaChange>'.  Type '(next?: (value: MediaChange) => void, error?: (error: any) => void, complete?: () => void) => Subscription' is not assignable to type '{ (observer?: PartialObserver<MediaChange>): Unsubscribable; (next: null, error: null, complete: () => void): Unsubscribable; (next: null, error: (error: any) => void, complete?: () => void): Unsubscribable; (next: (value: MediaChange) => void, error: null, complete: () =>void): Unsubscribable; (next?: (value: Medi...'.
+    Types of parameters 'next' and 'observer' are incompatible.
+      Type 'PartialObserver<MediaChange>' is not assignable to type '(value: MediaChange) => void'.
+        Type 'NextObserver<MediaChange>' is not assignable to type '(value: MediaChange) => void'.
+          Type 'NextObserver<MediaChange>' provides no match for the signature '(value: MediaChange): void'.
+
+i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> npm install angular/flex-layout-builds --save
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ @angular/flex-layout@7.0.0-beta.24-b2e2064
+updated 1 package and audited 37317 packages in 134.171s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T01:55:08.218Z
+Hash: f5fc9405eb4af6dbc638
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.flex-layout"' has no exported member 'ObservableMedia'.i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> ng update --all
+                  Package "@agm/core" has an incompatible peer dependency to "@angular/common" (requires "^5.0.0 || ^6.0.0", would install
+"7.2.14")
+                  Package "@angular/compiler-cli" has an incompatible peer dependency to "typescript" (requires ">=3.1.1 <3.3", would install "3.4.5").                  Package "@swimlane/ngx-charts" has an incompatible peer dependency to "core-js" (requires "^2.5.1", would install "3.0.1").                  Package "@swimlane/ngx-charts" has an incompatible peer dependency to "core-js" (requires "^2.5.1", would install "3.0.1")                  Package "@swimlane/ngx-datatable" has an incompatible peer dependency to "core-js" (requires "^2.5.0", would install "3.0.1")                  Package "@swimlane/ngx-charts" has an incompatible peer dependency to "d3" (requires "^4.10.2", would install "5.9.2").
+Incompatible peer dependencies found. See above.
+PS D:\ProyectosAngular\SavedCliAng5> npm install angular/flex-layout-builds --save
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ @angular/flex-layout@7.0.0-beta.24-b2e2064
+updated 1 package and audited 37317 packages in 90.877s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T02:43:25.185Z
+Hash: f5fc9405eb4af6dbc638
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.flex-layout"' has no exported member 'ObservableMedia'.i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> ng update --all
+                  Package "@agm/core" has an incompatible peer dependency to "@angular/common" (requires "^5.0.0 || ^6.0.0", would install
+"7.2.14")
+                  Package "@angular/compiler-cli" has an incompatible peer dependency to "typescript" (requires ">=3.1.1 <3.3", would install "3.4.5").                  Package "@swimlane/ngx-charts" has an incompatible peer dependency to "core-js" (requires "^2.5.1", would install "3.0.1")                  Package "@swimlane/ngx-charts" has an incompatible peer dependency to "core-js" (requires "^2.5.1", would install "3.0.1").                  Package "@swimlane/ngx-datatable" has an incompatible peer dependency to "core-js" (requires "^2.5.0", would install "3.0.1")                  Package "@swimlane/ngx-charts" has an incompatible peer dependency to "d3" (requires "^4.10.2", would install "5.9.2").
+Incompatible peer dependencies found. See above.
+PS D:\ProyectosAngular\SavedCliAng5> npm install @angular/flex-layout@latest
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ @angular/flex-layout@7.0.0-beta.24
+updated 1 package and audited 37317 packages in 59.856s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T02:49:23.702Z
+Hash: f5fc9405eb4af6dbc638
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/services/match-media.service.ts(1,23): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.
+i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> npm i typescript@3.1.6 --save-dev --save-exact
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ typescript@3.1.6
+added 1 package from 1 contributor, updated 1 package and audited 37317 packages in 57.294s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T02:52:22.194Z
+Hash: f5fc9405eb4af6dbc638
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/services/match-media.service.ts(1,23): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.
+i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> npm install @angular/flex-layout@latest
+npm WARN rollback Rolling back readable-stream@2.3.6 failed (this is probably harmless): EPERM: operation not permitted, lstat 'D:\ProyectosAngular\SavedCliAng5\node_modules\@angular-devkit\core\node_modules\fsevents\node_modules'
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ @angular/flex-layout@7.0.0-beta.24
+updated 1 package and audited 37317 packages in 50.993s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T02:54:04.541Z
+Hash: f5fc9405eb4af6dbc638
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+
+ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flexsrc/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/services/match-media.service.ts(1,23): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.i ｢wdm｣: Failed to compile.^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> ng install @angular/flex-layout@7.0.0-beta.24
+The specified command ("install") is invalid. For a list of available options,
+run "ng help".
+
+Did you mean "lint"?
+PS D:\ProyectosAngular\SavedCliAng5> ng install @angular/flex-layout@7.0.0-beta.24
+The specified command ("install") is invalid. For a list of available options,
+run "ng help".
+
+Did you mean "lint"?
+PS D:\ProyectosAngular\SavedCliAng5> npm install @angular/flex-layout@7.0.0-beta.24
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ @angular/flex-layout@7.0.0-beta.24
+updated 1 package and audited 37317 packages in 49.151s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T02:57:00.424Z
+Hash: f5fc9405eb4af6dbc638
+chunk {main} main.js, main.js.map (main) 1.89 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 93 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 327 kB [initial] [rendered]
+
+ERROR in src/@fuse/components/shortcuts/shortcuts.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/components/sidebar/sidebar.component.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/directives/fuse-mat-sidenav/fuse-mat-sidenav.directive.ts(3,10): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.src/@fuse/services/match-media.service.ts(1,23): error TS2305: Module '"D:/ProyectosAngular/SavedCliAng5/node_modules/@angular/flex-layout/flex-layout"' has no exported member 'ObservableMedia'.
+i ｢wdm｣: Failed to compile.
+^C¿Desea terminar el trabajo por lotes (S/N)? s
+PS D:\ProyectosAngular\SavedCliAng5> npm install @angular/flex-layout@^7.0.0-beta.19
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/common@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @agm/core@1.0.0-beta.2 requires a peer of @angular/core@^4.0.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular/core@7.2.14 requires a peer of zone.js@~0.8.26 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/effects@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/common@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of @angular/router@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/router-store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngrx/store-devtools@5.2.0 requires a peer of rxjs@^5.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/common@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/core@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/animations@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of @angular/platform-browser@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-charts@7.1.1 requires a peer of rxjs@5.x but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-datatable@11.2.0 requires a peer of rxjs@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/animations@^4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/common@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/compiler@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/core@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of @angular/platform-browser-dynamic@~4.4.0 || ^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of rxjs@^5.4.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @swimlane/ngx-dnd@3.1.0 requires a peer of zone.js@^0.8.0 but none is installed. You must install peer dependencies yourself.
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/animations@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/common@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-calendar@0.23.6 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies
+yourself.
+npm WARN angular-draggable-droppable@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/common@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/core@>=2.0.0 <6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-in-memory-web-api@0.5.3 requires a peer of @angular/http@>=2.0.0 <6.0.0 but none is installed. You must install peer depennpm WARN angular-in-memory-web-api@0.5.3 requires a peer of rxjs@^5.1.0 but none is installed. You must install peer dependencies yourself.npm WARN angular-resizable-element@2.0.0 requires a peer of @angular/core@>=5.0.0 <7.0.0 but none is installed. You must install peer dependencies yourself.npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\@angular-devkit\core\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
++ @angular/flex-layout@7.0.0-beta.19
+updated 1 package and audited 37317 packages in 60.795s
+found 76 vulnerabilities (26 low, 36 moderate, 14 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+PS D:\ProyectosAngular\SavedCliAng5> ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-04-24T03:01:36.920Z
+Hash: 5eda5ba80754d055cbb2
+Time: 39945ms
+chunk {main} main.js, main.js.map (main) 3.35 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 700 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 5.19 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 8.68 MB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+
+
+
+USE [Factu19]
+GO
+
+/****** Object:  StoredProcedure [dbo].[PRC_SVDN_PUNTOS_SAVED]    Script Date: 31/07/2019 22:46:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+/*==========================================================================*/
+/*  Archivo:            PRC_SVDN_PUNTOS_SAVED.sql							*/
+/*  Stored procedure:   PRC_SVDN_PUNTOS_SAVED								*/
+/*  Producto:			Sistema de Venta Directa - Niviglobal				*/
+/*  Disenado por:		Mauricio Ramos										*/
+/*  Fecha de escritura:	30/07/2019											*/
+/*==========================================================================*/
+
+CREATE PROCEDURE [dbo].[PRC_SVDN_PUNTOS_SAVED]
+(
+	@i_operation						char(1),
+	@i_option							char(1),		
+	@i_numeropedido						varchar(12)				= NULL,
+	@i_nit								varchar(20)				= NULL,
+	@i_campana							varchar(4)				= NULL,
+	@i_tipo								varchar(2)				= NULL,
+	@i_cantidad							int						= NULL,
+	@i_movimiento						varchar(50)				= NULL,
+	@i_procesado						int						= NULL,
+	@o_err_cod							int						OUTPUT,
+    @o_err_msg							varchar					OUTPUT
+)
+AS
+
+BEGIN
+
+
+	/*================================================================*/
+	/*OPERACIONES DE SELECCION                                        */
+	/*================================================================*/
+	IF @i_operation = 'S'
+	BEGIN
+			/*================================================================*/
+			--Obtiene los puntos efectivos de una empresaria
+			IF @i_option = 'A'
+			BEGIN
+
+				 --SELECT (puntoEfec-PuntoRed) as PuntoEfec FROM   SVDN_PUNTOS_TOTAL WHERE nit=@i_nit
+				  SELECT ISNULL((SELECT (puntoEfec-PuntoRed)  FROM   SVDN_PUNTOS_TOTAL WHERE nit=@i_nit),0) as PuntoEfec
+				
+			END
+	END
+
+	/*================================================================*/
+	/*OPERACIONES DE INSERCION                                        */
+	/*================================================================*/ 
+	IF @i_operation = 'I'
+	BEGIN    
+		IF @i_option = 'A'
+		BEGIN				
+		
+				
+				INSERT INTO SVDN_PUNTOS_DETALLADO
+				(       
+					Nit						,
+					Campana					,
+					Documento				,
+					Tipo					,
+					Cantidad				,
+					Fecha					,					
+					Movimiento				,
+					Procesado		
+				) 
+				VALUES
+				( 	
+					@i_nit					,
+					(select campana from campanas where fechaini < GETDATE() and GETDATE() < fechafin),
+					@i_numeropedido			,
+					@i_tipo					,
+					@i_cantidad				,
+					getdate()				,
+					@i_movimiento			,
+					@i_procesado			
+				)
+
+
+				--********************************************************************************************************************
+				-- SIEMPRE ACTUALIZAR PUNTOS TOTAL
+
+				---------------- Si no existe se crea en puntos total --------------------------------------	
+				IF(SELECT COUNT(*) FROM svdn_Puntos_total WHERE nit=@i_nit)=0
+				BEGIN
+
+				INSERT INTO svdn_Puntos_total(nit, puntoped, puntoEfec, puntoRed, total)
+				VALUES (@i_nit, 0, 0, 0, 0 );
+				END
+				-------------------END---------------- --------------------------------------	
+
+
+				UPDATE SVDN_PUNTOS_TOTAL
+
+				SET puntoPed=ISNULL((
+				SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+				WHERE nit=@i_nit
+				AND procesado=0
+				AND tipo='+'),0),
+
+				puntoEfec=ISNULL((
+				SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+				WHERE nit=@i_nit
+				AND procesado=1
+				AND tipo='+'
+				),0), 
+
+				puntoRed=ISNULL((
+				SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+				WHERE nit=@i_nit			
+				AND tipo='-'),0)
+				WHERE nit=@i_nit			
+
+
+				UPDATE SVDN_PUNTOS_TOTAL
+				SET total=PuntoPed+puntoEfec-puntoRed
+				WHERE nit=@i_nit
+
+			--********************************************************************************************************************
+		
+		END
+		
+		IF @i_option = 'B'
+		BEGIN		
+				
+			---------------- Si no existe se crea en puntos total --------------------------------------	
+				IF(SELECT COUNT(*) FROM svdn_Puntos_total WHERE nit=@i_nit)=0
+				BEGIN
+
+				INSERT INTO svdn_Puntos_total(nit, puntoped, puntoEfec, puntoRed, total)
+				VALUES (@i_nit, 0, 0, 0, 0 );
+				END
+				-------------------END---------------- --------------------------------------	
+
+
+				UPDATE SVDN_PUNTOS_TOTAL
+
+				SET puntoPed=ISNULL((
+				SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+				WHERE nit=@i_nit
+				AND procesado=0
+				AND tipo='+'),0),
+
+				puntoEfec=ISNULL((
+				SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+				WHERE nit=@i_nit
+				AND procesado=1
+				AND tipo='+'
+				),0), 
+
+				puntoRed=ISNULL((
+				SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+				WHERE nit=@i_nit			
+				AND tipo='-'),0)
+				WHERE nit=@i_nit			
+
+
+				UPDATE SVDN_PUNTOS_TOTAL
+				SET total=PuntoPed+puntoEfec-puntoRed
+				WHERE nit=@i_nit
+			
+		END
+
+
+		--Inserta los puntos adicionales por otros conceptos
+  
+		IF @i_option = 'C'
+		BEGIN				
+
+			DECLARE @VALOR  NUMERIC(18,2)=0
+			DECLARE @IVA  NUMERIC(18,2)=0
+			DECLARE @TOTAL  NUMERIC(18,2)=0
+			DECLARE @VALORPEDIDOMINIMOEXTRA  NUMERIC(18,2)=0
+			DECLARE @VALORGANADOPEDIDOMINIMOEXTRA  INT =0
+			DECLARE @VALORGANADOPUNTOSSAVED  INT =0
+
+			-----------------------------------------------------------------------------------------------------------------------------
+			-- CONCEPTO 10 = POR NIVEL DE PEDIDO
+
+			--PUNTOS POR PEDIDO EXTRA PUNTOS
+			SET @VALORPEDIDOMINIMOEXTRA = CAST((SELECT monto FROM SVDN_PUNTOS_NIVELES WHERE id=1) AS NUMERIC)
+
+			SET @VALORGANADOPEDIDOMINIMOEXTRA = CAST((SELECT PUNTOS FROM SVDN_PUNTOS_NIVELES WHERE id=1) AS INT)
+
+			--PRECIO FACTURADO = PRECIO EMPRESARIA
+			SET @VALOR= (select sum(valor) from svdn_pedidosc2_2000 where numero=@i_numeropedido and referencia<>'FT0001' )
+			SET @IVA = (select sum(valor*(tarifaiva/100)) from svdn_pedidosc2_2000 where numero=@i_numeropedido and referencia<>'FT0001' ) 
+
+			SET @TOTAL= @VALOR + @IVA
+				
+			-- SI CUMPLE PUNTOS POR NIVEL DE PEDIDO
+			IF(@TOTAL >= @VALORPEDIDOMINIMOEXTRA)
+			BEGIN
+				
+				INSERT INTO SVDN_PUNTOS_DETALLADO
+				(       
+					Nit						,
+					Campana					,
+					Documento				,
+					Tipo					,
+					Cantidad				,
+					Fecha					,					
+					Movimiento				,
+					Procesado		
+				) 
+				VALUES
+				( 	
+					@i_nit					,
+					(select campana from campanas where fechaini < GETDATE() and GETDATE() < fechafin),
+					@i_numeropedido								,
+					'+'											,
+					@VALORGANADOPEDIDOMINIMOEXTRA				,
+					getdate()									,
+					10											, -- POR NIVEL DE PEDIDO
+					0			
+				)
+			END
+
+			-----------------------------------------------------------------------------------------------------------------------------
+			-- CONCEPTO 18 = POR CREACION DE PEDIDO POR SAVED
+
+			SET @VALORGANADOPUNTOSSAVED = CAST((SELECT par_valor FROM SVDN_PARAMETROS WHERE par_id=78) AS INT)
+
+			INSERT INTO SVDN_PUNTOS_DETALLADO
+			(       
+				Nit						,
+				Campana					,
+				Documento				,
+				Tipo					,
+				Cantidad				,
+				Fecha					,					
+				Movimiento				,
+				Procesado		
+			) 
+			VALUES
+			( 	
+				@i_nit					,
+				(select campana from campanas where fechaini < GETDATE() and GETDATE() < fechafin),
+				@i_numeropedido								,
+				'+'											,
+				@VALORGANADOPUNTOSSAVED						,
+				getdate()									,
+				18											, -- POR CREACION DE PEDIDO POR SAVED
+				0			
+			)
+			-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+			--********************************************************************************************************************
+			-- SIEMPRE ACTUALIZAR PUNTOS TOTAL
+
+			---------------- Si no existe se crea en puntos total --------------------------------------	
+			IF(SELECT COUNT(*) FROM svdn_Puntos_total WHERE nit=@i_nit)=0
+			BEGIN
+
+			INSERT INTO svdn_Puntos_total(nit, puntoped, puntoEfec, puntoRed, total)
+			VALUES (@i_nit, 0, 0, 0, 0 );
+			END
+			-------------------END---------------- --------------------------------------	
+
+
+			UPDATE SVDN_PUNTOS_TOTAL
+
+			SET puntoPed=ISNULL((
+			SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+			WHERE nit=@i_nit
+			AND procesado=0
+			AND tipo='+'),0),
+
+			puntoEfec=ISNULL((
+			SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+			WHERE nit=@i_nit
+			AND procesado=1
+			AND tipo='+'
+			),0), 
+
+			puntoRed=ISNULL((
+			SELECT SUM(cantidad) FROM SVDN_PUNTOS_DETALLADO 
+			WHERE nit=@i_nit			
+			AND tipo='-'),0)
+			WHERE nit=@i_nit			
+
+
+			UPDATE SVDN_PUNTOS_TOTAL
+			SET total=PuntoPed+puntoEfec-puntoRed
+			WHERE nit=@i_nit
+
+		--********************************************************************************************************************
+		END
+	END
+	
+END
+
+GO
+
+
+
+Errores de angular CLI
+https://github.com/angular/angular-cli/issues/4632
+
+Actualizar angular de 7 a 8
+https://alligator.io/angular/angular-8/
+
+$ ng update @angular/cli @angular/core
+$ ng update @angular/material
+
+
+
+SVDN_CLIENTE --> OPCION FINAL --> IF @i_option = 'ED'
+
+/*==========================================================================*/
+			--Lista un cliente especifico de la bd de svdn que corresponda a una zona de vendedor o lider 
+			IF @i_option = 'ED'
+			BEGIN
+
+				
+				SELECT     
+								*, CAST(0 as Bit) as privilegio, '' as CODCIUDADDESPACHO
+				FROM         
+								clientes
+				WHERE
+								nit	=	@i_nit
+				and
+								activo = 1
+				and
+								(LIDER = @i_id_lider OR vendedor = @i_vendedor)
+			END
+
+
+
+PRC_SVDN_PEDIDOSC1_2000 Operation='S'
+ @i_option ='RW'
+
+/*==========================================================================*/
+	/* Lista Pedidos x Director y campana sin Facturar  */
+			if @i_option ='RW'
+			BEGIN
+				select     
+						ped.numero, ped.mes, ped.fecha, ped.anulado, ped.espera, ped.despacho, ped.iva, ped.valor, ped.descuento, ped.fechacreacion, ped.claveusuario, ped.zona, 
+						  ped.codigo_numeracion, ped.transmitido, ped.campana, ped.numeroenvio, ped.nofacturado, ped.facturar, ped.codtipo, ped.devol, ped.factura, 
+						  ven.vendedor, ven.nombre, cli.nit, cli.razon_social, ped.orden, ped.procesado, ped.esp_id, ped.ivapreciocatalogo, ped.valorpreciocatalogo, 
+						  ped.codigo, cat.grupocatalogo, '' as descripcion, ped.generapremios, cli.creadopor, CAST(0 as BIT) as generapremios, 0 as anexo, CAST(0 as BIT) as procesado_cliente_historico, CAST(0 as BIT) as reserva, CAST(0 as BIT) as borrador, getdate() as fechacierreborrador
+						
+				from         pedidosc1_2000 as ped inner join
+									  vendedor as ven on ped.vendedor = ven.vendedor inner join
+									  clientes as cli on ped.nit = cli.nit inner join
+									  catalogo as cat on ped.codigo = cat.codigo
+				where
+				
+						ven.vendedor		=	@i_vendedor		and		ped.campana		= @i_campana
+								and ped.anulado		=	0  and ped.esp_id   IN ('15','16')
+				order by fechacreacion desc
+			END
+
+
+PRC_SVDN_PEDIDOSC1_2000 Operation='S'
+ @i_option ='RX'
+
+/*==========================================================================*/	
+
+
+			/* Lista Pedidos x Lider y campana sin Facturar  */
+			if @i_option ='RX'
+			BEGIN
+		select     
+						ped.numero, ped.mes, ped.fecha, ped.anulado, ped.espera, ped.despacho, ped.iva, ped.valor, ped.descuento, ped.fechacreacion, ped.claveusuario, ped.zona, 
+						  ped.codigo_numeracion, ped.transmitido, ped.campana, ped.numeroenvio, ped.nofacturado, ped.facturar, ped.codtipo, ped.devol, ped.factura, 
+						  ven.vendedor, ven.nombre, cli.nit, cli.razon_social, ped.orden, ped.procesado, ped.esp_id, ped.ivapreciocatalogo, ped.valorpreciocatalogo, 
+						  ped.codigo, cat.grupocatalogo, '' as descripcion, ped.generapremios, ped.anexo, ped.reserva
+						
+				from         pedidosc1_2000 as ped inner join
+									  vendedor as ven on ped.vendedor = ven.vendedor inner join
+									  clientes as cli on ped.nit = cli.nit inner join
+									  catalogo as cat on ped.codigo = cat.codigo
+				where
+						ped.idlider			=	@i_idlider		and		ped.campana		= @i_campana
+								and ped.anulado		=	0  and ped.esp_id   IN ('15','16')
+				order by fechacreacion desc
+			END
+
+
+
+
+	--Lista las empresarias de un lider segun Estado
+			IF @i_option = 'EE'
+			BEGIN
+
+				SELECT     cli.FECHAINGRESO, cli.nit, cli.NOMBRE1, cli.NOMBRE2, cli.APELLIDO1, cli.APELLIDO2, cli.FECHANACIMIENTO, cli.direccionresidencia, cli.BARRIO, cli.SEXO, 
+							  cli.direccion, cli.telefonos, cli.TELEFONODOS, cli.celular1, cli.celular2, cli.email, cli.razon_social, cli.ciudad, cli.activo, cli.TIPODOCUMENTO, cli.PAIS, cli.DV, zon.zona,
+							   zon.descripcion, ven.vendedor, ven.nombre, cli.esc_id,  ciu.codciudad, ciu.nombreciudad, dep.codEstado, dep.nombreEstado, pai.codPais, 
+							  pai.nombrePais, cli.ultimamodificacion, 0 AS bar_codbarrio, '' AS bar_nombre, 0 AS ciu_codciudad, '' AS ciu_nombre, 0 AS reg_codregional, '' AS reg_nombre, 
+							  0 AS tid_id, '' AS tid_nombre, CASE WHEN sec_codsector IS NULL THEN 'SIN ASIGNAR' ELSE sec_codsector END AS sec_codsector, esc.esc_nombre ,
+							  cli.codparroquia, nomparroquia, calles, numerocasa, comollegar, referenciafamiliar, telefonoreferenciaf, nombrereferidor,
+							operadorcelular, lider
+				FROM         dimciudad AS ciu INNER JOIN
+							  dimEstado AS dep ON ciu.codestado = dep.codEstado INNER JOIN
+							  dimpais AS pai ON dep.codPais = pai.codPais INNER JOIN
+							  clientes AS cli ON ciu.codciudad = cli.CODCIUDAD INNER JOIN
+							  vendedor AS ven ON cli.vendedor = ven.vendedor INNER JOIN
+							  zonas AS zon ON cli.zona = zon.zona INNER JOIN
+							  SVDN_ESTADOSCLIENTE AS esc ON cli.esc_id = esc.esc_id
+				WHERE     (cli.lider = @i_id_lider)
+					and
+													cli.activo = 1 and cli.esc_id like  @i_codestado
+						ORDER BY esc.esc_orden
+
+			END	
+			

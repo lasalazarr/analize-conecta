@@ -1,0 +1,171 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Detalle Solicitud</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+        <form [formGroup]="form">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Calificación</mat-label>
+                <mat-select formControlName="quality">
+                    <mat-option *ngFor="let item of qualityList" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <mat-label>Plazo credito</mat-label>
+                <input matInput formControlName="plazo_credito" required maxlength="13" inputmode="numeric"
+                    pattern="[0-9]*" digitOnly>
+
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <mat-label>Cupo Credito</mat-label>
+                <input matInput formControlName="cupo_asignado" required maxlength="13" inputmode="numeric"
+                    pattern="[0-9]*" digitOnly>
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <mat-label>No Solicitud</mat-label>
+                <input matInput formControlName="NSOLICITUD" required maxlength="8" inputmode="numeric" pattern="[0-9]*"
+                    digitOnly>
+            </mat-form-field>
+
+
+            <mat-form-field style="width: 100%;">
+                <mat-label>Observación</mat-label>
+                <textarea matInput formControlName="observation" rows="3"></textarea>
+            </mat-form-field>
+
+            <mat-checkbox formControlName="gestionado">Gestionado</mat-checkbox>
+            <mat-checkbox formControlName="DOCOMPLETA">Documentación Completa</mat-checkbox>
+            <mat-checkbox formControlName="ESCREDITO">Credito Autorizado</mat-checkbox>
+
+        </form>
+        <div style="display: flex;
+    justify-content: left;
+    margin-bottom: 12px;">
+            <button type="submit" class="btn btn-info pull-right" (click)="SaveQualificafication()"
+                style="background-color: black; color: white; font-size: 12px;margin-top:10px ;"
+                [disabled]="form.invalid">Guardar</button>
+        </div>
+
+        <div>
+            <div><b>Id Solicitud</b></div>
+            <div> {{data.Id}} </div>
+        </div>
+        <div>
+            <div><b>Cedula</b></div>
+            <div> {{data.Cedula}} </div>
+        </div>
+        <div>
+            <div><b>Fecha Registro</b></div>
+            <div> {{data.FechaRegistro | date: 'short'}} </div>
+        </div>
+        <div>
+            <div><b>Nombre Completo</b></div>
+            <div> {{data.NombreCompleto}} </div>
+        </div>
+        <div>
+            <div><b>Dirección</b></div>
+            <div> {{data.direccion}} </div>
+        </div>
+        <div>
+            <div><b>Celular</b></div>
+            <div> {{data.celular1}} </div>
+        </div>
+        <div>
+            <div><b>Celular</b></div>
+            <div> {{data.telefonos}} </div>
+        </div>
+        <div>
+            <div><b>email</b></div>
+            <div> {{data.email}} </div>
+        </div>
+        <div>
+            <div><b>Lider</b></div>
+            <div> {{data.NombreLider}} </div>
+        </div>
+        <div *ngIf="!data?.EsFisico">
+            <div><b>Cedula Delantera</b></div>
+            <div>
+                <div>
+                    <mat-icon (click)="editDocument('CedulaDelantera')">create</mat-icon>
+
+                    <a (click)="open(data.DocumentoCedulaDelantera)">
+                        <img src="assets/icons/meteocons/img/pdficon.png" width="80px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!data?.EsFisico">
+            <div><b>Cedula Trasera</b></div>
+            <div>
+                <div>
+                    <mat-icon (click)="editDocument('CedulaTrasera')">create</mat-icon>
+
+                    <a (click)="open(data.DocumentoCedulaTrasera)">
+                        <img src="assets/icons/meteocons/img/pdficon.png" width="80px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="!data?.EsFisico">
+            <div><b>Documento Servicios</b></div>
+            <div>
+                <div>
+                    <mat-icon (click)="editDocument('Servicios')">create</mat-icon>
+
+                    <a (click)="open(data.DocumentoServicios)">
+                        <img src="assets/icons/meteocons/img/pdficon.png" width="80px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!data?.EsFisico">
+            <div><b>Documento Contrato</b></div>
+            <div>
+                <div>
+                    <mat-icon (click)="editDocument('Contrato')">create</mat-icon>
+
+                    <a (click)="open(data.DocumentoContrato)">
+                        <img src="assets/icons/meteocons/img/pdficon.png" width="80px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="!data?.EsFisico">
+            <div><b>Documento Inscripción</b></div>
+            <div>
+                <div>
+                    <mat-icon (click)="editDocument('Inscripcion')">create</mat-icon>
+
+                    <a (click)="open(data.DocumentoInscripcion)">
+                        <img src="assets/icons/meteocons/img/pdficon.png" width="80px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="box-footer">
+
+        <button type="submit" class="btn btn-info pull-right" (click)="dialogRef.close()"
+            style="background-color: black; color: white;">CERRAR</button>
+
+
+    </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,127 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+      <mat-toolbar-row>
+        <span class="title dialog-title">Detalle Pedido Facturado</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  
+    <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+  
+      <div>
+        <div><b>Documento</b></div>
+        <div> {{data.Nit}} </div>
+      </div>
+      <div>
+        <div><b>Nombre</b></div>
+        <div> {{data.NombreEmpresaria}} </div>
+      </div>
+      <div>
+        <div><b>Estado Pedido</b></div>
+        <div> {{data.NombreEstado}} </div>
+      </div>
+      <div>
+          <div><b>Número Pedido</b></div>
+          <div> {{data.Numero}} </div>
+        </div>
+        <div *ngIf="muestralibero">
+          <div><b>Usuario Liberó</b></div>
+          <div> {{data.UsuarioLibero}} </div>
+        </div>
+        <div *ngIf="muestralibero">
+          <div><b>Fecha Liberación</b></div>
+          <div> {{data.FechaLiberacion | date : 'MMM d, y-hh:mm a'}} </div>
+      </div>
+        <div>
+            <div><b>Número Factura</b></div>
+            <div> {{data.Factura}} - {{data.UsuarioFactura}}</div>
+          </div>
+      <div>
+        <div><b>Fecha Factura</b></div>
+        <div> {{data.Fecha | date : 'MMM d, y-hh:mm a'}} </div>
+      </div>
+   
+      <div>
+        <div><b>Valor Factura</b></div>
+        <div> {{data.Valor | currency}} </div>
+      </div>
+      <div *ngIf="muestraaduana">
+        <div><b>Número Aduana</b></div>
+        <div> {{data.NumeroAduana}} - {{data.UsuarioAduana}}  </div>
+      </div>
+      <div *ngIf="muestraaduana">
+        <div><b>Fecha Aduana</b></div>
+        <div> {{data.FechaAduana | date : 'MMM d, y-hh:mm a'}} </div>
+      </div>
+   
+      <div *ngIf="muestradespacho">
+        <div><b>Número Despacho</b></div>
+        <div> {{data.NumeroDespacho}} - {{data.UsuarioDespacho}} </div>
+      </div>
+      <div *ngIf="muestradespacho">
+        <div><b>Fecha Despacho</b></div>
+        <div> {{data.Despacho | date : 'MMM d, y-hh:mm a'}} </div>
+      </div>
+      <div>
+        <div><b>Fecha Entrega</b></div>
+        <div> {{data.FechaMovimiento}} </div>
+      </div>
+      <div>
+        <div><b>Operador Logistico</b></div>
+        <div> {{data.OperadorLogistico}} </div>
+      </div>
+      <div *ngIf="muestradevol">
+        <div><b>Fecha Nota Crédito</b></div>
+        <div> {{data.FechaNotaCredito | date : 'MMM d, y-hh:mm a'}} </div>
+      </div>
+      <div *ngIf="muestradevol">
+        <div><b>Valor Nota Crédito</b></div>
+        <div> {{data.ValorNotaCredito | currency}} </div>
+      </div>
+      <div *ngIf="muestradevol">
+        <div><b>Motivo Nota Crédito</b></div>
+        <div> {{data.MotivoNotaCredito}} </div>
+      </div>
+     
+      <div>
+        <div><b>Destinatario</b></div>
+        <div> {{data.NombreDestinatario}} </div>
+      </div>
+      <div>
+        <div><b>Ciudad Envío</b></div>
+        <div> {{data.CiudadDespacho}} </div>
+      </div>
+      <div>
+        <div><b>Dirección de Envío</b></div>
+        <div> {{data.DireccionEntregaPedido}} </div>
+      </div>
+  
+     
+      <div>
+        <div><b>Guia</b></div>
+        <div> <a href="{{this.linktracking}}" target="_blank">{{data.Guia}} </a> </div>
+      </div>
+  
+      <div>
+        <div><b>Lider</b></div>
+        <div> {{data.NombreVendedor}} </div>
+      </div>
+  
+   
+  
+    </div>
+  
+
+
+
+    <div class="box-footer">
+        <button type="submit" class="btn btn-default"  (click)="openResumenPedido(data)" 
+        style="background-color: black; color: white;">VER DETALLE DEL PEDIDO</button>
+        <button type="submit" class="btn btn-info pull-right"   (click)="dialogRef.close()" 
+        style="background-color: black; color: white;">CERRAR</button>
+      </div>
+    
+
+
+  
+  </div>

@@ -1,0 +1,114 @@
+:host {
+    .content {
+        .horizontal-stepper-wrapper,
+        .vertical-stepper-wrapper {
+            max-width: 800px;
+        }
+    }
+}
+
+form {
+    width: 100%;
+    max-width: 800px !important;
+}
+
+.form-errors-model {
+    flex: 1;
+
+    code {
+        background: none !important;
+    }
+}
+
+.btn-whatsapp {
+    display: block;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    left: 3000px;
+    top: 20px;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    z-index: 999;
+}
+
+.logofacebook {
+    cursor: pointer;
+    width: 41px;
+    border-radius: 60px;
+    padding: 5px;
+    background: #35ad3f;
+    img {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(207deg)
+            brightness(106%) contrast(104%);
+    }
+}
+.icoLike {
+    width: 40px;
+    height: 40px;
+    background: #c84c43;
+    font-size: 31px;
+    padding-left: 9px;
+    border-radius: 22px;
+    cursor: pointer;
+    color: white;
+}
+.headerback {
+    width: 100%;
+    justify-content: space-between !important;
+    display: flex;
+}
+.container-image-edit {
+    flex-direction: column !important;
+    display: flex;
+    .container-preview {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        div {
+            display: flex;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            img {
+                align-self: center;
+            }
+        }
+    }
+    .button-edit-image {
+        align-self: center;
+        div {
+            background-color: #3c4252;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            border-radius: 44px;
+            margin-top: 10px;
+            cursor: pointer;
+            mat-icon {
+                color: white;
+                line-height: 37px;
+            }
+        }
+    }
+}
+.button-change-password {
+    align-self: center;
+    div {
+        background-color: #3c4252;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border-radius: 44px;
+        margin-top: 10px;
+        cursor: pointer;
+        mat-icon {
+            color: white;
+            line-height: 37px;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<div class="panel panel-warning">
+  <div class="panel-heading">Zona</div>
+  <div class="panel-body">
+    <table>
+      <tr>
+        <td>
+          <mat-form-field class="input-field">
+            <mat-label>Nombre</mat-label>
+            <input matInput [(ngModel)]="zone.Nombre" type="text" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="input-field">
+            <mat-label>Radio (km)</mat-label>
+            <input matInput [(ngModel)]="zone.Radio" type="number" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-icon title="Sectores" class="icon" (click)="openSectorsDialog()">list_alt</mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="input-field">
+            <mat-label>Latitud</mat-label>
+            <input matInput [(ngModel)]="zone.Latitud" type="number" />
+          </mat-form-field>
+        </td>
+        <td colspan="2">
+          <mat-form-field class="input-field">
+            <mat-label>Longitud</mat-label>
+            <input matInput [(ngModel)]="zone.Longitud" type="number" />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="input-field">
+            <mat-label>Provincia</mat-label>
+            <mat-select [(ngModel)]="zone.ProvinciaId" (selectionChange)="onProvinceChange()">
+              <mat-option *ngFor="let pro of provincias" [value]="pro.CodEstado">
+                {{ pro.NombreEstado }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td colspan="2">
+          <mat-form-field class="input-field">
+            <mat-label>Canton</mat-label>
+            <mat-select [(ngModel)]="zone.CantonId">
+              <mat-option *ngFor="let c of canton" [value]="c.CodCiudad">
+                {{ c.NombreCiudad }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-checkbox [(ngModel)]="zone.Activo">Activo</mat-checkbox>
+        </td>
+        <td>
+          <mat-icon title="Guardar" class="icon icon-save" (click)="save()">save</mat-icon>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

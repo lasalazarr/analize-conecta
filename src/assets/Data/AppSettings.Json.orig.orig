@@ -1,0 +1,37 @@
+{
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+  "IndexSeleccionado": 0,
+=======
+  "IndexSeleccionado": 1,
+>>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+  "IndexSeleccionado": 1,
+=======
+  "IndexSeleccionado": 0,
+>>>>>>> origin/master
+>>>>>>> origin/master
+  "Firmas": [
+    {
+      "API": "https://apiservices.lineadirectaec.com/SavedServicesNet/api/",
+      "TipoAplicacion": 3,
+      "API_ImageContent": "http://localhost/Application.Enterprise.Services/UploadFile/"
+    },
+    {
+      "API": "http://localhost/Application.Enterprise.Services/api/",
+      "TipoAplicacion": 3,
+      "API_ImageContent": "https://apiservices.lineadirectaec.com/SavedServicesNet/UploadFile/"
+    },
+    {
+      "API": "https://apiservices.lineadirectaec.com/Application.Enterprise.Services/api/",
+      "TipoAplicacion": 2,
+      "API_ImageContent": "https://apiservices.lineadirectaec.com/SavedServicesNet/UploadFile/"
+    },
+    {
+      "API": "https://apiservices.lineadirectaec.com/ServicesUbicacion/api/",
+      "TipoAplicacion": 3,
+      "API_ImageContent": "https://apiservices.lineadirectaec.com/SavedServicesNet/UploadFile/"
+    }
+  ]
+}

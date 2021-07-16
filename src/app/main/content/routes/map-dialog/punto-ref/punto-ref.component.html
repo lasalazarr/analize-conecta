@@ -1,0 +1,21 @@
+<div class="dialog-content">
+
+  <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+    <mat-toolbar-row>
+      <span class="title dialog-title">Nuevo punto de referencia</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="containerInput">
+    <mat-form-field class="my-12" fxFlex="100" class="mat-form-ref">
+      <mat-label>Ingresa punto de referencia</mat-label>
+      <textarea matInput [(ngModel)]="puntoReferencia" maxlength="80"></textarea>
+    </mat-form-field>
+  </div>
+  
+  <div class="m-0" fxLayout="row" fxLayoutAlign="end center" align="center">
+    <button mat-stroked-button class="buttonBlack" (click)="ok()">
+      Aceptar
+    </button>
+  </div>
+
+</div>

@@ -1,0 +1,135 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+  
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Ventas por Mes</div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+<div class="content p-24 mat-white-bg">
+
+
+    <div fxLayout="column"  fxLayoutAlign="start start" fxLayout.gt-md="row">
+
+            <!-- REACTIVE FORM EXAMPLE -->
+
+            <form class="mat-white-bg   mb-24" fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form"
+                [formGroup]="form">
+                <mat-form-field class="registroEmpresaria" fxFlex="100">
+                    <mat-select placeholder="Mes" formControlName="Mes" [(ngModel)]="MesSeleccionado"
+                        required>
+                        <mat-option *ngFor="let Item of ListMes" [value]="Item.IdMes">
+                            {{ Item.Nombre }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="registroEmpresaria" fxFlex="100">
+                    <mat-select placeholder="Anio" formControlName="Anio" [(ngModel)]="AnioSeleccionado"
+                        required>
+                        <mat-option *ngFor="let Item of ListAnio" [value]="Item.IdAnio">
+                            {{ Item.Nombre }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="registroEmpresaria"  *ngIf="EsDirector" fxFlex="100">
+                    <mat-select [disabled]="ActivaList" placeholder="Lider" formControlName="Lider" [(ngModel)]="LiderSeleccionado"
+                        (selectionChange)="SelectedLider($event)" required >
+                        <mat-option *ngFor="let Item of ListLider" [value]="Item.IdLider">
+                            {{ Item.Nombres }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="formErrors.Lider.required">
+                        Lider es requerido
+                    </mat-error>
+                </mat-form-field>
+  
+                <mat-checkbox (change)="setAll($event.checked)"  *ngIf="EsDirector"  formControlName="Todos">Todos</mat-checkbox>
+       
+                <button (click)="ConfirmData()" mat-raised-button  class="buttonGlod"
+                aria-label="CREATE AN ACCOUNT" [disabled]="SaveInProgress">
+                Consultar
+                </button>
+           
+
+            </form>
+
+            <!-- / CONTENT -->
+
+     </div>
+       
+         <div class="example-header">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Escribe una Palabra">
+            </mat-form-field>
+            </div>
+    
+
+
+
+
+        <div class="example-container mat-elevation-z8">
+
+            <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="RangoSemana">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Semana</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.RangoSemana}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef>Total Venta Mes</mat-footer-cell>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="NuevaCumple">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Nueva CPM</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.NuevaCumple}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef>{{getTotalNuevas() }}</mat-footer-cell>
+                </ng-container>
+                 <!-- Progress Column -->
+                 <ng-container matColumnDef="NuevaNoCumple">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Nueva SPM</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.NuevaNoCumple}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                <ng-container matColumnDef="PedidoCumple">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Pedido Cumple Minimo</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.PedidoCumple}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef>{{getTotalPedidos() }}</mat-footer-cell>
+                </ng-container>
+                <ng-container matColumnDef="PedidoNoCumple">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Pedido No Minimo</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.PedidoNoCumple}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                <!-- Progress Column -->
+                <ng-container matColumnDef="Venta">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Venta</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Venta| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef> {{getTotalSaldo() | currency}} </mat-footer-cell>
+                </ng-container>
+     
+               
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"  class="example-element-row"
+                 > </mat-row>
+                <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+            </mat-table>	
+              
+
+            <mat-paginator [pageSizeOptions]="[31]"></mat-paginator>
+    
+        </div>
+
+
+
+    </div>
+
+</div>
+
+

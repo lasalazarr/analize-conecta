@@ -1,0 +1,67 @@
+<div id="forms" class="page-layout simple fullwidth px-24" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 20px;">Configuraciòn Home</div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content mat-white-bg">
+        <form name="form" [formGroup]="formHome" class="mat-white-bg   mb-24" fxLayout="column" fxLayoutAlign="start">
+            <mat-checkbox formControlName="Nuevo">Nuevo</mat-checkbox>
+            <mat-checkbox formControlName="All">Todos</mat-checkbox>
+
+            <mat-form-field class="registroEmpresaria" fxFlex="100">
+                <mat-select placeholder="Genero" formControlName="Genero" (selectionChange)="changeGenero($event)">
+                    <mat-option *ngFor="let Item of ListGenero" [value]="Item.Genero">
+                        {{ Item.DescripcionGenero }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="registroEmpresaria" fxFlex="100">
+                <mat-select placeholder="Categoria" formControlName="Categoria"
+                    (selectionChange)="changeCategoria($event)">
+                    <mat-option *ngFor="let Item of ListCategoria" [value]="Item.Categoria">
+                        {{ Item.DescipcionCategoria }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="registroEmpresaria" fxFlex="100">
+                <mat-select placeholder="Grupo" formControlName="Grupo">
+                    <mat-option *ngFor="let Item of ListGrupo" [value]="Item.Grupo">
+                        {{ Item.DescipcionGrupo }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="registroEmpresaria" fxFlex="100">
+                <input matInput placeholder="Enlace" formControlName="Url">
+
+            </mat-form-field>
+
+            <mat-form-field class="registroEmpresaria" fxFlex="100">
+                <mat-select placeholder="Enlace Interno" formControlName="UrlInterno"
+                    >
+                    <mat-option *ngFor="let Item of menus" [value]="Item.url">
+                        {{ Item.title }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="uploadImage">
+                <input id="channel-file" type="file" class="width:200px" (change)="uploadFileAndSetPreview($event)" />
+            </div>
+
+        </form>
+
+    </div>
+    <button class="buttonGlod" (click)="Guardar()">Guardar</button>
+
+</div>

@@ -1,0 +1,41 @@
+.menuPedido {
+
+    .step{
+       margin-top: 12px; 
+    }
+    .seleccionPaso {
+        display: flex;
+        text-align: center;
+        font-size: 16px;
+        background: #ececec;
+        padding: 12px;
+        cursor: pointer;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+
+ 
+
+
+        &>mat-icon{
+            margin-right: 18px;
+            align-self: center;
+        }
+        &>div {           
+            line-height: 26px;
+            text-align: left;
+        }
+    }
+    .doneButton{
+        BACKGROUND: BLACK;
+COLOR: WHITE;
+      &>mat-icon{
+    margin-right: 18px;
+    align-self: center;
+    color:white
+      }
+    }
+}
+
+.itemFont{
+    font-size: 11px;
+}

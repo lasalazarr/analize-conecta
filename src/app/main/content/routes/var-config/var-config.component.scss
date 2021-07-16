@@ -1,0 +1,38 @@
+:host {
+    padding: 20px;
+}
+
+.icon {
+    float: right;
+    cursor: pointer;
+}
+
+.body-list {
+    max-height: 400px;
+    min-height: 400px;
+    overflow-y: auto;
+}
+
+.list {
+    max-height: 400px;
+}
+
+.input-field {
+    margin: 10px;
+}
+
+.panel-list {
+    width: 350px;
+}
+
+.panel-simulator {
+    margin-left: 15px;
+}
+
+.mat-list-option {
+    margin: 15px;
+}
+
+.field-filter {
+    margin-left: 10px;
+}

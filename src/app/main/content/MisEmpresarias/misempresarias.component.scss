@@ -1,0 +1,174 @@
+@import "src/@fuse/scss/fuse";
+
+:host {
+
+    .content{
+        max-width: 1100px;
+    }
+
+}
+
+.filtros{
+    display: none;
+}
+
+.registrar {
+  background: gray;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 20%;
+  font-family: "Poppins", sans-serif !important;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.icoLike
+{
+    width: 40px;
+    height: 40px;
+    background: #c84c43;
+    font-size: 31px;
+    padding-left: 9px;
+    border-radius: 22px;
+    cursor: pointer;
+    color: white;
+}
+.headerback{
+    width: 100%;
+    justify-content: space-between !important;
+    display: flex;
+}
+
+
+
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+
+table {
+    width: 100%;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+    width: 50%;
+    border: 1px solid black;
+  }
+  
+  .example-element-row:hover {
+    background: #f5f5f5;
+  }
+  
+  .example-element-row:active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+  .mat-column-imagenEmpresaria{
+    flex:inherit !important;
+  }
+
+
+
+
+
+
+
+.knowledgebase-article-dialog {
+
+    @include media-breakpoint('xs') {
+        width: 100%;
+    }
+
+    @include media-breakpoint-up('xs') {
+        width: 720px;
+    }
+
+    .mat-dialog-container {
+        padding: 0px;
+    }
+
+    .dialog-content-wrapper {
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.container-locations {
+    display: flex;
+    justify-content: space-around;
+    > div {
+        > div.imagelocation {
+            cursor: pointer;
+            background: #999;
+            color: white;
+            width: 50px;
+            text-align: center;
+            /* line-height: 46px; */
+            height: 50px;
+            border-radius: 12px;
+            mat-icon {
+                color: white;
+                line-height: 50px;
+            }
+        }
+        > div.imagelocation.selected {
+            background: black;
+        }
+        text-align: center;
+    }
+}

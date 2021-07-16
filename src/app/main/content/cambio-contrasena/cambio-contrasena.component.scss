@@ -1,0 +1,32 @@
+.formPass {
+    display: flex;
+    flex-direction: column;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.buttonShowPass {
+    align-self: center;
+    background: black;
+    color: white;
+    line-height: 23px;
+    padding: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    height: 100px;
+    mat-icon {
+        color: white;
+        align-self: center;
+    }
+}
+
+
+.containerbutton{
+    display: flex;
+    justify-content: center;
+}
+

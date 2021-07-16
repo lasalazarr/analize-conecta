@@ -1,0 +1,33 @@
+<button #openButton mat-icon-button class="open-button mat-primary-bg mat-elevation-z2" (click)="openBar()">
+    <mat-icon>settings</mat-icon>
+</button>
+
+<div class="theme-options-panel-overlay" #overlay [fxHide]="barClosed" [@fadeInOut]="!barClosed"></div>
+
+<div #panel class="theme-options-panel mat-white-bg mat-elevation-z8">
+
+    <button mat-icon-button class="close-button" (click)="closeBar()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="theme-options-panel-inner" fxLayout="column" fxLayoutAlign="start start">
+
+   
+        <h3>Nuestra Ultima Colección:</h3>
+
+        <div class="logo">
+            <!-- <img src="assets/images/logos/fuseni.png"> -->
+
+            <iframe [class.thumbnail]="thumbnail" [src]="safeSrc" width="290" height="315" frameborder="0"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+
+
+
+        <h3>lsajdlaskjdasasd  sad sad asdas das as das das  sa asdasljdaslkjdaskldjaslkdjaslkd saljdlasdjasld jasld asdaspduaspdjasoidhasoi dhasoid s hdisadh iasuhd isau iasuh diasuhdisauhdias iudas iudhasiud asiud iasd isad aisuhiuashd isaud hu</h3>
+        <mat-divider></mat-divider>
+
+
+    </div>
+
+</div>

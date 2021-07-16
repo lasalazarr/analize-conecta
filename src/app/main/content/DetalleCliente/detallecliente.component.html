@@ -1,0 +1,112 @@
+<div class="dialog-content">
+
+  <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+    <mat-toolbar-row>
+      <span class="title dialog-title">Detalle Empresaria</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+
+    <div>
+      <div><b>Documento</b></div>
+      <div> {{data.Nit}} </div>
+    </div>
+    <div>
+      <div><b>Nombre</b></div>
+      <div> {{data.RazonSocial.toLowerCase()}} </div>
+    </div>
+    <div>
+      <div><b>Estado Empresaria</b></div>
+      <div> {{data.NombreEstadosCliente}} </div>
+    </div>
+    <div>
+      <div><b>Actividad</b></div>
+      <div> {{data.Clasificacion}} </div>
+    </div>
+    <div>
+      <div><b>Ultima Compra</b></div>
+      <div>{{(data.RemainingDays>3000? ' Sin compra':Fechacompra +' - Hace: '+ data.RemainingDays + ' dias' )}}</div>
+    </div>
+    <div>
+      <div><b>Calificación Crediticia</b></div>
+      <div> {{(data.ClasificacionC!='SIN '? data.ClasificacionC:'Sin Calificación')}} </div>
+    </div>
+    <div>
+      <div><b>Cupo Crédito</b></div>
+      <div> {{data.CupoAsignado}} </div>
+    </div>
+    <div>
+      <div><b>Saldo Cartera</b></div>
+      <div> {{data.Saldo}} </div>
+    </div>
+    <div>
+      <div><b>Nacimiento</b></div>
+      <div> {{data.FechaNacimiento  | date}} </div>
+    </div>
+    <div>
+      <div><b>Dirección Residencia</b></div>
+      <div> {{data.DireccionPedidos.toLowerCase()}} </div>
+    </div>
+    <div>
+      <div><b>Departamento</b></div>
+      <div> {{data.Departamento.toLowerCase()}} </div>
+    </div>
+    <div>
+      <div><b>Ciudad</b></div>
+      <div> {{data.Ciudad.toLowerCase()}} </div>
+    </div>
+  
+    <div>
+      <div><b>Teléfono</b></div>
+      <div> {{data.Celular1}}  </div>
+    </div>
+    <!--div>
+      <div><b>WhatsApp</b></div>
+      <div> {{data.Whatsapp}} </div>
+    </div-->
+    <div>
+      <div><b>Email</b></div>
+      <div> {{data.Email}} </div>
+    </div>
+    <!--div>
+      <div><b>Talla Prenda Superior</b></div>
+      <div> {{data.TallaPrendaSuperior}} </div>
+    </div>
+    <div>
+      <div><b>Talla Prenda Inferior</b></div>
+      <div> {{data.TallaPrendaInferior}} </div>
+    </div>
+    <div>
+      <div><b>Talla Calzado</b></div>
+      <div> {{data.TallaCalzado}} </div>
+    </div-->
+    <div>
+      <div><b>Creación</b></div>
+      <div> {{data.FechaIngreso | date}} </div>
+    </div>
+    <div>
+        <div><b>Lider</b></div>
+        <div> {{data.NombreLider.toLowerCase()}} </div>
+      </div>
+
+
+
+
+ 
+ 
+
+  </div>
+
+  <div class="box-footer">
+    <button type="submit" class="btn btn-default"  (click)="openActualizaEmpresaria(data.Nit,data.Departamento,data.Ciudad)" 
+    style="background-color: black; color: white;"  [disabled]="this.editar" >EDITAR</button>
+    <button type="submit" class="btn btn-info pull-right"   (click)="dialogRef.close()" 
+    style="background-color: black; color: white;">CERRAR</button>
+  </div>
+
+
+
+
+
+</div>

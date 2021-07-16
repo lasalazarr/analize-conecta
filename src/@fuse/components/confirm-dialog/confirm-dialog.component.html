@@ -1,0 +1,43 @@
+<div style="height: 200px;">
+  <div
+    style="
+      font-size: 18px;
+      font-weight: bolder;
+      color: white;
+      background-color: black;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+    "
+  >
+    Confirmación
+  </div>
+  <div style="margin: 0px 10px 0px 10px;">
+    <div>
+      <span layout="row">
+        <hr flex />
+        <div>
+          <p>{{ confirmMessage }}</p>
+          <!--<mat-form-field>
+            <input matInput [(ngModel)]="data.Mensaje">
+          </mat-form-field>-->
+        </div>
+        <ng-container *ngFor="let item of listDireccion">
+          <div>
+            <p>{{ item.Direccion }}</p>
+          </div>
+        </ng-container>
+      </span>
+    </div>
+
+    <div style="display: flex; justify-content: space-around;">
+      <!--<button mat-button (click)="onNoClick()">No Thanks</button> -->
+      <button mat-button class="buttonGlod" (click)="dialogRef.close(true)">
+        Confirmar
+      </button>
+      <button mat-button class="buttonGlod" (click)="dialogRef.close(false)">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>

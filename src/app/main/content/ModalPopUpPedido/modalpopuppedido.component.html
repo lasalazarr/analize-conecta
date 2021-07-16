@@ -1,0 +1,119 @@
+<head>
+    <meta charset="UTF-8">
+    
+    <script type="text/javascript" src="https://vpayment.verifika.com/VPOS2/js/modalcomercio.js" ></script>
+    <!--script type="text/javascript" src="https://integracion.alignetsac.com/VPOS2/js/modalcomercio.js" ></script-->
+</head>
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class="mat-accent m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Creación Pedido</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div>
+
+        <div *ngIf="data.spinerr" class="logoloader">
+
+            <img width="128" src="assets/images/scrumboard/GlodLogo.png" class="loaderInner">
+            <img width="128" src="assets/images/Spinner.gif" class="spinnergif">
+
+        </div>
+
+        <div *ngIf="!data.spinerr">
+            <div style="text-align: center;">
+                <mat-icon style="height: 80px;
+                width: 90px;
+                font-size: 80px;
+                color: green;">check_circle</mat-icon>
+
+            </div>
+            <span layout="row">
+ 
+                <div class="containerData  p-12">
+                    <div>
+                        <div [ngStyle]="{'color': TextColor}">{{data.Mensaje}}</div>
+                    </div>
+                    <div>
+                        <div [ngStyle]="{'color': TextColor}">{{data.FechaHora}}</div>
+                    </div>
+                    <div>
+                        <div [ngStyle]="{'color': TextColor}">Documento: {{data.Nit}}</div>
+                    </div>
+                    <div>
+                        <div [ngStyle]="{'color': TextColor}">{{data.NombreEmpresaria}}</div>
+                    </div>
+                    <div>
+                        <div [ngStyle]="{'color': TextColor}">Valor Pedido:{{data.ValorTotalPedido | currency}}</div>
+                    </div>
+                    <div>
+                        <div [ngStyle]="{'color': TextColor}">Valor Comision Tarjeta: {{data.ValorComisiont | currency}}</div>
+                    </div>
+                    <div>
+                        <div [ngStyle]="{'color': TextColor}">Valor a Pagar con tarjeta debito o credito : {{data.MontoPagar | currency}}</div>
+                    </div>
+
+                    <!--<mat-form-field>
+        <input matInput [(ngModel)]="data.Mensaje">
+      </mat-form-field> style="display: none;"-->
+                </div>
+
+
+            </span>
+            <form name="f1" id="f1"  style="display: none;"    action="#" method="post" class="alignet-form-vpos2">
+                <table>
+                    <tr><td>acquirerId</td><td><input type="text" name ="acquirerId" value="{{data.acquirerId}}" /></td></tr>
+                    <tr><td>idCommerce</td><td> <input type="text" name ="idCommerce" value="{{data.idCommerce}}" /></td></tr>
+                    <tr><td>purchaseOperationNumber </td><td><input type="text" name="purchaseOperationNumber" value="{{data.Numerooperacion}}"  /></td></tr>
+                    <tr><td>purchaseAmount </td><td><input type="text" name="purchaseAmount" value="{{data.purchaseAmount}}" /></td></tr>
+                    <tr><td>purchaseCurrencyCode </td><td><input type="text" name="purchaseCurrencyCode" value="{{data.purchaseCurrencyCode}}" /></td></tr>
+                    <tr><td>language </td><td><input type="text" name="language" value="SP" /></td></tr>        
+                    <tr><td>shippingFirstName </td><td><input type="text" name="shippingFirstName" value="{{data.Nombre1}}" /></td></tr>
+                    <tr><td>shippingLastName </td><td><input type="text" name="shippingLastName" value="{{data.Apellido1}}" /></td></tr>
+                    <tr><td>shippingEmail </td><td><input type="text" name="shippingEmail" value="{{data.Email}}" /></td></tr>
+                    <tr><td>shippingAddress </td><td><input type="text" name="shippingAddress" value="Direccion ABC" /></td></tr>
+                    <tr><td>shippingZIP </td><td><input type="text" name="shippingZIP" value="170513" /></td></tr>
+                    <tr><td>shippingCity </td><td><input type="text" name="shippingCity" value="QUITO" /></td></tr>
+                    <tr><td>shippingState </td><td><input type="text" name="shippingState" value="PICHINCHA" /></td></tr>
+                    <tr><td>shippingCountry </td><td><input type="text" name="shippingCountry" value="EC" /></td></tr>                
+            <!--Parametro para la Integracion con Pay-me. Contiene el valor del parametro codCardHolderCommerce.-->
+                    <tr><td>userCommerce </td><td><input type="text" name="userCommerce" value="{{data.Nit}}" /></td></tr> <!-- 0101010101 -->
+            <!--Parametro para la Integracion con Pay-me. Contiene el valor del parametro codAsoCardHolderWallet.-->
+                    <tr><td>userCodePayme </td><td><input type="text" name="userCodePayme" value="{{data.Nit}}" /></td></tr> <!-- 5--420--2340 -->
+                    <tr><td>descriptionProducts </td><td><input type="text" name="descriptionProducts" value="MERCADERIA GLOD" /></td></tr>
+                    <tr><td>programmingLanguage </td><td><input type="text" name="programmingLanguage" value="ANGULAR 7" /></td></tr>
+            <!--Ejemplo envío campos reservados en parametro reserved1.-->
+                    <tr><td>reserved1 </td><td><input type="text" name="reserved1" value="SP" /></td></tr>
+                    <tr><td>reserved2 </td><td><input type="text" name="reserved2" value="{{reserva2}}" /></td></tr>
+                    <tr><td>reserved3 </td><td><input type="text" name="reserved3" value="{{reserva3}}" /></td></tr>
+                    <tr><td>reserved6 </td><td><input type="text" name="reserved6" value="000" /></td></tr>
+                    <tr><td>reserved9 </td><td><input type="text" name="reserved9" value="{{reserva9}}" /></td></tr> 
+                    <tr><td>reserved10 </td><td><input type="text" name="reserved10" value="{{reserva10}}" /></td></tr>                       
+                    <tr><td>purchaseVerification </td><td><input type="text" name="purchaseVerification" value="{{data.purchaseVerification}}" /></td></tr>    
+                                 
+                    <!--ttr><td colspan="2"><input type="button" id="BotonPagos" onclick="javascript:AlignetVPOS2.openModal('https://integracion.alignetsac.com/')" value="Comprar"></td></tr-->
+
+                    <tr><td colspan="2"><input id="BotonPagos" type="button" onclick="javascript:AlignetVPOS2.openModal('','1')" value="Comprar"></td></tr>
+           
+                </table>
+                
+            </form>
+            <div class="containerButtons p-12">
+                <button class="buttonAppBlack" (click)="PagarPedido()" 
+                cdkFocusInitial>PAGAR PEDIDO</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="buttonAppBlack" (click)="onVerDetalleClick()" 
+                cdkFocusInitial>VER DETALLE PEDIDO</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="buttonAppBlack" *ngIf="IsButtonEnable" (click)="openPopUpCredito()"
+                    cdkFocusInitial>PAGAR CON CREDITO</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!--<button mat-button (click)="onNoClick()">No Thanks</button> -->
+                <button class="buttonAppBlack"  (click)="onCloseClick()"
+                    cdkFocusInitial>CERRAR</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+            </div>
+        </div>
+    </div>
+</div>

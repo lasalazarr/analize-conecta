@@ -1,0 +1,55 @@
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.btn-fab-call {
+    position: fixed;
+    bottom: 110px;
+    right: 10px;
+    background-color: #f5d25e;
+}
+
+.contact-section {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    height: 150px;
+    background-color: #f5d25e;
+}
+
+.form-field {
+    position: fixed;
+    top: 100px;
+    left: 85px;
+    z-index: 1;
+    background-color: white;
+    width: 85%;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.search-icon {
+    position: fixed;
+    right: 10%;
+}
+
+.route-time-label {
+    z-index: 1;
+    position: fixed;
+    top: 150px;
+    left: 90px;
+}
+
+@media only screen and (max-width: 600px) {
+    .form-field {
+        width: 95%;
+        left: 10px;
+    }
+    .route-time-label {        
+        left: 15px;
+    }
+    .search-icon {     
+        right: 5%;
+    }
+}

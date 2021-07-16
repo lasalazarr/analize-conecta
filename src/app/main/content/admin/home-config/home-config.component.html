@@ -1,0 +1,90 @@
+
+
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+    <!-- HEADER -->
+
+
+
+    <div class="px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%; justify-content: space-between;">
+            <div style="font-size: 32px;">Empresarias prospectos</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+
+        <div class="mx-24 my-24">
+    <form class="mat-white-bg   mb-24" fxLayout="column" name="form" [formGroup]="form">
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <mat-select placeholder="Tipo Documento" formControlName="TipoCedula" required>
+                <mat-option *ngFor="let Item of ListTipoDocumento" [value]="Item.Id">
+                    {{ Item.Nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <mat-select placeholder="Tipo Documento" formControlName="TipoCedula" required>
+                <mat-option *ngFor="let Item of ListTipoDocumento" [value]="Item.Id">
+                    {{ Item.Nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <mat-select placeholder="Tipo Documento" formControlName="TipoCedula" required>
+                <mat-option *ngFor="let Item of ListTipoDocumento" [value]="Item.Id">
+                    {{ Item.Nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <br />
+        </div>
+
+        <button mat-raised-button (click)="enviarFormulario()" class="buttonGlod" aria-label="CREATE AN ACCOUNT"
+            [disabled]="form.invalid ">
+            Enviar Información
+        </button>
+
+    </form>
+</div>
+
+
+
+
+        <div *ngFor="let item of homeMenus">
+            <div class="containerCard" (click)="openDetalleCliente(item)">
+                <div class="headerCard">
+                    <div>
+                        {{
+                                "Registro hace " +
+                                    item?.RemainingDays +
+                                    (item?.RemainingDays > 1
+                                        ? " dias "
+                                        : " dia ")
+                            }}
+                    </div>
+                </div>
+                <div class="headerCard">
+                    <img class="mr-20" src="assets/images/appimages/empresarias.png" />
+                    <div class="btn-whatsapp" style="margin: 2px 15px; width: 40px;">
+                        <a (click)="llamarEmpresaria(item)"><img _ngcontent-ako-c25=""
+                                src="assets/images/record_voice_over-24px.svg" /></a>
+                    </div>
+                </div>
+                <div class="headerCard">
+                    <div>{{ item?.RazonSocial }}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

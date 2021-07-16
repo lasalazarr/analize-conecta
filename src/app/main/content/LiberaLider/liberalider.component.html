@@ -1,0 +1,147 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Liberación de Pedidos</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+        <span layout="row">
+            <div class="containerData  p-12">
+                <div>
+                    <div [ngStyle]="{'color': TextColor}">Lider: {{NombreUsuario}}</div>
+                </div>
+                <div>
+                    <div [ngStyle]="{'color': TextColor}">Valor a Favor : {{Saldo}}</div>
+                </div>
+            </div>
+        </span>
+        <div>Resumen Comisión</div>
+        <!-- <div class="example-container mat-elevation-z8">
+            <mat-table [dataSource]="dataSource2" matSort class="mat-elevation-z8">
+           
+                <ng-container matColumnDef="Mes">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Mes</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Mes}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+
+            
+                <ng-container matColumnDef="BaseModa">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Venta Moda</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.BaseModa| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+               
+                 <ng-container matColumnDef="ComisionModa">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Comision Moda</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.ComisionModa | currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                <ng-container matColumnDef="BaseOtros">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Venta Otros</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.BaseOtros| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                
+              
+                <ng-container matColumnDef="ComisionOtros">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Comision Otros</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.ComisionOtros| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+        
+              
+            
+            
+                
+
+                <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns1;"  class="example-element-row"
+                 > </mat-row>
+                <mat-footer-row *matFooterRowDef="displayedColumns1"></mat-footer-row>
+            </mat-table>
+        </div> -->
+        <div   *ngIf="EsLider"  class="example-container mat-elevation-z8">
+            <div *ngIf="EsLider">Detalle Comisión</div>
+            <div *ngIf="EsLider" class="example-header">
+                <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Escribe una Palabra">
+                </mat-form-field>
+                </div>
+            <mat-table *ngIf="EsLider" [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="Mes">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Mes</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Mes}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef>Total Venta Mes</mat-footer-cell>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="Nit">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Cedula</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Nit}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                 <!-- Progress Column -->
+                 <ng-container matColumnDef="Documento">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Documento</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Documento}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                <ng-container matColumnDef="Tipo">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Tipo}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                <ng-container matColumnDef="Fecha">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Fecha | date}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+                </ng-container>
+                <!-- Progress Column -->
+                <ng-container matColumnDef="BaseModa">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Venta en Moda</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.BaseModa| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef> {{getTotalModa() | currency}} </mat-footer-cell>
+                </ng-container>
+     
+                <ng-container matColumnDef="BaseOtros">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Venta Otros</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.BaseOtros| currency}}</mat-cell>
+                    <mat-footer-cell *matFooterCellDef> {{getTotalOtros() | currency}} </mat-footer-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"  class="example-element-row"
+                 > </mat-row>
+                <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+            </mat-table>	
+            <mat-paginator [pageSizeOptions]="[31]"></mat-paginator>
+        </div>
+        <br/>
+        <div>
+            <ag-grid-angular #agGrid style="width: 100%; height: 200px;" 
+            id="myGrid" 
+            class="ag-theme-balham"
+            [columnDefs]="columnDefs" 
+            [rowData]="rowData" 
+            [context]="this" 
+            (gridReady)="onGridReady($event)"
+            [frameworkComponents]="frameworkComponents" 
+            >
+            </ag-grid-angular>
+        </div>
+        <div>
+            <button class="registrar" (click)="liberar()">Liberar</button>
+        </div>
+    </div>
+
+</div>
+
+

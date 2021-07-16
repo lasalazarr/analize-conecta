@@ -1,0 +1,93 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between ;text-align: center">
+            <div style="font-size: 32px;width: 100%">Datos recepción de pago</div>
+        </div>
+
+
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div fxLayout="column" fxLayoutAlign="center start" fxLayout.gt-md="row">
+    
+        <form class="mat-white-bg   mb-24" fxLayout="column" fxLayoutAlign="center start" fxFlex="1 0 auto">
+       
+
+            <span layout="row">
+ 
+                <div class="containerData  p-12">
+            
+     
+                    <div>
+                        <div><b>Codigo de Autorización: </b>{{authorizationCode}}</div>
+                     
+                      </div>
+                      <div>
+                        <div><b>Tarjeta:</b> {{brand}}</div>
+                        
+                      </div>
+                      <div>
+                        <div><b>Codigo de Referencia:</b>{{paymentReferenceCode}}</div>
+                       
+                      </div>
+                      <div>
+                        <div><b>Tipo Tarjeta:</b> {{reserved22}}</div>
+                       
+                      </div>
+                  
+                      <div>
+                        <div><b>Número de Operacion: </b>{{purchaseOperationNumber}}</div>
+                        
+                      </div>
+                      <div>
+                        <div><b>Recibo de Caja:</b> {{recibo}}</div>
+                        
+                      </div>
+                      <div>
+                        <div><b>Monto:</b> {{purchaseAmount | currency}}</div>
+                      
+                      </div>
+    
+ 
+                    </div>
+
+
+                </span>
+
+
+
+                <div fxLayout="row" *ngIf="SucceSave" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                    
+                    <div style="text-align: center;">
+                        <mat-icon style="height: 80px;
+                        width: 90px;
+                        font-size: 80px;
+                        color: green;">check_circle</mat-icon>
+        
+                    </div>
+                    <div fxFlex="100" style="color:#19611e">Transacción Exitosa!</div>
+                </div>
+                <div fxLayout="row" *ngIf="SucceSave1" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                    
+                    <div style="text-align: center;">
+                        <mat-icon style="height: 80px;
+                        width: 90px;
+                        font-size: 80px;
+                        color: red;">highlight_off</mat-icon>
+        
+                    </div>
+                    <div fxFlex="100" style="color: red">Tu Pedido se reservo con éxito pero no se registro el pago del mismo!</div>
+                </div>
+
+
+
+            </form>
+
+    </div>
+
+
+</div>

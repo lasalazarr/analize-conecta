@@ -1,0 +1,127 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Hacer cambio o devolución</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="menuPedido mx-24 my-24">
+        <div class="step">
+
+            <div class="seleccionPaso">
+                <mat-icon>help_outline</mat-icon>
+                <div (click)="positionDropDown()">
+                    {{!lodash.isNil(reason)? reason.description : 'MOTIVO DEL CAMBIO' }} </div>
+
+            </div>
+            <mat-select [(ngModel)]="reason" #color [style.display]="hideDropdown == true ? 'block':'none'"
+                (selectionChange)="hideDropdown = false" (openedChange)="closedItem($event)">
+                <mat-option [value]="change" *ngFor="let change of optionsChanges"> {{change.description}}
+                </mat-option>
+            </mat-select>
+
+
+
+        </div>
+        <div class="step">
+
+            <div class="seleccionPaso" (click)="positionDropDownitemChanges()">
+                <mat-icon>find_replace</mat-icon>
+                <div>{{ lodash.isNil(itemChangeSelected)?'PRENDA A DEVOLVER': itemChangeSelected.Descripcion }}
+                </div>
+            </div>
+
+            <mat-select [(ngModel)]="itemChangeSelected" #changeItem
+                [style.display]="hideDropdownitemChanges == true ? 'block':'none'" (openedChange)="closedItem($event)"
+                (selectionChange)="selectCloth($event)">
+                <mat-option class="selectCustomItemChanges" [value]="change" *ngFor="let change of itemChanges">
+                    <div style="display: flex;">
+
+
+
+
+                        <img style="width: 50px;height: 50px;border-radius: 18px;margin-right: 12px;"
+                            src="{{ 'https://imagenesapp.lineadirectaec.com/assets/imagesAplicacion/' + change?.Imagen}}">
+                        <div class="itemFont">
+                            {{change.Descripcion}}
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </mat-option>
+            </mat-select>
+
+        </div>
+
+        <div class="step">
+
+            <div class="seleccionPaso" (click)="positionDropDownitemNewChanges()">
+                <mat-icon>fiber_new</mat-icon>
+                <div>
+                    {{ lodash.isNil(itemNewChangeSelected)?'PRENDA NUEVA':(itemNewChangeSelected.NombreProducto + ',color :'+ itemNewChangeSelected.NombreColor +',talla:'+itemNewChangeSelected.NombreTalla) }}
+                </div>
+            </div>
+
+            <mat-select [(ngModel)]="itemNewChangeSelected" #changeItemNew
+                [style.display]="hideDropdownitemNewChanges == true ? 'block':'none'"
+                (openedChange)="closedItem($event)" (selectionChange)="selectNewCloth($event)">
+                <mat-option class="selectCustomItemChanges" [value]="change" *ngFor="let change of itemNewChanges">
+                    <div style="display: flex;">
+
+
+
+
+                        <img style="width: 50px;height: 50px;border-radius: 18px;margin-right: 12px;"
+                            src="{{ 'https://imagenesapp.lineadirectaec.com/assets/imagesAplicacion/' + change?.Imagen}}">
+                        <div class="itemFont">
+                            {{change.NombreProducto + ',color :'+ change.NombreColor +',talla:'+change.NombreTalla}}
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </mat-option>
+            </mat-select>
+
+        </div>
+
+        <div class="step">
+
+            <div class="seleccionPaso" (click)="openDatosEnvio()">
+                <mat-icon>fiber_new</mat-icon>
+                <div>{{ lodash.isNil(datosEnvio)?'DATOS ENVIO': 'DATOS ENVIO SELECCIONADO' }}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="seleccionPaso doneButton" (click)="EnviarCambio()">
+                <mat-icon>done_outline</mat-icon>
+                <div>
+                    ACEPTAR
+                </div>
+            </div>
+
+        </div>
+
+        <div class="step">
+            <div class="seleccionPaso" (click)="OpenPolitics()">
+                <mat-icon>article</mat-icon>
+                <div>
+                    VER POLITICAS DE CAMBIO
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

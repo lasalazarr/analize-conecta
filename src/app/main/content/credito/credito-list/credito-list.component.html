@@ -1,0 +1,90 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+    <!-- HEADER -->
+    <div class="px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%; justify-content: space-between;">
+            <div style="font-size: 32px;width: 100%;text-align: center;">Solicitudes de Crédito</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content px-24 mat-white-bg">
+        <div class="example-header">
+
+            <mat-form-field class=" mx-12">
+                <mat-select placeholder="Tipo consulta" [(value)]="TipoSeleccionado"
+                    (selectionChange)="cambiarTipo($event)">
+                    <mat-option *ngFor="let Item of tipoConsulta" [value]="Item.value">
+                        {{ Item.Nombre }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <ng-container *ngIf="TipoSeleccionado == 2">
+                <mat-form-field class=" mx-12">
+                    <input matInput [matDatepicker]="picker1" placeholder="Fecha Inicio" [(ngModel)]="FechaInicio">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class=" mx-12">
+                    <input matInput [matDatepicker]="picker2" placeholder="Fecha Fin" [(ngModel)]="FechaFin">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </ng-container>
+            <ng-container *ngIf="TipoSeleccionado == 1">
+                <mat-form-field class="filterInput  mx-12">
+                    <input matInput placeholder="Cedula" aria-label="State" [(ngModel)]="Cedula" />
+                </mat-form-field>
+            </ng-container>
+            <ng-container *ngIf="TipoSeleccionado == 3">
+                <mat-checkbox style="margin-top: 12px;margin-right: 15px;" [(ngModel)]="gestionado">Gestionado
+                </mat-checkbox>
+
+            </ng-container>
+
+            <ng-container *ngIf="TipoSeleccionado == 4">
+                <mat-checkbox style="margin-top: 12px;margin-right: 15px;" [(ngModel)]="EsFisico">Fisico
+                </mat-checkbox>
+
+            </ng-container>
+
+            <button mat-button class="buttonGlod" (click)="search()">
+                Buscar
+            </button>
+            <button style="margin-left: 12PX;" mat-button class="buttonGlod" (click)="create()">
+                Crear Solicitud
+            </button>
+        </div>
+        <div style="text-align: center; color: brown;"> {{mensaje}} </div>
+
+        <div *ngFor="let item of ListCredits" class="itemList">
+            <div class="containerCard">
+
+                <div>
+
+                    <div> Fecha Solicitud :{{ item.FechaRegistro | date:'short' }}</div>
+
+                    <div> {{ item.NombreCompleto }}</div>
+                    <div> Doc: {{ item.Cedula }}</div>
+                    <div> Calificación: {{ item.CLASIFICACIONC }}</div>
+                    <ng-container *ngIf="item.Gestionado">
+                        <div> Gestionado</div>
+                    </ng-container>
+                    <ng-container *ngIf="item.EsFisico">
+                        <div> Fisico</div>
+                    </ng-container>
+
+                </div>
+                <div>
+                    <div>
+                        <mat-icon class="readmore" (click)="openDetalleSocilitud(item)">read_more</mat-icon>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

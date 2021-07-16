@@ -1,0 +1,160 @@
+<div class="dialog-content">
+
+    <mat-toolbar class="mat-accent m-0" style="background-color: black;">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Resumen Pedido</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <br>
+
+
+    <div class="mx-24" fusePerfectScrollbar>
+        <form name="form" [formGroup]="form">
+
+
+
+
+
+
+            <div class="containerData">
+                <!-- Checkbox Column -->
+                <div>
+                    <div> <b> {{data.NombreEmpresaria}}</b></div>
+                </div>
+                <div>
+                    <div><b># Articulos</b></div>
+                    <div>{{data.CantidadArticulos}}</div>
+                </div>
+
+                <div>
+                    <div><b>Precio Catálogo</b></div>
+                    <div>${{data.TotalPrecioCatalogo}}</div>
+
+                </div>
+
+                <div>
+                    <div><b>Precio Empresaria</b></div>
+                    <div> ${{data.PrecioEmpresariaTotal}}</div>
+                </div>
+                <div>
+                    <div><b>Ganarás</b></div>
+                    <div> {{data.TotalPrecioCatalogo - data.PrecioEmpresariaTotal | currency}}</div>
+
+                </div>
+                <div>
+                    <div><b>Ganancia Puntos</b></div>
+                    <div> {{PuntosGanadosCalculo}} puntos</div>
+
+                </div>
+
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Tus Puntos
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                <div style="display: flex;
+                                justify-content: flex-end;
+                                width: 100%;">
+                                    <mat-icon>filter_9_plus</mat-icon>
+                                </div>
+
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="containerData">
+                            <!-- Checkbox Column -->
+
+
+                            <div>
+                                <div><b>Precio Puntos</b></div>
+                                <div>{{data.PrecioPuntosTotal}}</div>
+                                <div><b>Tus Puntos:</b></div>
+                                <div>{{data.TusPuntos}}</div>
+                            </div>
+
+
+
+                            <div>
+                                <div><b>Puntos Gastados:</b></div>
+                                <div>{{data.PuntosGastados}}</div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Paga con puntos
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                <div style="display: flex;
+                                justify-content: flex-end;
+                                width: 100%;">
+                                    <mat-icon>settings</mat-icon>
+                                </div>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div>
+                            <div style="display: flex;">
+                                <div style="margin-right: 27px;"> Pagar flete con puntos</div>
+                                <mat-checkbox *ngIf="DisableTipoFlete" value="checked" (click)="changeValue(checked)"
+                                    color="primary">
+
+                                </mat-checkbox>
+                            </div>
+
+                            <br />
+                        </div>
+                        <div style="display: flex;">
+                            <div>Pagar pedido con puntos</div>
+                            <input required formControlName="txt_PuntosUsar"
+                                style="border-bottom: 1px solid black;width: 60px; margin-left: 12px;"
+                                [ngModel]="txt_PuntosUsar" inputmode="numeric" pattern="[0-9]*" maxlength="5"
+                                (change)="CalcularTotalPagar()" digitOnly>
+
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <div>
+                    <div><b>Total Pagar</b></div>
+                    <div>{{data.TotalPagar}}</div>
+                </div>
+
+                <b style="font-size: 10px;">Recuerda confirmar los datos de tu pedido</b>
+
+
+                <p align="center" style="color: red;"><b>{{data.MensajeError}}</b></p>
+
+            </div>
+
+
+
+
+
+
+
+
+
+        </form>
+
+        <!--<div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100" style="color: green">
+      <br>
+      <b>Costo de Envío:</b> $12.78<br>
+    </div>-->
+
+    </div>
+
+    <div class="m-0 p-12" fxLayout="row" fxLayoutAlign="end center">
+        <button *ngIf="ReservarPedidoBtnOk" (click)="ConfirmData()" class="buttonAppBlack"
+            [disabled]="form.invalid || SaveInProgress">Reservar
+            Pedido</button>
+
+    </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,86 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Detalle de Pedido</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+
+        <div>
+            <div><b>Pedido</b></div>
+            <div> {{data.pedido}} </div>
+        </div>
+        <div>
+            <div><b>Estado</b></div>
+            <div> {{data.Estado_Pedido}} </div>
+        </div>
+        <div>
+            <div><b>Empresaria</b></div>
+            <div> {{data.Nombre_Vendedor}} </div>
+        </div>
+        <div>
+            <div><b>Fecha Liberación</b></div>
+            <div> {{data.Fecha_Liberacion | date: 'short'}} </div>
+        </div>
+        <div>
+            <div><b>Fecha Faturación</b></div>
+            <div> {{data.Fecha_Fact | date: 'short'}} </div>
+        </div>
+        <div>
+            <div><b>Fecha Aduanaje</b></div>
+            <div> {{data.Fecha_Adu | date: 'short'}} </div>
+        </div>
+        <div>
+            <div><b>Fecha Despacho</b></div>
+            <div> {{data.Fecha_Asig | date: 'short'}} </div>
+        </div>
+        <div>
+            <div><b>Numero Factura</b></div>
+            <div> {{data.Num_Factura}} </div>
+        </div>
+        <div>
+            <div><b>Ciudad Destino</b></div>
+            <div> {{data.Ciudad_Destino}} </div>
+        </div>
+        <div>
+            <div><b>Usuario que Liberó</b></div>
+            <div> {{data.Usu_Liberacion}} </div>
+        </div>
+        <div>
+            <div><b>Usuario que Facturó</b></div>
+            <div> {{data.Usu_Factura}} </div>
+        </div>
+        <div>
+            <div><b>Usuario que Aduanó</b></div>
+            <div> {{data.Usu_Aduanaje}} </div>
+        </div>
+        <div>
+            <div><b>Usuario que Despachó</b></div>
+            <div> {{data.Usu_Asignacion}} </div>
+        </div>
+        <div>
+            <div><b>Tipo Envio</b></div>
+            <div> {{data.EnvioA}} </div>
+        </div>
+        <div>
+            <div><b>Bodega</b></div>
+            <div> {{data.Bodega}} </div>
+        </div>
+        <div>
+            <div><b>Guia Api</b></div>
+            <div> {{data.guiaapi}} </div>
+        </div>
+    </div>
+
+    <div class="box-footer">
+
+        <button type="submit" class="btn btn-info pull-right" (click)="dialogRef.close()"
+            style="background-color: black; color: white;">CERRAR</button>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Clientes</div>
+            <div style="WIDTH: 100PX;"><button style="WIDTH: 100%;" class="buttonGlod" (click)="irNuevaEmpresaria()">
+                    NUEVA
+                </button></div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content px-24 mat-white-bg">
+
+
+
+        <div class="example-header">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Escribe una Palabra">
+            </mat-form-field>
+        </div>
+
+        <div class="example-container ">
+            <mat-table #tableEmpresaria [dataSource]="dataSource" class="">
+                <ng-container matColumnDef="imagenEmpresaria">
+                    <mat-cell *matCellDef="let row">
+                        <img class="mr-20" src="assets/images/appimages/empresarias.png">
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="RazonSocial">
+                    <mat-cell *matCellDef="let row"> {{row.RazonSocial}}</mat-cell>
+                </ng-container>
+                <mat-header-row></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"
+                    style="cursor: pointer" (click)="openDetalleCliente(row)">
+                </mat-row>
+            </mat-table>
+
+            <mat-paginator [pageSizeOptions]="[100,200,500]"></mat-paginator>
+        </div>
+    </div>
+</div>

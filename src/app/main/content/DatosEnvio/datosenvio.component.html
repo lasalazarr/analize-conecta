@@ -1,0 +1,163 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Información Envío</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+
+
+    <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+
+        <form fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form" [formGroup]="form">
+
+            <mat-form-field fxFlex="100" *ngIf="visibleMensajeError">
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                    <div style="color: red; font-weight: bold;">DEBE INGRESAR EL DOCUMENTO <br> DE LA EMPRESARIA</div>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100" class="appform">
+                <mat-select placeholder="Despachar A:" formControlName="DespacharA" [(ngModel)]="DespacharASeleccionado"
+                    (selectionChange)="SelectedDespacharA($event)" required>
+                    <mat-option *ngFor="let Item of ListDespachar" [value]="Item.IdTipoEnvio">
+                        {{ Item.Nombre }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.DespacharA.required">
+                    Despachar A es requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="100" *ngIf="visibleLocalizacionC" class="appform">
+                <mat-select placeholder="Cliente Final" formControlName="ClienteF"
+                    (selectionChange)="SelectClienteFinal($event)" required>
+                    <mat-option *ngFor="let Item of ListClientes" [value]="Item.Nit">
+                        {{ Item.NombreEmpresariaCompletoBusqueda }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.ClienteF.required">
+                    Cliente Final es requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="100" *ngIf="visiblePuntos" class="appform">
+                <mat-select placeholder="Punto" formControlName="Punto" (selectionChange)="SelectedPunto($event)"
+                    [required]="visiblePuntos">
+                    <mat-option *ngFor="let Item of ListPuntoEnvio" [value]="Item">
+                        {{ Item.Descripcion }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.Provincia.required">
+                    Provincia es requerido
+                </mat-error>
+            </mat-form-field>
+            <!-- <mat-form-field fxFlex="100" *ngIf="visibleLocalizacion" class="appform">
+                <mat-select placeholder="Provincia" formControlName="Provincia"
+                    (selectionChange)="SelectedProvincia($event)" [required]="visibleLocalizacion">
+                    <mat-option *ngFor="let Item of ListProvincia" [value]="Item">
+                        {{ Item.NombreEstado }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.Provincia.required">
+                    Provincia es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100" *ngIf="visibleLocalizacion" class="appform">
+                <mat-select placeholder="Canton" formControlName="Canton" (selectionChange)="SelectedCanton($event)"
+                    [required]="visibleLocalizacion">
+                    <mat-option *ngFor="let Item of ListCanton" [value]="Item">
+                        {{ Item.NombreCiudad }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.Canton.required">
+                    Canton es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100" *ngIf="visibleLocalizacion" class="appform">
+                <mat-select placeholder="Parroquia" formControlName="Parroquia"
+                    (selectionChange)="SelectedParroquia($event)" [required]="visibleLocalizacion">
+                    <mat-option *ngFor="let Item of ListParroquia" [value]="Item">
+                        {{ Item.NombreParroquia }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.Parroquia.required">
+                    Parroquia es requerido
+                </mat-error>
+            </mat-form-field> -->
+
+            <mat-form-field class="appform" fxFlex="100" *ngIf="visibleLocalizacion">
+                <input matInput placeholder="Correo Electronico" formControlName="CorreoElectronico" required
+                    [(ngModel)]="EmailSeleccionado">
+                <mat-error *ngIf="formErrors.Parroquia.required">
+                    Correo es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100" class="appform">
+                <input matInput placeholder="Telefono" formControlName="Telefono" required
+                    [ngModel]="TelefonoSeleccionado" maxlength="11" inputmode="numeric" pattern="[0-9]*" digitOnly>
+
+            </mat-form-field>
+
+
+            <mat-form-field fxFlex="100">
+                <mat-select placeholder="Bodega" formControlName="Bodega" [(ngModel)]="BodegaSeleccionado" required>
+                    <mat-option *ngFor="let Item of data?.ListBodega" [value]="Item.Bodega">
+                        {{ Item.Nombre }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.Bodega.required">
+                    Bodega es requerido
+                </mat-error>
+            </mat-form-field>
+
+
+            <ng-container *ngIf="visibleLocalizacion">
+                <div>
+                    <div class="container-locations" id="localtionContainerObject">
+                        <ng-container *ngFor="let item of listaDirecciones">
+                            <div (click)="selectDireccion(item)">
+                                <div class="imagelocation" [ngClass]="{'selected': TipoSelected == item.Tipo}">
+                                    <mat-icon>{{item.icono}}</mat-icon>
+                                </div>
+                                <div>{{item.Texto}}</div>
+                            </div>
+                        </ng-container>
+
+                    </div>
+
+                    <div style="color: red;">{{mensageDireccion}}</div>
+                    <button (click)="editlocalization()" class="buttonAppBlack">
+                        Editar Direcciones
+                    </button>
+                </div>
+
+            </ng-container>
+
+            <mat-form-field fxFlex="100" class="appform" *ngIf="visibleLocalizacion">
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100">
+                    <textarea rows="3" matInput placeholder="Dirección" [(ngModel)]="DireccionSeleccionado" readonly
+                        formControlName="Direccion"></textarea>
+                </div>
+            </mat-form-field>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100">
+                <br>
+                <div style="margin-right: 5px;"><b>Costo de Envío:</b></div>
+                <div>$ {{data.ValorFlete}}</div> <br>
+                <br>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="content p-12">
+        <button class="buttonAppBlack" (click)="onClose()"
+            [disabled]="form.invalid || SaveInProgress || !visibleGuardar" aria-label="Close">
+            GUARDAR
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,51 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Configuraciòn Home</div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+
+
+        <div *ngFor="let item of ListHome">
+            <div class="containerCard" >
+
+                <div class="headerCard">
+                    <div>
+                        <img [src]="item.Imagen">
+                    </div>
+
+
+                </div>
+                <div style="display: flex;justify-content: center;">
+                    <div class="mx-12">
+                        <mat-icon style="font-size: 40px;" (click)="borrarHome(item)">delete</mat-icon>
+                    </div>
+
+                    <div class="mx-12">
+                        <mat-icon style="font-size: 40px;" (click)="editarHome(item)">create</mat-icon>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <button style="width: 100%;" class="buttonGlod" (click)="CreateHome()">Crear</button>
+
+
+
+
+    </div>
+    
+</div>

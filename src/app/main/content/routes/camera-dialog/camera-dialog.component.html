@@ -1,0 +1,33 @@
+<span class="btn-close"  (click)="close()">X</span>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <!-- <form [formGroup]="firstFormGroup"> -->
+      <ng-template matStepLabel>Persona que recibe</ng-template>
+        <input matInput [(ngModel)]="data.receiver" placeholder="Nombre de la persona" type="text">  
+        <mat-dialog-actions align="center">
+          <button mat-raised-button color="primary" [mat-dialog-close]="data">Finalizar</button>
+        </mat-dialog-actions>
+  </mat-step>
+  <!-- <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Captura la foto</ng-template>
+       <div class="container vh-100">
+        <div class="d-flex flex-column align-items-center">
+          <div class="p-1">
+            <video #video class="vid" autoplay></video>
+          </div>
+          <div class="pb-2" align="center">
+            <button mat-raised-button color="primary" (click)="capture()">Capturar</button>
+          </div>
+          <div class="p-1">
+            <canvas #canvas class="vid canva"></canvas>
+          </div>
+        </div>
+      </div>
+      <div>
+        <mat-dialog-actions align="center">
+          <button mat-raised-button color="primary" [mat-dialog-close]="data">Finalizar</button>
+        </mat-dialog-actions>
+      </div>
+    </form> 
+  </mat-step> -->
+</mat-vertical-stepper>

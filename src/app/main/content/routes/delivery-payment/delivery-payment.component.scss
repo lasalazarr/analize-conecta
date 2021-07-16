@@ -1,0 +1,18 @@
+:host {
+    .content {
+        .horizontal-stepper-wrapper,
+        .vertical-stepper-wrapper {
+            max-width: 800px;
+        }
+    }
+}
+
+.custom-toolbar {
+    background-color:#000000;
+    color:white;
+}
+
+.form-field {
+    margin-right: 10px;
+    margin-left: 10px;
+}

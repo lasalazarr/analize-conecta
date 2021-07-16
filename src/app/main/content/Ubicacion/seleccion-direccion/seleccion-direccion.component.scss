@@ -1,0 +1,199 @@
+agm-map {
+    height: 250px !important;
+    width: 100%; /* This is really important*/
+}
+
+a {
+    color: darkblue;
+}
+
+p {
+    font-family: Lato;
+}
+
+:host {
+    .content {
+        .horizontal-stepper-wrapper,
+        .vertical-stepper-wrapper {
+            max-width: 800px;
+        }
+    }
+}
+
+form {
+    width: 100%;
+    max-width: 800px !important;
+}
+
+.form-errors-model {
+    flex: 1;
+
+    code {
+        background: none !important;
+    }
+}
+
+.icoLike {
+    width: 40px;
+    height: 40px;
+    background: #c84c43;
+    font-size: 31px;
+    padding-left: 9px;
+    border-radius: 22px;
+    cursor: pointer;
+    color: white;
+}
+.headerback {
+    width: 100%;
+    justify-content: space-between !important;
+    display: flex;
+}
+
+.container-locations {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    > div {
+        > div.imagelocation {
+            cursor: pointer;
+            background: #999;
+            color: white;
+            width: 50px;
+            text-align: center;
+            /* line-height: 46px; */
+            height: 50px;
+            border-radius: 12px;
+            mat-icon {
+                color: white;
+                line-height: 50px;
+            }
+        }
+        > div.imagelocation.selected {
+            background: black;
+        }
+        text-align: center;
+    }
+}
+.disableformstyle {
+    flex-direction: unset !important;
+    box-sizing: unset !important;
+    display: unset !important;
+}
+.popup{
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.localizate{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    >mat-icon{
+        color: white;
+    }
+}
+
+.input-field {
+  width: 100% !important;
+}
+
+// map
+
+#map {
+    min-height: 400px;
+  }
+  
+  /* Optional: Makes the sample page fill the window. */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  #infowindow-content .title {
+    font-weight: bold;
+  }
+  
+  #infowindow-content {
+    display: none;
+  }
+  
+  #map #infowindow-content {
+    display: inline;
+  }
+  
+  .pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+  }
+  
+  #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
+  
+  .pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+  }
+  
+  .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 90%;
+    left: 0px !important;
+    top: 60px !important;
+    border: solid;
+    border-width: 1px;
+    border-radius: 15px;
+  }
+  
+  #pac-input:focus {
+    border-color: #4d90fe;
+  }
+  
+  #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+  }
+  
+  #target {
+    width: 345px;
+  }
+  
+  #clear-button {
+    z-index: 0;
+    position: absolute;
+    right: 10% !important;
+    top: 17% !important;
+    font-weight: bold;
+  }

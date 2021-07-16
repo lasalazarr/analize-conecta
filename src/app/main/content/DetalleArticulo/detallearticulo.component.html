@@ -1,0 +1,154 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Detalle Articulo: {{data.CodigoRapido}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <div mat-dialog-content class="m-0" fusePerfectScrollbar>
+        <form name="form" [formGroup]="form">
+
+            <mat-card-content>
+
+                <!-- <fuse-widget fxLayout="column" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="50" > -->
+                <fuse-widget
+                    style="flex-direction: column;box-sizing: border-box;display: flex;flex: 1 1 100%;max-width: 100%;">
+                    <!-- Front -->
+                    <div class="fuse-widget-front mat-elevation-z2">
+                        <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="space-between center">
+                            <div>
+                                <p align="left" class="text-color-negro">
+                                    <b>{{data.NombreProd +' • ' +data.Color +' • '+data.Talla}}</b></p>
+                                <mat-divider></mat-divider>
+                            </div>
+
+                            <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                <mat-icon>360</mat-icon>
+                            </button>
+                        </div>
+
+                        <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+
+                            <ng-container
+                                *ngIf="!lodash.isNil(data.NombreImagen) && !lodash.isEmpty(data.NombreImagen)">
+                                <img class="CenterImageArticuloDetalle"
+                                    src="{{data.CarpetaImagenes}}{{data.NombreImagen}}" alt="Articulo">
+                            </ng-container>
+                            <ng-container *ngIf="lodash.isNil(data.NombreImagen) || lodash.isEmpty(data.NombreImagen)">
+                                <div style="height: 200px;display: flex;">
+                                    <img class="CenterImageArticuloDetalle"
+                                        style="width: 70px;width: 70px;align-self: center;"
+                                        src="assets/images/scrumboard/GlodLogo.png" alt="Articulo">
+                                </div>
+
+                            </ng-container>
+
+                            <!-- PRODUCCION <img class="CenterImageArticulo" src="../../../../saved/assets/imagesAplicacion/{{data.NombreImagen}}"
+                alt="Articulo">-->
+
+                        </div>
+                    </div>
+                    <!-- / Front -->
+
+                    <!-- Back -->
+                    <div class="fuse-widget-back p-16 mat-elevation-z2">
+                        <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                            aria-label="Flip widget">
+                            <mat-icon class="s-16">360</mat-icon>
+                        </button>
+                        <p aling="left" class="text-color-negro"><b>DESCRIPCIÓN</b></p>
+                        <mat-divider></mat-divider>
+                        <div class="p-12 m-0 containerData" fusePerfectScrollbar>
+
+                            <div>
+                                <div><b>Nombre</b></div>
+                                <div> {{data.NombreProd}} </div>
+                            </div>
+                            <div>
+                                <div><b>Color - Talla</b></div>
+                                <div> {{data.Color}} - <b>
+                                    </b>{{data.Talla}} </div>
+                            </div>
+                            <div>
+                                <div><b>Valor Unitario</b></div>
+                                <div>${{data.ValorUnitario}} </div>
+                            </div>
+                            <div *ngIf="esprovilegio"> 
+                                <div><b>Inventario Disponible</b></div>
+                                <div>{{data.Inventario}} Unidades </div>
+                            </div>
+                            <div>
+                                <div><b>% Descuento</b></div>
+                                <div>{{data.PorcentajeDescuento}}%</div>
+                            </div>
+                            <div>
+                                <div><b>Valor Total</b></div>
+                                <div>${{(ValorUnitario*Cantidad).toFixed(2) }}</div>
+                            </div>
+                            <div>
+                                <div><b>Precio Puntos</b></div>
+                                <div>{{(data.PrecioPuntos*Cantidad)}}</div>
+                            </div>
+                            <div>
+                                <div><b>Precio Empresaria</b></div>
+                                <div>${{(data.PrecioEmpresaria*Cantidad).toFixed(2)}}</div>
+                            </div>
+                            <div style="font-size: 17px;">
+                                <div><b>Ganancia</b></div>
+                                <div>${{((ValorUnitario*Cantidad)-(data.PrecioEmpresaria*Cantidad)).toFixed(2)}}</div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- / Back -->
+
+                </fuse-widget>
+                <div>
+                    <div fxFlex="45" align="right">
+                        <button (click)="CalacularResta()" mat-icon-button color="accent">
+                            <mat-icon class="mat-24" aria-label="Example icon-button with a heart icon">remove
+                            </mat-icon>
+                        </button>
+                    </div>
+                    <mat-form-field fxFlex="10">
+                        <input matInput placeholder="" formControlName="Cantidad" required [ngModel]="Cantidad"
+                            maxlength="2" inputmode="numeric" pattern="[0-9]*" digitOnly (focusout)="CalcularTotales()">
+                    </mat-form-field>
+
+                    <div fxFlex="40" align="left">
+                        <button (click)="CalcularSuma()" mat-icon-button color="accent">
+                            <mat-icon class="mat-24" aria-label="Example icon-button with a heart icon">add
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </form>
+
+        <!--<div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100" style="color: green">
+      <br>
+      <b>Costo de Envío:</b> $12.78<br>
+    </div>-->
+
+    </div>
+
+
+
+
+    <div class="m-0" fxLayout="row" fxLayoutAlign="end center" style="    padding: 0px 10px 10px 10px;">
+        <!-- <button class="buttonAppBlack" (click)="onAdicionarArticulo()">
+            <mat-icon>favorite</mat-icon> Me Encanta
+        </button> -->
+        <button class="buttonAppBlack" (click)="onAdicionarArticulo()">
+            ADICIONAR A PEDIDO
+        </button>
+    </div>
+
+</div>

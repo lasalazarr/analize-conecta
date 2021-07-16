@@ -1,0 +1,12 @@
+Pendientes SAVED:
+
+- Convertir servidor en SSL, https - Geo (video)
+- Definir cantidad de campos de registro de empresaria - Juan David
+- Configurar BD para plu, catalogo, campanas funcionales - Geo 
+- Realizar pruebas de logueo con diferentes usuarios - Definir perfiles opciones - Geo
+- Realizar creacion de pedidos y validar reglas del negocio - Juan David + Geo
+- Definir funcionalidad para mapas de google + georeferenciacion - Juan David 
+- FileServer de Imagenes, nomenclatura, tamaño y manejo - Geo
+- Depurar BD de GYG en estructura + tamaño + version (sql migracion 2017) - Geo
+- Definir funcionalidad de panel izq + arriba + panel derecho de la app - Juan David
+- Simplificar menus de la aplicacion x perfil. - Juan David

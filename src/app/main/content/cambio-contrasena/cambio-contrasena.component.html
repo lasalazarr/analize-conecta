@@ -1,0 +1,69 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between ;text-align: center">
+            <div style="font-size: 32px;width: 100%">CAMBIO DE CLAVE</div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content mat-white-bg">
+
+        <div class="formContainer mx-12">
+
+            <form class="mat-white-bg   mb-24" fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form"
+                [formGroup]="formcambioclave">
+                <div class="my-12 buttonShowPass" (click)="showPassword = !showPassword">
+                    <div>
+                        {{showPassword ? 'Ocultar ':'Mostrar '}} Clave
+                    </div>
+                    <mat-icon class="ml-12"> {{showPassword ? 'visibility':'visibility_off'}} </mat-icon>
+                </div>
+                <mat-form-field class="my-12" fxFlex="100">
+                    <input matInput [type]="showPassword ? 'text': 'password'" placeholder="Clave Anterior"
+                        formControlName="oldPwd" autocomplete="off">
+                    <mat-error *ngIf="formcambioclave.get('oldPwd').hasError('missMatchPassword')">
+                        Clave erronea
+                    </mat-error>
+                    <mat-error *ngIf="formcambioclave.get('oldPwd').hasError('required')">
+                        Clave anterior es requerida
+                    </mat-error>
+
+
+                </mat-form-field>
+                <mat-form-field class="" fxFlex="100">
+                    <input matInput [type]="showPassword ? 'text': 'password'" placeholder="Clave Nueva"
+                        formControlName="newPwd" autocomplete="off">
+
+                    <mat-error *ngIf="formcambioclave.get('newPwd').hasError('required')">
+                        Clave nueva es requerida
+                    </mat-error>
+
+
+                </mat-form-field>
+                <mat-form-field class="" fxFlex="100">
+                    <input matInput [type]="showPassword ? 'text': 'password'" placeholder="Confirmar"
+                        formControlName="confirmPwd" autocomplete="off">
+
+                    <mat-error *ngIf=" formcambioclave.get('confirmPwd').hasError('required')">
+                        Confirmar es requerido
+                    </mat-error>
+
+                </mat-form-field>
+                <mat-error *ngIf="formcambioclave.hasError('diferentPass')">
+                    Las claves no coinciden.
+                </mat-error>
+                <div class="containerbutton">
+                    <button class="buttonGlod mat-raised-button" (click)="actualizarclave()"
+                        [disabled]="formcambioclave.invalid">
+                        Confirmar Cambio
+                    </button>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

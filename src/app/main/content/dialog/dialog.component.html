@@ -1,0 +1,53 @@
+<div *ngIf="tipoO == 1 || tipoO==2">
+  <p>
+    <strong>
+   Actualizar valor
+  </strong>
+  </p>
+  
+  <div >
+    <label for="usr">Valor:</label>
+    <input type="text" class="form-control" id="usr"  [(ngModel)]="valor">
+  </div>
+  <br>
+  <div>
+    <button class="btn btn-primary mr-3" style="margin-right: 10px;" (click)="Aceptar()">Actualizar</button>
+    <button class="btn btn-primary mr-3" (click)="Cancelar()">Cancelar</button>
+  </div> 
+</div>
+<div *ngIf="tipoO == 3 || tipoO == 4">
+  <p>
+    <strong>
+   Esta seguro de esta operacion?
+   </strong>
+  </p>
+  
+  <br>
+  <div>
+    <button class="btn btn-primary mr-3" style="margin-right: 10px;" (click)="Aceptar()">Aceptar</button>
+    <button class="btn btn-primary mr-3" (click)="Cancelar()">Cancelar</button>
+  </div> 
+</div>
+<div *ngIf="tipoO == 5">
+  <p>
+    <strong>
+   Actualizar valores
+  </strong>
+  </p>
+  
+  <div >
+    <label for="usr">Puntos:</label>
+    <input type="text" class="form-control" id="puntos2"  [(ngModel)]="puntos">
+  </div>
+  <div >
+    <label for="usr">Bono puntos:</label>
+    <input type="text" class="form-control" id="bonopunto2"  [(ngModel)]="bonopunto">
+  </div>
+  <br>
+  <div>
+    <button class="btn btn-primary mr-3" style="margin-right: 10px;" (click)="Aceptar()">Actualizar</button>
+    <button class="btn btn-primary mr-3" (click)="Cancelar()">Cancelar</button>
+  </div> 
+</div>
+
+

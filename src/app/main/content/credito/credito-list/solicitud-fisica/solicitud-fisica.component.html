@@ -1,0 +1,34 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Creación solicitud fisica</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div style="color: red;">{{  messageError}}</div>
+
+    <div mat-dialog-content class="p-24 m-0 containerData" fusePerfectScrollbar>
+        <form class="formy" [formGroup]="formSolicitud" class="mat-white-bg   mb-24" fxLayout="column">
+
+
+            <mat-form-field class="registroEmpresaria" fxFlex="100">
+                <input autocomplete="off" matInput placeholder="Número Cedula" formControlName="NumeroCedula"
+                    pattern="[0-9]*" digitOnly>
+            </mat-form-field>
+
+
+            <button mat-raised-button (click)="guardarDocumentos()" class="buttonGlod" aria-label="CREATE AN ACCOUNT"
+                [disabled]="formSolicitud.invalid">
+                Guardar
+            </button>
+            <button mat-raised-button (click)="dialogRef.close()" class="buttonGlod">
+                Cancelar
+            </button>
+
+        </form>
+
+
+
+
+    </div>
+</div>

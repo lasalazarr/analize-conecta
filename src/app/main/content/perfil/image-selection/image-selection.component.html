@@ -1,0 +1,40 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class="mat-accent m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title">Cambiar Imagen</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="containerImage">
+        <img *ngIf="(!lodash.isNil(preview) || !lodash.isEmpty(preview))" [src]="preview">
+    </div>
+    <form class="formy" [formGroup]="formImage">
+
+        <div class="uploadImage">
+            <input id="channel-file" type="file" (change)="uploadFileAndSetPreview($event)" />
+        </div>
+    </form>
+    <div *ngIf="!validFormat && (!lodash.isNil(preview) || !lodash.isEmpty(preview))"
+        style="text-align: center;color: red;">
+        Formato incorrecto para imagen (formatos permitidos png,jpg,jpeg)
+    </div>
+    <div *ngIf="load" class="container-spinner">
+        <mat-spinner diameter="50"></mat-spinner>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="containerButtons p-12">
+
+
+        <button (click)="onClose()" class="buttonAppBlack">
+            cerrar
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <ng-container>
+            <button (click)="Guardar()" [disabled]="!validFormat || formImage.invalid || load" class="buttonAppBlack">Guardar
+                Imagen</button>
+        </ng-container>
+
+
+    </div>
+
+
+</div>

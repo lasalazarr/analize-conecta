@@ -1,0 +1,34 @@
+<div class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+  <mat-toolbar matDialogTitle class="m-0 custom-toolbar">
+    <mat-toolbar-row>
+        <div class="contenedor-titulo">
+          <div>Entregas pendientes</div>
+        </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-form-field class="form-field">
+    <mat-label>Buscar ruta</mat-label>
+    <input matInput placeholder="Ingresa un código de ruta" #searchCode (keyup)="filter(searchCode.value)" type="search">
+  </mat-form-field>
+  <mat-accordion class="accordion" hideToggle>
+    <mat-expansion-panel *ngFor="let route of filteredData">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon mat-list-icon *ngIf="route.Estado == 1">directions</mat-icon>
+          <mat-icon mat-list-icon *ngIf="route.Estado == 2">departure_board</mat-icon>
+          <div class="item-text">Ruta {{ route.Id }}</div>
+        </mat-panel-title>
+        <mat-panel-description>
+          <div class="item-text">{{ route.Detalle.length }} entregas - {{ route.Distancia }} Km - <strong>${{ route.Valor }}</strong> - {{ route.Fecha | date }}</div>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        <span class="status-text"><strong>Pendientes:</strong> {{ route.PedidosPendientes }}</span>
+        <span class="status-text"><strong>En ruta:</strong> {{ route.PedidosEnRuta }}</span>
+        <span class="status-text"><strong>Entregados:</strong> {{ route.PedidosEntregados }}</span>
+        <span class="status-text"><strong>Devueltos:</strong> {{ route.PedidosDevueltos }}</span>
+        <button class="btn-start" mat-stroked-button color="primary" (click)="onRouteClick(route)">Iniciar</button>
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

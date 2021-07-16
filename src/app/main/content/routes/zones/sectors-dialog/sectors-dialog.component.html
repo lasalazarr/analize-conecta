@@ -1,0 +1,28 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <mat-icon title="Añadir" class="icon" (click)="add()">add_box</mat-icon>
+      </th>
+      <th>Sector</th>
+      <th>Parroquia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of sectors">
+      <td>
+        <mat-icon title="Remover" class="icon" (click)="remove(item.guid)">remove_circle</mat-icon>
+      </td>
+      <td><input matInput [(ngModel)]="item.Nombre" /></td>
+      <td><input matInput [(ngModel)]="item.ParroquiaId" /></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3" align="right">
+        <button mat-raised-button (click)="dialogRef.close(sectors)">Guardar</button>
+        <button mat-raised-button color="primary" (click)="dialogRef.close()">Cerrar</button>
+      </td>
+    </tr>
+  </tfoot>
+</table>

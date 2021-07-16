@@ -1,0 +1,118 @@
+<div [ngClass]="{'popup': popupStyle}">
+    <form class="disableformstyle" name="form1" [formGroup]="form">
+
+        <div class="container-locations" *ngIf="showTypeAddress" >
+            <ng-container *ngFor="let item of locations">
+                <div>
+                    <div class="imagelocation" (click)="seleccionarTipoDireccion(item.Tipo) "
+                        [ngClass]="{'selected': TipoSelected == item.Tipo}">
+                        <mat-icon>{{item.icono}}</mat-icon>
+                    </div>
+                    <div>{{item.Texto}}</div>
+                </div>
+            </ng-container>
+        </div>
+
+        <!-- deprecated
+        <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mostrarUbicacion($event)" [zoom]="zoom"
+            (mapReady)="GetInfoLocation()">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+            <agm-circle *ngIf="lat && lng" [latitude]="lat" [longitude]="lng" [radius]="5" [fillColor]="'#F44336'"
+                [fillOpacity]="0.4">
+            </agm-circle>
+        </agm-map>
+        -->
+
+        <div>
+            <input
+                id="pac-input"
+                class="controls"
+                type="search"
+                placeholder="Introduce tu dirección"
+                formControlName="Direccion"/>
+            <!--<mat-icon aria-hidden="false" class="clear-button">clear</mat-icon>-->
+            <button id="clear-button">X</button>
+        </div>
+        <div id="map"></div>
+
+        <div class="localizate my-12 py-12"  (click)="localizame()">
+
+            <mat-icon>add_location</mat-icon>
+            <div>
+                Localizate
+            </div>
+         </div>
+         <ng-container *ngIf="showUpdateAddress">
+            <div class="localizate my-12 py-12"  (click)="goToAddress()">
+                <div>
+                    Actualizar Dirección
+                </div>
+             </div>
+         </ng-container>
+       
+    <!--
+        <mat-form-field fxFlex="100" style="width: 100% !important;">
+            <textarea rows="3" matInput placeholder="Click En Localizarme" formControlName="Direccion" required
+                (keyup)=" this.setAdressInput()"><textarea></textarea>
+        </mat-form-field>
+        <mat-error *ngIf="formErrors?.Direccion?.required">
+            Dirección Requerida
+        </mat-error>
+        <mat-error *ngIf="mensageDireccion">
+            {{this.mensageDireccion}}
+        </mat-error>
+    -->
+        <br />
+
+        <label>(*) Datos obligatorios</label>
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <mat-select placeholder="Provincia" formControlName="Provincia" (selectionChange)="changeProvincia($event)" required>
+                <mat-option *ngFor="let Item of ListProvincia" [value]="Item">
+                    {{ Item.NombreEstado }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+
+        <mat-form-field class="registroEmpresaria" fxFlex="100">
+            <mat-select placeholder="Canton" formControlName="Canton" (selectionChange)="changeCanton($event)" required>
+                <mat-option *ngFor="let Item of ListCanton" [value]="Item">
+                    {{ Item.NombreCiudad }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100" class="appform">
+            <mat-select placeholder="Parroquia" formControlName="Parroquia" (selectionChange)="changeParroquia($event)" required>
+                <mat-option *ngFor="let Item of ListParroquia" [value]="Item">
+                    {{ Item.NombreParroquia }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+       
+
+
+        <mat-form-field fxFlex="100" class="input-field">
+            <input matInput placeholder="Dirección de entrega (Ej: calle 22 N.153 Edificio-Apartamento 202)"formControlName="refPoint" maxlength="100" inputmode="text" required>
+        </mat-form-field>
+
+        <div *ngIf="MostrarPedcat" fxFlex="100" class="appform">
+            <label for="pedcatid">Pedir catalogo:</label>
+            <mat-checkbox id="pedcatid" value="pedcat" [(ngModel)]="pedcat" [ngModelOptions]="{standalone: true}" (change)="pedircatalogo($event)" class="example-margin"></mat-checkbox>
+        </div>
+    
+        <ng-container *ngIf="showSave">
+            <button class="buttonGlod" mat-raised-button [disabled]="this.listaDirecciones?.length == 0 || !form.valid"
+                (click)="Guardar()">Guardar</button>
+        </ng-container>
+        <ng-container *ngIf="returnButton">
+            <button class="buttonGlod" mat-raised-button [disabled]="this.listaDirecciones?.length == 0 || !form.valid"
+                (click)="returnData()">Guardar</button>
+        </ng-container>
+    
+    </form>
+</div>

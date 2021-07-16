@@ -1,0 +1,126 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar
+    (window:resize)="onResize($event)">
+    <!-- HEADER -->
+
+    <div class="px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%; justify-content: space-between;">
+            <div style="font-size: 32px;">Reporte Pedidos</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+        <mat-accordion *ngIf="pedidos != undefined && pedidos != null">
+            <ng-container *ngFor="let item of pedidos">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{item.Estado_Pedido}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <cdk-virtual-scroll-viewport id="inputsearch" itemSize="10" maxBufferPx="600" minBufferPx="600"
+                        class="example-viewport">
+                        <table *ngIf="!this.showTableMovil" class=" table_response">
+                            <tr>
+                                <th>Pedido</th>
+                                <th>Empresaria</th>
+                                <th>Factura</th>
+                                <th>Fecha Factura</th>
+                                <th>Dias Vencidos</th>
+                                <th>Ciudad Destino</th>
+                                <th>Estado de Guia</th>
+                                <th></th>
+                            </tr>
+                            <tr *cdkVirtualFor="let innerItem of item.PedidoXEstadoInfo"
+                                [ngClass]="{'table_Alert':innerItem.AlertaDespacho || innerItem.AlertaFacturacion || innerItem.AlertaLiberacion }">
+                                <td> {{innerItem.pedido}}</td>
+                                <td> {{innerItem.Nombre_Vendedor}}</td>
+                                <td> {{innerItem.Num_Factura}}</td>
+                                <td> {{innerItem.Fecha_Fact | date:'short'}}</td>
+                                <td> {{selectDaysAlert(innerItem)}}</td>
+                                <td> {{innerItem.Ciudad_Destino}}</td>
+                                <td> {{innerItem.EstadoGuia}}</td>
+                                <td>
+                                    <button (click)="openDetalleSocilitud(innerItem.pedido)" mat-icon-button
+                                        aria-label="Editar dirección">
+                                        <mat-icon class="s-20">remove_red_eye</mat-icon>
+                                    </button>
+                                    <button (click)="openResumenPedido(innerItem.pedido)" mat-icon-button
+                                        aria-label="Ver detalle">
+                                        <mat-icon class="s-20">read_more</mat-icon>
+                                    </button>
+
+
+                                   
+                                    <button *ngIf="item?.cod_EstPed === '24'" mat-icon-button
+                                        [routerLink]="['/ubicaciongeneral', innerItem.pedido]"
+                                        aria-label="Editar dirección" matTooltip="Editar dirección">
+                                        <mat-icon class="s-20">cancel_schedule_send</mat-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                        <ng-container *ngIf="this.showTableMovil">
+                            <div class="row_table_movil" *ngFor="let innerItem of item.PedidoXEstadoInfo"
+                                [ngClass]="{'table_Alert':innerItem.AlertaDespacho || innerItem.AlertaFacturacion || innerItem.AlertaLiberacion  }">
+                                <div class="column_table_movil">
+                                    <span class="column_description">Pedido</span><span>{{innerItem.pedido}}</span>
+                                </div>
+                                <div class="column_table_movil">
+                                    <span class="column_description">Empresaria</span><span
+                                        style="text-align: end;">{{innerItem.Nombre_Vendedor}}</span>
+                                </div>
+                                <div class="column_table_movil">
+                                    <span
+                                        class="column_description">Factura</span><span>{{innerItem.Num_Factura}}</span>
+                                </div>
+                                <div class="column_table_movil">
+                                    <span class="column_description">Fecha Factura</span>
+                                    <span>{{innerItem.Fecha_Fact | date:'short'}}</span>
+                                </div>
+                                <div class="column_table_movil">
+                                    <span class="column_description">Dias
+                                        Vencidos</span><span>{{selectDaysAlert(innerItem)}}</span>
+                                </div>
+                                <div class="column_table_movil">
+                                    <span class="column_description">Ciudad
+                                        Destino</span><span>{{innerItem.Ciudad_Destino}}</span>
+                                </div>
+                                <div class="column_table_movil">
+                                    <span class="column_description">Estado de
+                                        Guia</span><span>{{innerItem.EstadoGuia}}</span>
+                                </div>
+                                <div class="column_table_movil">
+
+                                    <button (click)="openDetalleSocilitud(innerItem.pedido)" mat-icon-button
+                                        aria-label="Ver detalle">
+                                        <mat-icon class="s-20">remove_red_eye</mat-icon> Ver detalle
+                                    </button>
+                                    <button *ngIf="item?.cod_EstPed === '24'" mat-icon-button
+                                        [routerLink]="['/ubicaciongeneral', innerItem.pedido]"
+                                        aria-label="Editar dirección" matTooltip="Editar dirección" style="margin-left: -10px;">
+                                        <mat-icon class="s-20">cancel_schedule_send</mat-icon> Editar dirección
+                                    </button>
+                                    <div></div>
+
+                                </div>
+                            </div>
+                        </ng-container>
+                    </cdk-virtual-scroll-viewport>
+                </mat-expansion-panel>
+            </ng-container>
+        </mat-accordion>
+
+        <div style="display: flex; justify-content: center;">
+            <ngx-charts-bar-vertical-stacked [view]="view" [scheme]="colorScheme" [results]="multi"
+                [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+                [animations]="animations">
+            </ngx-charts-bar-vertical-stacked>
+        </div>
+    </div>
+</div>

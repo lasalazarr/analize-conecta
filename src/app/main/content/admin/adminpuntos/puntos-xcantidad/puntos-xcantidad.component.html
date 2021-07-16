@@ -1,0 +1,41 @@
+<div *ngIf="visible" [@slideInOut]>
+  <p>
+    <strong>
+   Agregar Puntos x Cantidad
+  </strong>
+  </p>
+  
+  <div style="display: flex;">
+    <div class="col-xs-3">
+      <label for="Cadena">Cantidad:</label>
+      <input type="text" class="form-control" id="Cadena"  [(ngModel)]="Monto">
+    </div>
+    <div class="col-xs-3">
+      <label for="Cadena">Puntos:</label>
+      <input type="text" class="form-control" id="Cadena"  [(ngModel)]="Puntos">
+    </div>
+    
+  </div>
+  <div class="col-xs-3">
+    <p style="color: red;font-weight: bold;">{{mensaje}}</p>
+  </div>
+  <br>
+  <div>
+    <button class="btn btn-primary mr-3" style="margin-right: 10px;" (click)="Agregar()">Agregar</button>
+  </div> 
+
+  <br>
+</div>
+
+<div>
+  <button class="btn btn-primary mr-3" style="margin-right: 10px;" (click)="Abrir()">Crear nuevo punto x cantidad</button>
+</div> 
+<ag-grid-angular #agGrid style="width: 100%; height: 200px;" 
+id="myGrid" 
+class="ag-theme-balham"
+[columnDefs]="columnDefs" 
+[rowData]="rowData" 
+[context]="this" 
+(gridReady)="onGridReady($event)"
+[frameworkComponents]="frameworkComponents" 
+ >

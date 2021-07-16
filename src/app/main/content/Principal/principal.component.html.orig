@@ -1,0 +1,78 @@
+<div id="forms" class="page-layout simple fullwidth" style="flex-direction: ROW;
+box-sizing: border-box;
+display: flex;
+justify-content: center;" fusePerfectScrollbar>
+    <div style="margin: 20px;">
+<<<<<<< HEAD
+
+
+        <ng-container *ngFor="let item of ListHome">
+            <div class="productos">
+                <loading-image [url]="item.Imagen" 
+                (click)="accion(item)">
+                </loading-image>
+            </div>
+        </ng-container>
+        
+     
+=======
+        <div class="productos">
+            <loading-image [url]="'assets/images/vercatalogo.png'" 
+            (click)="openBlank('https://appsaved.lineadirectaec.com/glod')">
+            </loading-image>
+        </div>
+        <div class="productos">
+            <loading-image [url]="'assets/images/nuevosproductos.png'" (click)="nueva()">
+            </loading-image>
+        </div>
+        <div class="productos">
+            <loading-image [url]="'assets/images/articulos/boton10.png'" (click)="nueva()">
+            </loading-image>
+        </div>
+        <div class="productos">
+            <loading-image [url]="'assets/images/70off.png'" (click)="nueva()">
+            </loading-image>
+        </div>
+        <div class="productos">
+            <loading-image [url]="'assets/images/articulos/cuidadoper.png'" (click)="nueva()">
+            </loading-image>
+        </div>
+        <div class="productos">
+            <loading-image [url]="'assets/images/articulos/buzosHombres.png'" (click)="nueva()">
+            </loading-image>
+        </div>
+>>>>>>> origin/master
+        <!-- <div style="display: flex;
+        margin-top: 6px;">
+            <loading-image [url]="'assets/images/calzado1.png'"
+                (click)="openBlank('https://appsaved.lineadirectaec.com/linea')">
+            </loading-image>
+            <div style="display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 5px;">
+
+
+                <loading-image [url]="'assets/images/hacerpedido.PNG'" [routerLink]="['/pedidosprincipal']">
+                </loading-image>
+                <loading-image [url]="'assets/images/credito.png'"
+                    (click)="openBlank('https://creditos.lineadirectaec.com')">
+                </loading-image>
+                <loading-image [url]="'assets/images/descargarpassi.PNG'"
+                    (click)="openBlank('https://www.lineadirectaec.com/passi')">
+                </loading-image>
+                <loading-image [url]="'assets/images/descargarglod.PNG'"
+                    (click)="openBlank('https://appsaved.lineadirectaec.com/glod')">
+                </loading-image>
+                
+                Linea comentareada, verificar eliminacion
+                <div>
+                < iPaper snippet start >
+                <iframe src="https://viewer.ipaper.io/linea-directa-ecuador/glod-campana-03-2020/-/embedded/flat/pageslider/6/" 
+                style="display:block;" scrolling="no" frameborder="0"></iframe>
+                < iPaper snippet end >
+                </div 
+
+            </div>-->
+    </div> 
+</div>

@@ -1,0 +1,91 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+    <!-- HEADER -->
+
+    <div class="px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%; justify-content: space-between;">
+            <div style="font-size: 32px;">Conteos de Inventario</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+    
+    <div fxLayout="column"  fxLayoutAlign="start start" fxLayout.gt-md="row">
+
+        <!-- REACTIVE FORM EXAMPLE -->
+
+        <form class="mat-white-bg   mb-24" fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form"
+            [formGroup]="form">
+            <mat-form-field fxFlex="100" class="appform">
+                <mat-select placeholder="Bodega de despacho:" formControlName="MotivoAnulacion" [(ngModel)]="BodegaSeleccionada"
+                    (selectionChange)="SelectedDespacharA($event)" required>
+                    <mat-option *ngFor="let Item of ListBodega" [value]="Item.Bodega">
+                        {{ Item.Nombre }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="formErrors.MotivoAnulacion.required">
+                    Despachar A es requerido
+                </mat-error>
+            </mat-form-field>
+            <button (click)="ConfirmData()" mat-raised-button  class="buttonGlod"
+            aria-label="CREATE AN ACCOUNT" [disabled]="form.invalid || SaveInProgress">
+            Consultar
+            </button>
+       
+
+        </form>
+
+        <!-- / CONTENT -->
+
+ </div>
+
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+
+       
+
+        <div class="search-header">
+            <mat-form-field class="filterInput">
+                <input matInput placeholder="Buscar Referencia" aria-label="State" [formControl]="productCtrl" />
+            </mat-form-field>
+        </div>
+
+        <cdk-virtual-scroll-viewport itemSize="75" maxBufferPx="600" minBufferPx="600" class="example-viewport">
+            <div *cdkVirtualFor="let item of filteredProduct | async">
+                <div class="containerCard">
+                    <div class="headerCard">
+            
+                        <div>Referencia: {{ item?.Referencia }}</div>
+                        <div>Ccostos: {{ item.Ccostos }}</div>
+                    </div>
+                    <div class="headerCard">
+                        <div> {{ item?.Descripcion }}</div>
+                      
+                    </div>
+                    <div class="headerCard">
+                       
+                        <div>Saldo Bodega: {{ item?.Saldo  }}</div>
+                        <div>
+                            <div (click)="openAdicionarArticulo(item)">
+                                    <mat-icon>images</mat-icon>
+                            </div>
+                        </div>
+                        <div (click)="openResumenPedido(item)">
+                            <mat-icon>description</mat-icon>
+                        </div>
+                    </div>
+                    
+                  
+                 
+                </div>
+            </div>
+        </cdk-virtual-scroll-viewport>
+
+        <div class="containerCard bottomList">
+            <div>
+                Total Inventario
+            </div>
+            <div>
+                {{ getTotalSaldo()  }}
+            </div>
+        </div>
+    </div>
+</div>

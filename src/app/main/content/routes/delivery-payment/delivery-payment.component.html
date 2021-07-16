@@ -1,0 +1,12 @@
+<div class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+  <mat-label>Pedido contra entrega</mat-label>
+  <mat-divider></mat-divider>
+  <br />
+  <mat-label>Nro. de comprobante</mat-label>
+  <input matInput [(ngModel)]="payment.voucher" placeholder="Ingresa el nro. de comprobante" type="text">
+  <br />
+  <mat-checkbox [(ngModel)]="payment.efecty">Pago efectivo</mat-checkbox>
+  <mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" [mat-dialog-close]="payment">Finalizar</button>
+  </mat-dialog-actions>
+</div>

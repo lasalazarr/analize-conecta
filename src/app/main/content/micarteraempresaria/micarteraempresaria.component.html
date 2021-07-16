@@ -1,0 +1,86 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+  
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Resumen de Cartera</div>
+        </div>
+    </div>
+
+        <div *ngIf="visibleLocalizacion" align="center" style="font-size: 20px;">Estado crédito:</div>
+        <div *ngIf="visibleLocalizacion" align="center" style="font-size: 20px;">{{EstadoCredito}}</div>
+  
+    <div>
+        <div align="center" style="font-size: 20px;">Tu saldo en cartera:</div>
+        <div  align="center" style="font-size: 20px;">{{getTotalSaldo() | currency}}</div>
+        <fusioncharts  
+        width="100%"
+        type="pie2d"
+        [dataSource]="dataSource1"  >
+      </fusioncharts>
+
+      </div>
+
+
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+
+
+       
+        <div class="search-header">
+            <mat-form-field class="filterInput">
+                <input matInput placeholder="Buscar Empresaria" aria-label="State" [formControl]="productCtrl">
+            </mat-form-field>
+        </div>
+        
+        <cdk-virtual-scroll-viewport itemSize="75" maxBufferPx="600" minBufferPx="600" class="example-viewport">
+            <div *cdkVirtualFor="let item of filteredProduct | async">
+                <div class="containerCard"  (click)="openResumenPedido(item)">
+
+                    <div class="headerCard">
+                        <div>Cédula: {{item?.Nit}}</div>
+                        <div>Saldo: {{item?.Saldo | currency}}</div>
+                    </div>
+                    <div class="headerCard">
+                        <div>Empresaria: {{item?.Nombre}}</div>    
+
+                    </div>
+                    <div class="headerCard">
+                        <div>Lider: {{item?.Lider}}</div>
+                    </div>
+                    <div class="headerCard">
+                     <div>Crédito:  {{item?.EstadoCredito}}</div>
+                     <div
+                            class="btn-whatsapp"
+                            style="margin: 0px 13px; width: 33px;"
+                        >
+                            <a (click)="llamarEmpresaria(item)"
+                                ><img
+                                    _ngcontent-ako-c25=""
+                                    src="assets/images/record_voice_over-24px.svg"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </cdk-virtual-scroll-viewport>
+        
+                
+        <div class="containerCard bottomList">
+            <div>
+                Total Cartera
+            </div>
+            <div>
+                {{getTotalSaldo() | currency}}
+            </div>
+        
+        </div>
+
+    </div>
+
+</div>

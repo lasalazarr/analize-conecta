@@ -1,0 +1,31 @@
+<div class="dialog-content">
+
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+            <span class="title dialog-title"> {{titulo}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="menuPedido mx-24 my-24">
+
+        <div class="step">
+         
+
+            <div>
+                <div *ngFor="let item of items" >
+                    {{item}}
+                </div>
+            </div>
+           
+
+        </div>
+        <div class="step">
+            <div class="seleccionPaso doneButton" (click)="dialogRef.close()">
+                <mat-icon>done_outline</mat-icon>
+                <div>
+                    CERRAR
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

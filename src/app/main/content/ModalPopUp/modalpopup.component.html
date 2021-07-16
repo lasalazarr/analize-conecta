@@ -1,0 +1,30 @@
+<div style="height: 200px;">
+
+    <div style="    font-size: 18px;
+        font-weight: bolder;
+        color: white;
+        background-color: black;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;">{{data.Titulo}}
+
+    </div>
+    <div style="margin:0px 10px 0px 10px;">
+        <span layout="row">
+            <hr flex />
+            <div>
+                <p [ngStyle]="{'color': TextColor}">{{data.Mensaje}}</p>
+                <!--<mat-form-field>
+              <input matInput [(ngModel)]="data.Mensaje">
+            </mat-form-field>-->
+            </div>
+
+
+        </span>
+    </div>
+
+    <div>
+        <!--<button mat-button (click)="onNoClick()">No Thanks</button> -->
+        <button style="margin-left: 10px;" mat-button class="buttonGlod" [mat-dialog-close]="data.Mensaje" cdkFocusInitial>Ok</button>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 6 version
+*/
+
+:host {
+
+    .content {
+ 
+        
+
+        .horizontal-stepper-wrapper,
+        .vertical-stepper-wrapper {
+            max-width: 800px;
+        }
+    }
+}
+
+form {
+    width: 100%;
+    max-width: 800px !important;
+}
+
+.form-errors-model {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+
+    code {
+        background: none !important;
+    }
+}
+
+.icoLike
+{
+    width: 40px;
+    height: 40px;
+    background: #c84c43;
+    font-size: 31px;
+    padding-left: 9px;
+    border-radius: 22px;
+    cursor: pointer;
+    color: white;
+}
+.headerback{
+    width: 100%;
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.customRecover
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-height: 100%;
+}

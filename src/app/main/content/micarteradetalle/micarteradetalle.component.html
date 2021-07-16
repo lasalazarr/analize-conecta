@@ -1,0 +1,53 @@
+<div class="dialog-content">
+
+    <!-- HEADER -->
+  
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+          <span class="title dialog-title">Detalle Cartera: {{data.NombreEmpresaria}}</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+   
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+
+
+        <div class="example-container mat-elevation-z8">
+
+            <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="Numero">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Factura</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Numero}}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="Fecha">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Fecha | date}}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="Saldo">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Deuda</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.Saldo}}</mat-cell>
+                </ng-container>
+          
+               
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"  class="example-element-row"
+                (click)="openResumenPedido(row)">
+               </mat-row>
+                 </mat-table>	
+              
+
+            <mat-paginator [pageSizeOptions]="[100,200]"></mat-paginator>
+    
+        </div>
+    </div>  
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center">
+        <button (click)="Close()" style="width: 125px;" class="buttonGlod" aria-label="Close">
+          CERRAR
+        </button>
+      </div>
+</div>

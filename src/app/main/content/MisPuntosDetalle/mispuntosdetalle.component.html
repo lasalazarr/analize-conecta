@@ -1,0 +1,79 @@
+<div class="dialog-content">
+
+    <!-- HEADER -->
+          
+    <div class="returnTap"  >
+        <button (click)="onClose()" mat-mini-fab style="background: white;align-self: center;">
+            <mat-icon style="color: black;">reply</mat-icon>
+        </button>
+        <div>Volver</div>
+    </div>
+    <mat-toolbar matDialogTitle class=" m-0" style="background-color: #000000;color:white">
+        <mat-toolbar-row>
+          <span class="title dialog-title">Detalle Puntos: </span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+            <span class="title dialog-title">{{data.NombreEmpresaria}} </span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+ 
+      <div class="title dialog-title">
+        <div align="center" style="font-size: 20px;">Puntos Disponibles</div>
+        <div  class="logoloader">
+
+            <div id="circulo" >   {{data.PuntosTotal}}</div>
+  
+
+        </div>
+
+
+    </div>
+
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div mat-dialog-content class="p-24 m-0" fusePerfectScrollbar>
+
+
+       
+        <div class="search-header">
+            <mat-form-field class="filterInput">
+                <input matInput placeholder="Buscar pedido" aria-label="State" [formControl]="productCtrl">
+            </mat-form-field>
+        </div>
+    
+
+        <cdk-virtual-scroll-viewport itemSize="75" maxBufferPx="600" minBufferPx="600" class="example-viewport">
+            <div *cdkVirtualFor="let item of filteredProduct | async">
+                <div class="containerCard" >
+
+                    <div class="headerCard">
+                   
+                        <div style="font-size: 20px;"> {{item?.Tipo2}}</div>
+                   
+
+                    </div>
+                    <div class="headerCard">
+                   
+                        <div>{{item?.Numero}}</div>
+                        <div>Campaña {{item?.Campana}}</div>
+                 </div>
+                    <div class="headerCard">
+                        <div>{{item?.Concepto}}</div>
+                        <div> Puntos {{item.Cantidad}}</div>
+
+                    </div>
+                 
+
+
+                </div>
+
+            </div>
+
+        </cdk-virtual-scroll-viewport>
+        
+
+    </div>
+
+</div>

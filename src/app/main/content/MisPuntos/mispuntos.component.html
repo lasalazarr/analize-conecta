@@ -1,0 +1,63 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Puntos Empresarias</div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24 mat-white-bg">
+
+        <div class="search-header">
+            <mat-form-field class="filterInput">
+                <input matInput placeholder="Buscar empresaria" aria-label="State" [formControl]="productCtrl">
+            </mat-form-field>
+        </div>
+
+        <cdk-virtual-scroll-viewport itemSize="75" maxBufferPx="600" minBufferPx="600" class="example-viewport">
+            <div *cdkVirtualFor="let item of filteredProduct | async">
+                <div class="containerCard"  (click)="openResumenPedido(item)">
+
+                    <div class="headerCard">
+                        <div>Puntos {{item?.PuntosTotal}}</div>
+                    </div>
+                    <div class="headerCard">
+                        <div>Estado Empresaria {{item?.EstadoEmpresaria}}</div>
+                    </div>
+       
+                    <div class="headerCard">
+                    <div>Empresaria {{item?.NombreEmpresaria}}</div>
+                   
+                </div>
+                <div class="headerCard">
+   
+                    <div>Lider {{item?.NombreLider}}</div>
+                </div>
+
+                </div>
+
+            </div>
+
+        </cdk-virtual-scroll-viewport>
+        
+        
+        
+        <div class="containerCard bottomList">
+            <div>
+                Total Puntos
+            </div>
+            <div>
+                {{getTotalSaldo()}}
+            </div>
+        
+        </div>
+
+      
+    </div>
+
+</div>

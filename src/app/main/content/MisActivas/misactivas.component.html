@@ -1,0 +1,48 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column" fusePerfectScrollbar>
+
+    <!-- HEADER -->
+    <div class=" px-24 h-100 mat-white-bg" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" style="width: 100%;justify-content: space-between">
+            <div style="font-size: 32px;">Empresarias Activas</div>
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content px-24 mat-white-bg">
+
+
+
+        <div class="example-header">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Escribe una Palabra">
+            </mat-form-field>
+        </div>
+
+        <div class="example-container">
+
+            <mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container matColumnDef="imagenEmpresaria">
+                    <mat-cell *matCellDef="let row">
+                        <img class="mr-20" src="assets/images/appimages/empresarias.png">
+                    </mat-cell>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="NombreCompleto">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.RazonSocial}}</mat-cell>
+                </ng-container>
+
+
+                <mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"
+                    (click)="openDetalleCliente(row)">
+                </mat-row>
+            </mat-table>
+
+            <mat-paginator [pageSizeOptions]="[100,200,500]"></mat-paginator>
+        </div>
+    </div>
+</div>
