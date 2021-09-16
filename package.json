@@ -43,7 +43,7 @@
     "@angular/router": "7.2.14",
     "@capacitor/android": "2.4.3",
     "@capacitor/angular": "1.0.2",
-    "@capacitor/cli": "2.1.0",
+    "@capacitor/cli": "3.0.0",
     "@capacitor/core": "2.1.0",
     "@nativescript/angular": "8.21.0",
     "@ng-toolkit/universal": "7.1.2",
