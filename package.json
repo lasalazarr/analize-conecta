@@ -61,7 +61,7 @@
     "@uiowa/digit-only": "0.0.5",
     "ag-grid": "18.1.2",
     "ag-grid-angular": "21.0.1",
-    "ag-grid-community": "21.0.1",
+    "ag-grid-community": "25.2.0",
     "ag-grid-enterprise": "23.0.2",
     "agm-direction": "0.7.6",
     "angular-calendar": "0.23.6",
