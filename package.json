@@ -27,7 +27,7 @@
     "@amcharts/amcharts4": "4.10.15",
     "@amcharts/amcharts4-fonts": "4.0.1",
     "@amcharts/amcharts4-geodata": "4.1.19",
-    "@angular-devkit/build-angular": "0.13.0",
+    "@angular-devkit/build-angular": "0.1000.0",
     "@angular/animations": "7.2.14",
     "@angular/cdk": "7.3.7",
     "@angular/common": "7.2.14",
